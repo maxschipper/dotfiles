@@ -1,0 +1,4 @@
+-- require("full-border"):setup()
+-- require("git"):setup()
+-- require("starship"):setup({ config_file = "/Users/max/.config/starship/starship_yazi.toml" })
+-- starship:setup({ config_file = "/Users/max/.config/starship/starship_yazi.toml" })

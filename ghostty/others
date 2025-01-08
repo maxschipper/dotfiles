@@ -1,0 +1,21 @@
+copy-on-select = false
+
+
+shell-integration = detect
+shell-integration-features = no-cursor,no-sudo,no-title
+
+working-directory = 
+
+window-vsync = true
+
+window-theme = auto
+
+resize-overlay = after-first
+resize-overlay-position = center
+resize-overlay-duration = 750ms
+
+clipboard-read = ask
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true

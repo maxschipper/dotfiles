@@ -1,0 +1,30 @@
+config-file = "keybinds"
+config-file = "font"
+config-file = "style"
+config-file = "others"
+
+
+command = zellij
+initial-command = 
+wait-after-command = true
+abnormal-command-exit-runtime = 1000
+
+macos-option-as-alt = left
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+
+desktop-notifications = true
+
+scrollback-limit = 10000000
+window-colorspace = display-p3
+
+confirm-close-surface = true
+quit-after-last-window-closed = false
+
+
+
+term = xterm-ghostty
+
+auto-update = check
+auto-update-channel = 
+

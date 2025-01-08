@@ -1,0 +1,115 @@
+[[language]]
+name = "go"
+auto-format = true    
+formatter = { command = "goimports" }
+
+[[language]]
+name = "c"
+auto-format = true
+# language-servers = [ "clangd", { name = "gpt", only-features = [ "completion" ] } ]
+language-servers = [ "clangd", { name = "gpt", except-features = [ "code-action" ] } ]
+# indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "(shell|bash|zsh|sh)"
+file-types = [{ glob = "ghostty/*" }, { glob = ".config/**/config" }, { glob = "*rc" }]
+
+
+# [[language]]
+# name = "arduino"
+# scope = "source.ino"
+# file-types = ["ino"]
+# # language-servers = [ "arduino" ]
+# language-servers = [ "clangd-arduino" ]
+
+# [language-server.arduino]
+# # filetypes = ["ino"]
+# command = "arduino-language-server" 
+# args = [
+#     "-cli-config", "/path/to/arduino-cli.yaml",
+#     "-clangd", "/usr/local/opt/llvm/bin/clangd",
+#     "-cli", "/usr/local/bin/arduino-cli",
+#     "-cli", "-config $HOME/arduino/arduino-cli.yaml",
+#     "-fqbn", "arduino:avr:uno"
+# ] 
+
+# [language-server.clangd-arduino]
+# command = "clangd" 
+
+
+
+# [language-server.test]
+# command = "clang-format"
+# args = ["--fallback-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never}"] 
+
+
+[[language]]
+name = "fish"
+language-servers = [ "fish-lsp", "gpt" ]
+
+[language-server.fish-lsp]
+command = "fish-lsp"
+args= ["start"]
+
+# LATEX config
+[[language]]
+name = "latex"
+# language-servers = [ "texlab", "gpt" ]
+language-servers = [ "texlab" ]
+
+[language-server.texlab.config.texlab.chktex]
+onOpenAndSave = true
+onEdit = true
+
+[language-server.texlab.config.texlab.forwardSearch]
+executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
+args = [ "-g", "-r", "%l", "%p", "%f" ]
+# executable = "zathura"
+# args = [ "--synctex-forward", "%l:%c:%f", "%p" ]
+
+[language-server.texlab.config.texlab.build]
+auxDirectory = "build"
+logDirectory = "build"
+pdfDirectory = "build"
+forwardSearchAfter = true
+onSave = true
+executable = "tectonic"
+args = [
+ "-X",
+ "compile",
+ "--synctex",
+ "--keep-logs",
+ # "--keep-intermediates",
+ "--outdir=build",
+ "%f",
+]
+
+[[language]]
+name = "bibtex"
+
+[language-server.bibtex]
+filetypes = "bib"
+event = "save"
+command = "bibtex-tidy %file%"
+
+# OLLAMA
+# [language-server.gpt]
+# timeout = 60
+# command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
+# args = [
+#  "--handler", "ollama",
+#  "--ollamaEndpoint", "http://192.168.178.22:11434",
+#  "--ollamaModel", "qwen2.5-coder",
+#  "--logFile", "/Users/max/.config/helix/helix-gpt/ollama.log"
+# ]
+
+# CODEIUM
+[language-server.gpt]
+timeout = 60
+command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
+args = [
+ "--handler", "codeium",
+ "--logFile", "/Users/max/.config/helix/helix-gpt/codeium.log"
+]

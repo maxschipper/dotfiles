@@ -1,0 +1,115 @@
+theme = "gruvbox_dark_soft"
+# gruvbox, gruvbox_dark_soft, jetbrains_dark, material_darker, molokai, monokai_soda, new_moon, papercolor_dark, onedark, onedarker
+
+[editor]
+mouse           = true
+auto-completion = true
+#rulers         = [80, 120]
+cursorline      = true
+# cursorcolumn    = true
+bufferline      = "multiple"
+line-number     = "relative"
+scrolloff       = 8
+shell           = ["fish", "-c"]
+color-modes     = true 
+
+# experimental
+
+# end-of-line-diagnostics = "hint"
+end-of-line-diagnostics = "info"
+
+[editor.inline-diagnostics]
+# cursor-line = "info" 
+cursor-line = "warning" 
+# other-lines = "warning"
+other-lines = "error"
+
+
+
+
+[editor.auto-save]
+after-delay.enable  = true
+after-delay.timeout = 180000 # in ms -> 3min *60*1000= 180000ms
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control"]
+center = ["file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
+right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-type"]
+separator   = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+auto-signature-help = true
+
+[editor.whitespace.render]
+space   = "none"
+nbsp    = "all"
+nnbsp   = "all"
+newline = "none"
+tab     = "all"
+
+[editor.whitespace.characters]
+space   = " "
+nbsp    = "⍽"    # Non Breaking SPace
+nnbsp   = "␣"
+tab     = "→"
+newline = "⏎"
+tabpad  = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render      = true
+character   = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable            = true
+max-wrap          = 25
+max-indent-retain = 40
+wrap-indicator    = " ↪"
+
+[editor.file-picker]
+hidden    = false
+max-depth = 4
+# ignore = true
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+# KEY REMAPPING
+[keys.normal]
+esc   = ["collapse_selection", "keep_primary_selection"]
+minus = "search"
+X     = "extend_line_above"
+ret   = "insert_newline" # ret = ["open_below", "normal_mode"]
+C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+tab   = "indent"
+S-tab = "unindent"
+# T = ["extend_line","select_regex"]
+# T = ["extend_line", "select_regex \\b(true|false)\\b"]
+# C-space = "signature_help"
+
+# 0 = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
+# 0 = ":sh zellij run -c -- bash ~/.config/helix/yazi-picker.sh open"
+
+# 0 = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- fish ~/.config/helix/yazi-picker.fish open"
+
+[keys.normal.space]
+w = ":write"
+q = ":quit" # q = ":buffer-close"
+0 = ":quit!"
+1 = ":write-quit"
+f = "file_picker_in_current_directory"
+F = "file_picker"
+l = ":sh zellij run -c -i -- lazygit"
+u = ":sh zellij run -c -f -- yazi"
+Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize -"
