@@ -30,7 +30,7 @@ const { values } = parseArgs({
     },
     openaiModel: {
       type: 'string',
-      default: Bun.env.OPENAI_MODEL ?? "gpt-3.5-turbo-16k"
+      default: Bun.env.OPENAI_MODEL ?? "gpt-4o-mini"
     },
     openaiMaxTokens: {
       type: 'string',

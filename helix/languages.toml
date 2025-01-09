@@ -2,6 +2,8 @@
 name = "go"
 auto-format = true    
 formatter = { command = "goimports" }
+# language-servers = [ "gopls", "golangci-lint-langserver", { name = "gpt", except-features = [ "code-action" ] } ]
+language-servers = [ { name = "gpt", except-features = [ "code-action" ] } ]
 
 [[language]]
 name = "c"
@@ -106,10 +108,20 @@ command = "bibtex-tidy %file%"
 # ]
 
 # CODEIUM
+# [language-server.gpt]
+# timeout = 60
+# command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
+# args = [
+#  "--handler", "codeium",
+#  "--logFile", "/Users/max/.config/helix/helix-gpt/codeium.log"
+# ]
+
+
+# openai NOT WORKING
 [language-server.gpt]
 timeout = 60
 command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
 args = [
- "--handler", "codeium",
- "--logFile", "/Users/max/.config/helix/helix-gpt/codeium.log"
+ "--handler", "openai",
+ "--logFile", "/Users/max/.config/helix/helix-gpt/openai.log"
 ]
