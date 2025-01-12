@@ -2,14 +2,15 @@
 name = "go"
 auto-format = true    
 formatter = { command = "goimports" }
-# language-servers = [ "gopls", "golangci-lint-langserver", { name = "gpt", except-features = [ "code-action" ] } ]
-language-servers = [ { name = "gpt", except-features = [ "code-action" ] } ]
+# language-servers = [ "gopls", "golangci-lint-langserver" ]
+# language-servers = [ "gopls", "golangci-lint-langserver", { name = "helix-gpt", except-features = [ "code-action" ] } ]
+language-servers = [ "gopls", "golangci-lint-langserver", "helix-gpt" ]
 
 [[language]]
 name = "c"
 auto-format = true
-# language-servers = [ "clangd", { name = "gpt", only-features = [ "completion" ] } ]
-language-servers = [ "clangd", { name = "gpt", except-features = [ "code-action" ] } ]
+# language-servers = [ "clangd", { name = "helix-gpt", only-features = [ "completion" ] } ]
+language-servers = [ "clangd", { name = "helix-gpt", except-features = [ "code-action" ] } ]
 # indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
@@ -49,7 +50,7 @@ file-types = [{ glob = "ghostty/*" }, { glob = ".config/**/config" }, { glob = "
 
 [[language]]
 name = "fish"
-language-servers = [ "fish-lsp", "gpt" ]
+language-servers = [ "fish-lsp", "helix-gpt" ]
 
 [language-server.fish-lsp]
 command = "fish-lsp"
@@ -58,7 +59,7 @@ args= ["start"]
 # LATEX config
 [[language]]
 name = "latex"
-# language-servers = [ "texlab", "gpt" ]
+# language-servers = [ "texlab", "helix-gpt" ]
 language-servers = [ "texlab" ]
 
 [language-server.texlab.config.texlab.chktex]
@@ -97,7 +98,7 @@ event = "save"
 command = "bibtex-tidy %file%"
 
 # OLLAMA
-# [language-server.gpt]
+# [language-server.helix-gpt]
 # timeout = 60
 # command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
 # args = [
@@ -108,20 +109,20 @@ command = "bibtex-tidy %file%"
 # ]
 
 # CODEIUM
-# [language-server.gpt]
-# timeout = 60
-# command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
-# args = [
-#  "--handler", "codeium",
-#  "--logFile", "/Users/max/.config/helix/helix-gpt/codeium.log"
-# ]
-
-
-# openai NOT WORKING
-[language-server.gpt]
+[language-server.helix-gpt]
 timeout = 60
-command = "/Users/max/.config/helix/helix-gpt/deno/helix-gpt-deno/helix-gpt"
+command = "/Users/max/Documents/data-up/code/private/helix-gpt/helix-gpt-deno/helix-gpt"
 args = [
- "--handler", "openai",
- "--logFile", "/Users/max/.config/helix/helix-gpt/openai.log"
+ "--handler", "codeium",
+ "--logFile", "/Users/max/Documents/data-up/code/private/helix-gpt/codeium.log",
 ]
+
+
+# openai
+# [language-server.helix-gpt]
+# timeout = 60
+# command = "/Users/max/Documents/data-up/code/private/helix-gpt/helix-gpt-deno/helix-gpt"
+# args = [
+# #  "--handler", "openai",
+#  "--logFile", "/Users/max/Documents/data-up/code/private/helix-gpt/openai.log",
+# ]
