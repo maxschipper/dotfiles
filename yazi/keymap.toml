@@ -11,6 +11,7 @@ on   = [ ".", "F" ]
 run  = "finder cd"
 desc = "go to the Finder location"
 
+
 [[manager.prepend_keymap]]
 on   = [ "g", "k" ]
 run  = "cd ~/code"
@@ -19,7 +20,13 @@ desc = "~/code"
 [[manager.prepend_keymap]]
 on   = [ "g", "v" ]
 run  = "cd /Volumes"
-desc = "/Volumes"
+desc = "Go to /Volumes"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "r" ]
+run  = "cd ~/dotfiles"
+desc = "Go to ~/dotfiles"
+
 
 [[manager.prepend_keymap]]
 on   = [ ".", "a" ]
@@ -32,12 +39,8 @@ desc = "Remove a directory with the current date as name"
 
 [[manager.prepend_keymap]]
 on = [ "l" ]
-run = "plugin bypass --args=smart_enter"
-desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory"
-[[manager.prepend_keymap]]
-on = [ "h" ]
-run = "plugin bypass --args=reverse"
-desc = "Recursively enter parent directory, skipping parents with only a single subdirectory"
+run  = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
 
 [[manager.prepend_keymap]]
 on   = [ "c", "m" ]
@@ -79,11 +82,11 @@ keymap = [
 	{ on = [ "<PageUp>" ],     run = "arrow -100%", desc = "Move cursor up one page" },
 	{ on = [ "<PageDown>" ],   run = "arrow 100%",  desc = "Move cursor down one page" },
 
-	{ on = [ "H" ], run = "leave", desc = "Go back to the parent directory" },
-	{ on = [ "L" ], run = "enter", desc = "Enter the child directory" },
+	{ on = [ "h" ], run = "leave",    desc = "Go back to the parent directory" },
+	{ on = [ "l" ], run = "enter", desc = "Enter the child directory" },
 
-	# { on = [ "H" ], run = "back",    desc = "Go back to the previous directory" },
-	# { on = [ "L" ], run = "forward", desc = "Go forward to the next directory" },
+	{ on = [ "H" ], run = "back",    desc = "Go back to the previous directory" },
+	{ on = [ "L" ], run = "forward", desc = "Go forward to the next directory" },
 
 	{ on = [ "<A-k>" ], run = "seek -5", desc = "Seek up 5 units in the preview" },
 	{ on = [ "<A-j>" ], run = "seek 5",  desc = "Seek down 5 units in the preview" },
@@ -106,29 +109,30 @@ keymap = [
 	{ on = [ "<C-r>" ],   run = "toggle_all",            desc = "Inverse selection of all files" },
 
 	# Operation
-	{ on = [ "o" ],         run = "open",                       desc = "Open the selected files" },
-	{ on = [ "O" ],         run = "open --interactive",         desc = "Open the selected files interactively" },
-	{ on = [ "<Enter>" ],   run = "open",                       desc = "Open the selected files" },
-	{ on = [ "<C-Enter>" ], run = "open --interactive",         desc = "Open the selected files interactively" },
-	{ on = [ "y" ],         run = "yank",                       desc = "Copy the selected files" },
-	{ on = [ "Y" ],         run = "unyank",                     desc = "Cancel the yank status of files" },
-	{ on = [ "x" ],         run = "yank --cut",                 desc = "Cut the selected files" },
-	{ on = [ "X" ],         run = "unyank",                     desc = "Cancel the yank status of files" },
-	{ on = [ "p" ],         run = "paste",                      desc = "Paste the files" },
-	{ on = [ "P" ],         run = "paste --force",              desc = "Paste the files (overwrite if the destination exists)" },
-	{ on = [ "-" ],         run = "link",                       desc = "Symlink the absolute path of files" },
-	{ on = [ "_" ],         run = "link --relative",            desc = "Symlink the relative path of files" },
-	{ on = [ "d" ],         run = "remove",                     desc = "Move the files to the trash" },
-	{ on = [ "D" ],         run = "remove --permanently",       desc = "Permanently delete the files" },
-	{ on = [ "a" ],         run = "create",                     desc = "Create a file or directory (ends with / for directories)" },
-	{ on = [ "r" ],         run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
-	{ on = [ "R" ],         run = "rename --empty=before_ext",  desc = "Rename a file or directory but start empty" },
-	{ on = [ "." ],         run = "hidden toggle",              desc = "Toggle the visibility of hidden files" },
-	{ on = [ "s" ],         run = "search fd",                  desc = "Search files by name using fd" },
-	{ on = [ "S" ],         run = "search rg",                  desc = "Search files by content using ripgrep" },
-	{ on = [ "<C-s>" ],     run = "search none",                desc = "Cancel the ongoing search" },
-	{ on = [ "z" ],         run = "plugin zoxide",              desc = "Jump to a directory using zoxide" },
-	{ on = [ "Z" ],         run = "plugin fzf",                 desc = "Jump to a directory, or reveal a file using fzf" },
+	{ on = [ "o" ],         run = "open",                        desc = "Open the selected files" },
+	{ on = [ "O" ],         run = "open --interactive",          desc = "Open the selected files interactively" },
+	{ on = [ "<Enter>" ],   run = "open",                        desc = "Open the selected files" },
+	{ on = [ "<C-Enter>" ], run = "open --interactive",          desc = "Open the selected files interactively" },
+	{ on = [ "y" ],         run = "yank",                        desc = "Copy the selected files" },
+	{ on = [ "Y" ],         run = "unyank",                      desc = "Cancel the yank status of files" },
+	{ on = [ "x" ],         run = "yank --cut",                  desc = "Cut the selected files" },
+	{ on = [ "X" ],         run = "unyank",                      desc = "Cancel the yank status of files" },
+	{ on = [ "p" ],         run = "paste",                       desc = "Paste the files" },
+	{ on = [ "P" ],         run = "paste --force",               desc = "Paste the files (overwrite if the destination exists)" },
+	{ on = [ "-" ],         run = "link",                        desc = "Symlink the absolute path of files" },
+	{ on = [ "_" ],         run = "link --relative",             desc = "Symlink the relative path of files" },
+	{ on = [ "d" ],         run = "remove",                      desc = "Move the files to the trash" },
+	{ on = [ "D" ],         run = "remove --permanently",        desc = "Permanently delete the files" },
+	{ on = [ "a" ],         run = "create",                      desc = "Create a file or directory (ends with / for directories)" },
+	{ on = [ "r" ],         run = "rename --cursor=before_ext",  desc = "Rename a file or directory" },
+	{ on = [ "R" ],         run = "rename --empty=before_ext",   desc = "Rename a file or directory but start empty" },
+	{ on = ";",             run = "shell --interactive",         desc = "Run a shell command" },
+	{ on = ":",             run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
+	{ on = [ "s" ],         run = "search fd",                   desc = "Search files by name using fd" },
+	{ on = [ "S" ],         run = "search rg",                   desc = "Search files by content using ripgrep" },
+	{ on = [ "<C-s>" ],     run = "search none",                 desc = "Cancel the ongoing search" },
+	{ on = [ "z" ],         run = "plugin zoxide",               desc = "Jump to a directory using zoxide" },
+	{ on = [ "Z" ],         run = "plugin fzf",                  desc = "Jump to a directory, or reveal a file using fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Set linemode to size" },
