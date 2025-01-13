@@ -1,5 +1,4 @@
-theme = "gruvbox_dark_soft"
-# gruvbox, gruvbox_dark_soft, jetbrains_dark, material_darker, molokai, monokai_soda, new_moon, papercolor_dark, onedark, onedarker
+theme = "my-starlight-transparent"
 
 [editor]
 mouse           = true
@@ -86,30 +85,39 @@ layout = ["diff", "diagnostics", "line-numbers", "spacer"]
 
 # KEY REMAPPING
 [keys.normal]
+# QOL
 esc   = ["collapse_selection", "keep_primary_selection"]
-minus = "search"
 X     = "extend_line_above"
 ret   = "insert_newline" # ret = ["open_below", "normal_mode"]
-C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 tab   = "indent"
 S-tab = "unindent"
-# T = ["extend_line","select_regex"]
-# T = ["extend_line", "select_regex \\b(true|false)\\b"]
-# C-space = "signature_help"
 
-# 0 = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
-# 0 = ":sh zellij run -c -- bash ~/.config/helix/yazi-picker.sh open"
+minus = "search"
 
-# 0 = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- fish ~/.config/helix/yazi-picker.fish open"
+# Control+j|k can be used to move lines around, WARNING: breaks when used with multiple cursors
+C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+# <Y> and <P> yank and paste from the default register, <y> and <p> use a custom register "y"
+# this way you can yank text, then delete stuff and still be able to paste the yanked text with <p>
+# if you want to paste text you previously deleted with d you can use <P>
+P = "paste_after"
+Y = "yank"
+y = "@\"yY"
+p = "@\"yP"
+
 
 [keys.normal.space]
 w = ":write"
 q = ":quit" # q = ":buffer-close"
 0 = ":quit!"
 1 = ":write-quit"
+
+# only switched <f> and <F>
 f = "file_picker_in_current_directory"
 F = "file_picker"
+
+u = "@:theme my-"
+
 l = ":sh zellij run -c -i -- lazygit"
-u = ":sh zellij run -c -f -- yazi"
 Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize -"
