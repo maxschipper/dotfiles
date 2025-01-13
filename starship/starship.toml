@@ -122,25 +122,28 @@ truncate_to_repo = true
 "Desktop" = " "
 
 [git_branch]
+disabled = false
 symbol = ""
 style = "bg:color_aqua"
 format = '[[ $symbol $branch(:$remote_branch) ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_commit]
+disabled = false
 style = "bg:color_aqua"
 tag_symbol = ' 🏷 '
 tag_disabled = false
 format ="[\\($hash$tag\\) ]($style)"
 
 [git_state]
-
+disabled = false
 
 [git_status]
+disabled = false
 style = "bg:color_aqua"
 format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_metrics]
-disabled = false
+disabled = true
 added_style = "bg:color_aqua fg:color_purple"
 deleted_style = "bg:color_aqua fg:red"
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
