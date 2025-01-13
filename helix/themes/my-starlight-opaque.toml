@@ -1,0 +1,7 @@
+# Author : eemilhaa <eemil.haapanen@gmail.com> 
+# Palette from : https://github.com/CosmicToast/starlight
+
+inherits = "my-starlight-transparent"
+
+"ui.background"             = { bg = "#444444" }
+"ui.cursorline.primary"     = { bg = "#505050" }
