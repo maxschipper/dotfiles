@@ -1,10 +1,10 @@
-theme = GruvboxDarkSoft
+# theme = GruvboxDarkSoft
 
 # custom-shader = shaders/bloom025.glsl
 # custom-shader = shaders/tft.glsl
 # custom-shader = shaders/starfield.glsl
 
-# background = #444444
+background = #444444
 background-opacity = .7
 background-blur-radius = 20
 
