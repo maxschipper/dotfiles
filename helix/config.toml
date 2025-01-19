@@ -27,7 +27,7 @@ other-lines = "error"
 
 
 [editor.auto-save]
-after-delay.enable  = true
+after-delay.enable  = false
 after-delay.timeout = 180000 # in ms -> 3min *60*1000= 180000ms
 
 [editor.cursor-shape]
@@ -66,7 +66,7 @@ tabpad  = "·"  # Tabs will look like "→···" (depending on tab width)
 
 [editor.indent-guides]
 render      = true
-character   = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+character   = "╎" # Some characters that work well: "▏", "┆", "┊"
 skip-levels = 1
 
 [editor.soft-wrap]
@@ -87,6 +87,7 @@ layout = ["diff", "diagnostics", "line-numbers", "spacer"]
 [keys.normal]
 # QOL
 esc   = ["collapse_selection", "keep_primary_selection"]
+a     = ["append_mode", "collapse_selection"]
 X     = "extend_line_above"
 ret   = "insert_newline" # ret = ["open_below", "normal_mode"]
 tab   = "indent"
@@ -106,10 +107,17 @@ Y = "yank"
 y = "@\"yY"
 p = "@\"yP"
 
+[keys.select]
+P = "paste_after"
+Y = "yank"
+y = "@\"yY"
+p = "@\"yP"
+
 
 [keys.normal.space]
 w = ":write"
-q = ":quit" # q = ":buffer-close"
+q = ":quit"
+# q = ":buffer-close"
 0 = ":quit!"
 1 = ":write-quit"
 

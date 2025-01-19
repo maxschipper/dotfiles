@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 
     ### ADD TO $PATH
-    fish_add_path $HOME/.local/bin #          Homebrew
+    fish_add_path $HOME/.local/bin
     fish_add_path $XDG_DATA_HOME/go/bin #     Go
     fish_add_path $XDG_DATA_HOME/cargo/bin #  Rust
     fish_add_path $XDG_DATA_HOME/npm/bin #    Node.js
