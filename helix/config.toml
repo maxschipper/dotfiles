@@ -96,8 +96,12 @@ S-tab = "unindent"
 minus = "search"
 
 # Control+j|k can be used to move lines around, WARNING: breaks when used with multiple cursors
-C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+# moves selection left and right, can be used with multiple cursors
+C-h = ["delete_selection", "move_char_left", "paste_before"] 
+C-l = ["delete_selection", "move_char_right", "paste_before"] 
 
 # <Y> and <P> yank and paste from the default register, <y> and <p> use a custom register "y"
 # this way you can yank text, then delete stuff and still be able to paste the yanked text with <p>
