@@ -2,9 +2,10 @@
 name = "go"
 auto-format = true    
 formatter = { command = "goimports" }
-# language-servers = [ "gopls", "golangci-lint-langserver" ]
+language-servers = [ "gopls", "golangci-lint-lsp" ]
 # language-servers = [ "gopls", "golangci-lint-langserver", { name = "helix-gpt", except-features = [ "code-action" ] } ]
-language-servers = [ "gopls", "golangci-lint-langserver", "helix-gpt" ]
+# language-servers = [ "gopls", "golangci-lint-langserver", "helix-gpt" ]
+ 
 
 [[language]]
 name = "c"
@@ -17,7 +18,14 @@ language-servers = [ "clangd", { name = "helix-gpt", except-features = [ "code-a
 name = "bash"
 scope = "source.bash"
 injection-regex = "(shell|bash|zsh|sh)"
-file-types = [{ glob = "ghostty/*" }, { glob = ".config/**/config" }, { glob = "*rc" }]
+file-types = [{ glob = "ghostty/*" }, { glob = ".config/**/config" }, { glob = "*.conf" }, { glob = "*rc" }]
+
+# added .keymap and .overlay files from zmk
+# TODO: maybe do sth like glob: zmk*/**/*.keymap if there are other .keymap files
+[[language]]
+name = "devicetree"
+file-types = ["dts", "dtsi", "keymap", "overlay"]
+
 
 
 # [[language]]
