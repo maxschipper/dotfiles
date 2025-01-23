@@ -14,12 +14,12 @@ color-modes     = true
 
 # experimental
 
-# end-of-line-diagnostics = "hint"
-end-of-line-diagnostics = "info"
+end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "info"
 
 [editor.inline-diagnostics]
-# cursor-line = "info" 
-cursor-line = "warning" 
+cursor-line = "info" 
+# cursor-line = "warning" 
 # other-lines = "warning"
 other-lines = "error"
 
@@ -121,7 +121,7 @@ p = "@\"yP"
 [keys.normal.space]
 w = ":write"
 q = ":quit"
-# q = ":buffer-close"
+e = ":buffer-close"
 0 = ":quit!"
 1 = ":write-quit"
 
@@ -130,6 +130,8 @@ f = "file_picker_in_current_directory"
 F = "file_picker"
 
 u = "@:theme my-"
+# x = "@<esc>x|true_false<ret>strue|false<ret>"
+x = "@<esc>xs= ?true|= ?false|= ?yes|= ?no|= ?y|= ?n|= ?on|= ?off<ret>|toggle<ret>"
 
-l = ":sh zellij run -c -i -- lazygit"
+# l = ":sh zellij run -c -i -- lazygit"
 Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize -"
