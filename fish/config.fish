@@ -38,6 +38,10 @@ if status is-interactive
     abbr -a --position anywhere copyy '| pbcopy'
     # alias man='man -P bat'
 
+    # downloads the yt video and extracts the audio
+    abbr -a --set-cursor mp3dl yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 \"%\"
+
+
     # BREW abbreviations
     abbr -a bu "brew update && brew upgrade"
     abbr -a bs brew search
