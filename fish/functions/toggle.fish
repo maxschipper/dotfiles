@@ -3,39 +3,39 @@ function toggle
     set line (cat) # Read the entire line from stdin
 
     # Match the part of the line before the value (the '=' and the possible space after it)
-    set pre (string match -r '^=\s*' -- $line)
+    # set pre (string match -r '^=\s*' -- $line)
 
     # Get the value after the '=' sign, ignoring the possible space
-    set value (string replace -r '^=\s*' '' -- $line)
+    # set value (string replace -r '^=\s*' '' -- $line)
 
 
-    switch $value
+    switch $line
+        # true/false
         case true
-            set inverted false
+            echo false
         case false
-            set inverted true
+            echo true
 
+            # yes/no
         case yes
-            set inverted no
+            echo no
         case no
-            set inverted yes
+            echo yes
 
+            # y/n
         case y
-            set inverted n
+            echo n
         case n
-            set inverted y
+            echo y
 
+            # on/off
         case on
-            set inverted off
+            echo off
         case off
-            set inverted on
+            echo on
 
+            # no match: just return it without modification
         case "*"
-            set inverted ERROR
             echo $line
-            return
     end
-
-    echo "$pre$inverted"
-
 end

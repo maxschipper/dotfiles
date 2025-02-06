@@ -13,14 +13,3 @@ function true_false
 
     echo $line # Output the modified line
 end
-
-# function true_false
-#     set line (cat) # Read the entire input line from stdin
-
-#     # Replace 'true' with 'false' and vice versa
-#     set line (string replace -r 'true' 'TEMP_PLACEHOLDER' -- $line)
-#     set line (string replace -r 'false' 'true' -- $line)
-#     set line (string replace -r 'TEMP_PLACEHOLDER' 'false' -- $line)
-
-#     echo $line # Output the modified line
-# end
