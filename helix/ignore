@@ -37,3 +37,5 @@ bin/
 *.woff2
 *.zip
 *.m4a
+
+*_templ.go
