@@ -35,9 +35,6 @@ keybinds clear-defaults=true {
         bind "Super g" { Run "lazygit" {
             close_on_exit true
         }; FocusNextPane; ToggleFocusFullscreen;  }
-        bind "Super d" { Run "fish" "-i" "-c" "yazi" {
-            close_on_exit true
-        }; FocusNextPane; ToggleFocusFullscreen; }
         bind "Super a" { EditScrollback; }
         bind "Super o" { Run "fish" "-i" "-c" "finder cd"; }
 
@@ -207,7 +204,7 @@ keybinds clear-defaults=true {
     }
     session {
         // bind "Ctrl o" { SwitchToMode "Normal"; }
-        bind "Ctrl s" { SwitchToMode "Scroll"; }
+        // bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
             LaunchOrFocusPlugin "session-manager" {
@@ -245,7 +242,7 @@ keybinds clear-defaults=true {
     //     bind "Ctrl h" { SwitchToMode "Move"; }
     // }
     shared_except "tmux" "locked" {
-        bind "Super b" { SwitchToMode "Tmux"; }
+        bind "Super d" { SwitchToMode "Tmux"; }
     }
 }
 
