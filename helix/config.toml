@@ -3,6 +3,7 @@ theme = "my-starlight-transparent"
 [editor]
 mouse           = true
 auto-completion = true
+completion-timeout = 50
 #rulers         = [80, 120]
 cursorline      = true
 # cursorcolumn    = true
