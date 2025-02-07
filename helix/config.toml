@@ -37,7 +37,7 @@ select = "underline"
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control"]
-center = ["file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
+center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
 right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-type"]
 separator   = "│"
 mode.normal = "NORMAL"
