@@ -12,6 +12,7 @@ line-number     = "relative"
 scrolloff       = 8
 shell           = ["fish", "-c"]
 color-modes     = true 
+continue-comments = false
 
 # experimental
 
