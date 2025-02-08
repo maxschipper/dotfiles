@@ -3,6 +3,12 @@
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [[manager.prepend_keymap]]
+on = "P"
+run = '''
+  shell 'qlmanage -p "$@"'
+'''
+
+[[manager.prepend_keymap]]
 on   = [ ".", "f" ]
 run  = "finder update"
 desc = "Open Finder at this location"
@@ -48,7 +54,7 @@ run  = "plugin chmod"
 desc = "Chmod on selected files"
 
 [[manager.prepend_keymap]]
-on   = "f"
+on   = "F"
 run  = "plugin smart-filter"
 desc = "Smart filter"
 
@@ -120,7 +126,7 @@ keymap = [
 	{ on = [ "x" ],         run = "yank --cut",                  desc = "Cut the selected files" },
 	{ on = [ "X" ],         run = "unyank",                      desc = "Cancel the yank status of files" },
 	{ on = [ "p" ],         run = "paste",                       desc = "Paste the files" },
-	{ on = [ "P" ],         run = "paste --force",               desc = "Paste the files (overwrite if the destination exists)" },
+	# { on = [ "P" ],         run = "paste --force",               desc = "Paste the files (overwrite if the destination exists)" },
 	{ on = [ "-" ],         run = "link",                        desc = "Symlink the absolute path of files" },
 	{ on = [ "_" ],         run = "link --relative",             desc = "Symlink the relative path of files" },
 	{ on = [ "d" ],         run = "remove",                      desc = "Move the files to the trash" },
@@ -149,8 +155,7 @@ keymap = [
 	{ on = [ "c", "n" ], run = "copy name_without_ext", desc = "Copy the name of the file without the extension" },
 
 	# Filter
-	# { on = [ "f" ], run = "filter --smart", desc = "Filter the files" },
-	{ on = [ "F" ], run = "filter --smart", desc = "Filter the files" },
+	{ on = [ "f" ], run = "filter --smart", desc = "Filter the files" },
 
 	# Find
 	{ on = [ "/" ], run = "find --smart",            desc = "Find next file" },
