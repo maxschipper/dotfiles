@@ -1,5 +1,64 @@
-[plugin]
-deps = [{ use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "Reledia/glow", rev = "5ce76dc" }, { use = "AnirudhG07/rich-preview", rev = "8be4d27" }, { use = "GrzegorzKozub/mdcat", rev = "d3d5089" }, { use = "yazi-rs/plugins:full-border", rev = "600614a" }, { use = "yazi-rs/plugins:git", rev = "600614a" }, { use = "yazi-rs/plugins:chmod", rev = "600614a" }, { use = "Rolv-Apneseth/starship", rev = "4053c8c" }, { use = "yazi-rs/plugins:smart-enter", rev = "600614a" }, { use = "boydaihungst/mediainfo", rev = "ddfd5ec" }, { use = "yazi-rs/plugins:smart-filter", rev = "02d18be" }]
+[[plugin.deps]]
+use = "Reledia/hexyl"
+rev = "39d3d4e"
+hash = "dd624cbaff94af65f39fd86bc57b340"
 
-[flavor]
-deps = [{ use = "bennyyip/gruvbox-dark", rev = "b4cc9f2" }]
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "5ce76dc"
+hash = "52e5f5c602962e7cbf874da28f52ba45"
+
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "2559e5f"
+hash = "c9a3d0731e7d7340e2c6d6126b1f3aa3"
+
+[[plugin.deps]]
+use = "GrzegorzKozub/mdcat"
+rev = "d3d5089"
+hash = "40c20e6c1085d1f45309b9f148bf4f6e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "8945e54"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "8945e54"
+hash = "771f18427fb75fb19990ce602bb322f4"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "8945e54"
+hash = "f28138c2e11e87962b66d583fef724c3"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "d1cd0a3"
+hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "8945e54"
+hash = "aef2b1a805b80cce573bb766f1459d88"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "d0be054"
+hash = "c2af4afa521e307ef81ac038077f38f9"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "8945e54"
+hash = "b482f4f2d3c4e0aa3f8db89a95699439"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "8945e54"
+hash = "b03f3d80d26b6d7bb490b1380e9cb754"
+
+[[flavor.deps]]
+use = "bennyyip/gruvbox-dark"
+rev = "b4cc9f2"
+hash = "f44c42bcbed3c8564100e45e2fe3649a"
