@@ -62,6 +62,10 @@ prepend_previewers = [
 	# mediainfo
   { mime = "{image,audio,video}/*", run = "mediainfo"},
   { mime = "application/subrip", run = "mediainfo"},
+
+	# not working??
+  # { mime = "application/octet-stream", run = "hexyl"},
+
 	# Markdown
   { name = "*.md*", run = "glow" },
   # { name = "*.md", run = "mdcat" },
@@ -76,6 +80,7 @@ prepend_previewers = [
 
 append_previewers = [
 	# Binary previewer
+  # { mime = "text/*", run = "code"},
   { name = "*", run = "hexyl" },
 ]
 
@@ -90,3 +95,8 @@ id   = "git"
 name = "*/"
 run  = "git"
 
+# [[plugin.prepend_fetchers]]
+# id   = "mime"
+# name = "*"
+# run  = "mime-ext"
+# prio = "high"
