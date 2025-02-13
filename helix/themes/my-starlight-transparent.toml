@@ -36,11 +36,11 @@
 
 # Markup
 "markup.heading.marker"    = { fg = "dark-fg", modifiers = ["dim","italic"] }
-"markup.heading.1"         = { fg = "white", bg ="dark-blue", modifiers = ["bold"], underline.style = "none" }
-"markup.heading.2"         = { fg = "white", bg ="magenta", modifiers = ["bold"], underline.style = "none" }
-"markup.heading.3"         = { fg = "white", bg ="cyan", modifiers = ["bold"], underline.style = "none" }
-"markup.heading.4"         = { fg = "white", bg ="green", modifiers = ["bold"], underline.style = "none" }
-"markup.heading"           = { fg = "dark-blue", modifiers = ["bold"], underline.style = "none" }
+"markup.heading.1"         = { fg = "white", bg ="dark-blue", modifiers = ["bold"] }
+"markup.heading.2"         = { fg = "white", bg ="magenta", modifiers = ["bold"] }
+"markup.heading.3"         = { fg = "white", bg ="cyan", modifiers = ["bold"] }
+"markup.heading.4"         = { fg = "white", bg ="green", modifiers = ["bold"] }
+"markup.heading"           = { fg = "dark-blue", modifiers = ["bold"] }
 
 "markup.list"           = { fg = "dark-blue", modifiers = ["bold"] }
 "markup.list.numbered"  = { fg = "blue", modifiers = ["bold"] }
