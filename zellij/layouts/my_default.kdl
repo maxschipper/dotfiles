@@ -49,7 +49,9 @@ layout {
 
 
                 
-                format_left   "{mode}#[bg=$bg] {tabs}"
+                format_left   "{mode}#[bg=$bg] #[bg=$bg,fg=$orange]#[bg=$orange,fg=$bg]{session} #[bg=$bg,fg=$orange]#[bg=$bg] {tabs}"
+
+
                 // format_left   "{mode}#[bg=$bg] {tabs}#[fg=$bg]"
 
                 // format_center "#[bg=$bg,fg=$dark-grey]  #[bg=$bg,fg=$dark-grey]{swap_layout}"
@@ -75,9 +77,12 @@ layout {
                 hide_frame_except_for_search "true"
                 hide_frame_except_for_scroll "true"
 
+                // 󰘳  󰀶   󰀵     
+
+                mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold]󰘳 #[bg=$bg,fg=$green]"
                 // mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold]NORMAL#[bg=$bg,fg=$green]"
                 // mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold] #[bg=$bg,fg=$green]"
-                mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold] #[bg=$bg,fg=$green]"
+                // mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold] #[bg=$bg,fg=$green]"
                 mode_locked        "#[fg=$red]#[bg=$red,fg=$bg,bold]LOCKED  #[bg=$bg,fg=$red]"
                 mode_resize        "#[fg=$blue]#[bg=$blue,fg=$bg,bold]RESIZE#[bg=$bg,fg=$blue]"
                 mode_pane          "#[fg=$blue]#[bg=$blue,fg=$bg,bold]PANE#[bg=$bg,fg=$blue]"
