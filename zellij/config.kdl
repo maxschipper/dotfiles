@@ -8,11 +8,6 @@ keybinds clear-defaults=true {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
 
-        // START my own custom keybids
-        // bind "Super u" { MoveTab "Left"; }
-        // bind "Super i" { MoveTab "Right"; }
-        // bind "Super p" { GoToNextTab; }
-        // bind "Super o" { GoToPreviousTab; }
         bind "Super h" { MoveFocusOrTab "Left"; }
         bind "Super l" { MoveFocusOrTab "Right"; }
         bind "Super j" { MoveFocus "Down"; }
@@ -29,17 +24,17 @@ keybinds clear-defaults=true {
         bind "Super t" { NewTab {
             name " "
         }; }
-        // bind "Super g" { Run "zellij" "run" "-fc" "--height" "90%" "--width" "90%" "-x" "5%" "-y" "5%" "--" "lazygit" {
-        //     close_on_exit true
-        // };  }
         bind "Super g" { Run "lazygit" {
             close_on_exit true
         }; FocusNextPane; ToggleFocusFullscreen;  }
-        bind "Super a" { EditScrollback; }
-        bind "Super o" { Run "fish" "-i" "-c" "finder cd"; }
 
+        bind "Super s" { LaunchOrFocusPlugin "file:/Users/max/.config/zellij/plugins/zellij-choose-tree.wasm" {
+            floating true
+            close_on_exit true
+            move_to_focused_tab true
+            show_plugins false
+        };}
 
-        // END my own custom keybids
 
     }
     locked {
@@ -53,8 +48,6 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Normal";
         }
-
-
         
         // bind to open monocle in a new floating pane and open any results in a new tiled/floating pane
         bind "z" {
@@ -63,21 +56,17 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Normal"
         }
-        // bind to open monocle on top of the current pane and open any results on top of itself
-        bind "Alt m" {
-            LaunchPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
-                in_place true
-                kiosk true
-            };
-            SwitchToMode "Normal"
-        }
         
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+
         bind "p" { SwitchToMode "Pane"; }
         bind "n" { SwitchToMode "Resize"; }
         bind "s" { SwitchToMode "Scroll"; }
         bind "o" { SwitchToMode "Session"; }
         bind "t" { SwitchToMode "Tab"; }
-        bind "h" { SwitchToMode "Move"; }
+        bind "m" { SwitchToMode "Move"; }
+        bind "r" { SwitchToMode "RenameTab"; }
+
         // bind "[" { SwitchToMode "Scroll"; }
         // bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
         // bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
@@ -242,7 +231,7 @@ keybinds clear-defaults=true {
     //     bind "Ctrl h" { SwitchToMode "Move"; }
     // }
     shared_except "tmux" "locked" {
-        bind "Super d" { SwitchToMode "Tmux"; }
+        bind "Super a" { SwitchToMode "Tmux"; }
     }
 }
 
@@ -258,6 +247,8 @@ plugins {
     filepicker location="zellij:strider" {
         cwd "/"
     }
+    sessionpicker location="file:~/.config/zellij/plugins/zellij-choose-tree.wasm"
+
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -303,7 +294,7 @@ auto_layout true
 //   - true (default)
 //   - false
 //
-session_serialization true
+session_serialization false
 
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
@@ -345,7 +336,7 @@ theme "gruvbox-dark"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "default"
+default_layout "my_default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
