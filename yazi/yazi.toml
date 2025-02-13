@@ -63,15 +63,15 @@ prepend_previewers = [
   { mime = "{image,audio,video}/*", run = "mediainfo"},
   { mime = "application/subrip", run = "mediainfo"},
 	# Markdown
-  { name = "*.md", run = "glow" },
+  { name = "*.md*", run = "glow" },
   # { name = "*.md", run = "mdcat" },
-	# Rich
-  { name = "*.csv", run = "rich-preview"}, # for csv files
+
+	# Rich (slow, dont use for md or code)
+  { name = "*.csv*", run = "rich-preview"}, # for csv files
   # { name = "*.md", run = "rich-preview" }, # for markdown (.md) files
-  { name = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
-  { name = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
-  { name = "*.json", run = "rich-preview"}, # for json (.json) files
-# { name = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
+  { name = "*.rst*", run = "rich-preview"}, # for restructured text (.rst) files
+  { name = "*.ipynb*", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
+  # { name = "*.json*", run = "rich-preview"}, # for json (.json) files
 ]
 
 append_previewers = [
