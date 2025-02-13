@@ -320,7 +320,7 @@ format = '[$indicator]($style)'
 
 [shlvl]
 disabled = false
-threshold = 2
+threshold = 3
 symbol = '󰹺'
 # style = 'bg:color_bg1 fg:bold yellow'
 style = "bg:color_bg3 fg:color_fg0"
