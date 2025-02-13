@@ -17,10 +17,6 @@ glow = [
 	{ run = 'glow -p "$@"', block = true, orphan = false, for = "macos", desc = "open using glow" },
 ]
 
-# play = [
-# 	{ run = 'qlmanage -p "$@" >/dev/null 2>/dev/null', orphan = false, for = "macos", desc = "open using the MacOS Quicklook" },
-# ]
-
 [open]
 prepend_rules = [
   # { mime = "{image,audio,video}/*", use = "quicklook"},
@@ -40,13 +36,9 @@ prepend_rules = [
 
 	{ name = "*.md", use = [ "edit", "glow" ] },
 ]
-append_rules = [
-	{ name = "*", use = "quicklook" },
-]
-
-
-
-
+# append_rules = [
+# 	{ name = "*", use = [ "edit" ,"quicklook" ] },
+# ]
 
 
 
