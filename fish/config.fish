@@ -102,7 +102,7 @@ if status is-interactive
     # eval (zellij setup --generate-auto-start fish | string collect)
 
     # soft serve
-    set -gx SOFT_SERVE_INITIAL_ADMIN_KEYS "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOs22hHeltDK1jES2OkS5lFo3jufAswZ2IGpUkbxiAHr max.schipper1@gmx.de"
+    source /Users/max/dotfiles/fish/soft-serve.fish
 
     # zoxide setup | needs to be at the end
     zoxide init fish | source
