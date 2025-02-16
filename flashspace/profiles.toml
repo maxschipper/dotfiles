@@ -1,0 +1,112 @@
+selectedProfileId = 'ECB65C15-5A07-4F5A-A922-7368BE70F490'
+
+[[profiles]]
+id = 'ECB65C15-5A07-4F5A-A922-7368BE70F490'
+name = 'Default'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'cmd+ctrl+opt+shift+d'
+display = 'Optix MAG27CQ'
+id = '9A4641EA-DA11-465C-B3FD-6FBE5C54546E'
+name = 'Default'
+shortcut = 'cmd+ctrl+opt+d'
+symbolIconName = 'rectangle.3.group'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Music'
+iconPath = '/System/Applications/Music.app/Contents/Resources/AppIcon.icns'
+name = 'Music'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'cmd+ctrl+opt+shift+t'
+display = 'Optix MAG27CQ'
+id = '201A499B-D30D-4DD0-9534-5B35DBAF5697'
+name = 'Terminal'
+shortcut = 'cmd+ctrl+opt+t'
+symbolIconName = 'apple.terminal'
+
+[profiles.workspaces.appToFocus]
+bundleIdentifier = 'com.mitchellh.ghostty'
+iconPath = '/Applications/Ghostty.app/Contents/Resources/AppIcon.icns'
+name = 'Ghostty'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.mitchellh.ghostty'
+iconPath = '/Applications/Ghostty.app/Contents/Resources/AppIcon.icns'
+name = 'Ghostty'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'cmd+ctrl+opt+shift+a'
+display = 'Optix MAG27CQ'
+id = '23B83947-A1B7-4BC7-8366-F554CB57921A'
+name = 'Browser'
+shortcut = 'cmd+ctrl+opt+a'
+symbolIconName = 'globe'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'company.thebrowser.Browser'
+iconPath = '/Applications/Arc.app/Contents/Resources/AppIcon.icns'
+name = 'Arc'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'app.zen-browser.zen'
+iconPath = '/Applications/Zen Browser.app/Contents/Resources/firefox.icns'
+name = 'Zen Browser'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'cmd+ctrl+opt+shift+c'
+display = 'Built-in Retina Display'
+id = 'AF80A3D1-FCFC-47D3-8B2D-A4CEBCEBFA0D'
+name = 'AI'
+shortcut = 'cmd+ctrl+opt+c'
+symbolIconName = 'sparkles'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.9247C344-0C32-405F-9557-495E33E5F0BA'
+iconPath = '/Users/max/Applications/ChatGPT.app/Contents/Resources/ApplicationIcon.icns'
+name = 'ChatGPT'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.anthropic.claudefordesktop'
+iconPath = '/Applications/Claude.app/Contents/Resources/electron.icns'
+name = 'Claude'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'cmd+ctrl+opt+shift+p'
+display = 'Built-in Retina Display'
+id = 'D1D05D6B-AD72-4F04-BB5F-C9A86961E138'
+name = 'Live Preview'
+shortcut = 'cmd+ctrl+opt+p'
+symbolIconName = 'livephoto'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'org.mozilla.firefox'
+iconPath = '/Applications/Firefox.app/Contents/Resources/firefox.icns'
+name = 'Firefox'
+
+[[profiles.workspaces]]
+display = 'Optix MAG27CQ'
+id = '7D9A8825-901C-459E-8A29-C2A346C90F10'
+name = 'Notes'
+shortcut = 'cmd+ctrl+opt+n'
+symbolIconName = 'note.text'
+
+[profiles.workspaces.appToFocus]
+bundleIdentifier = 'md.obsidian'
+iconPath = '/Applications/Obsidian.app/Contents/Resources/icon.icns'
+name = 'Obsidian'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Notes'
+iconPath = '/System/Applications/Notes.app/Contents/Resources/AppIcon.icns'
+name = 'Notes'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.reminders'
+iconPath = '/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns'
+name = 'Reminders'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'md.obsidian'
+iconPath = '/Applications/Obsidian.app/Contents/Resources/icon.icns'
+name = 'Obsidian'

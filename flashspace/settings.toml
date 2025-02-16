@@ -1,0 +1,35 @@
+centerCursorOnFocusChange = true
+centerCursorOnWorkspaceChange = true
+changeWorkspaceOnAppAssign = true
+checkForUpdatesAutomatically = true
+enableFocusManagement = true
+enableIntegrations = false
+enablePictureInPictureSupport = false
+enableSpaceControl = true
+enableSpaceControlAnimations = false
+floatTheFocusedApp = 'cmd+ctrl+opt+e'
+focusDown = 'cmd+ctrl+opt+j'
+focusLeft = 'cmd+ctrl+opt+h'
+focusRight = 'cmd+ctrl+opt+l'
+focusUp = 'cmd+ctrl+opt+k'
+menuBarDisplayAliases = 'Built-in Retina Display=Main;Optix MAG27CQ=Secondary'
+menuBarTitleTemplate = '$WORKSPACE'
+runScriptOnLaunch = ''
+runScriptOnProfileChange = ''
+runScriptOnWorkspaceChange = ''
+showFloatingNotifications = true
+showMenuBarTitle = false
+showSpaceControl = 'cmd+ctrl+opt+space'
+spaceControlCurrentDisplayWorkspaces = false
+switchToRecentWorkspace = 'cmd+ctrl+opt+escape'
+unfloatTheFocusedApp = 'cmd+ctrl+opt+shift+e'
+
+[[floatingApps]]
+bundleIdentifier = 'com.apple.systempreferences'
+iconPath = '/System/Applications/System Settings.app/Contents/Resources/PrefApp.icns'
+name = 'System Settings'
+
+[[floatingApps]]
+bundleIdentifier = 'org.pqrs.Karabiner-EventViewer'
+iconPath = '/Applications/Karabiner-EventViewer.app/Contents/Resources/app.icns'
+name = 'Karabiner-EventViewer'
