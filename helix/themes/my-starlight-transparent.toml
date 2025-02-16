@@ -65,7 +65,7 @@
 "ui.background"             = { fg = "dark-fg"}
 "ui.cursor"                 = { fg = "black", bg = "light-fg" }
 "ui.cursor.primary"         = { fg = "black", bg = "light-fg" }
-"ui.cursor.match"           = { fg = "black", bg = "magenta", modifiers = ["bold"] }
+"ui.cursor.match"           = { fg = "magenta", bg = "dark-bg", modifiers = ["bold"] }
 "ui.linenr"                 = "dark-fg"
 "ui.linenr.selected"        = { fg = "white", modifiers = [ "bold" ] }
 "ui.statusline"             = { fg = "light-fg", bg = "light-bg" }
