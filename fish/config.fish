@@ -27,7 +27,8 @@ if status is-interactive
     alias lg='lazygit'
     alias f='y'
     alias hxx='hx .'
-    alias todo='glow TODO.md'
+    alias todo='glow .todo.md'
+    abbr -a todos 'rg --color=always "TODO:" --hidden .'
     abbr -a gitinit 'git init && git add . && git commit -m "Initial commit"'
     abbr -a gorun 'clear && go run main.go'
     alias make='gmake'
@@ -37,6 +38,8 @@ if status is-interactive
     abbr -a pwdcopy 'pwd | pbcopy'
     abbr -a --position anywhere copyy '| pbcopy'
     # alias man='man -P bat'
+    abbr -a zs 'zellij attach --create-background'
+    abbr -a dotfiles zellij attach -c "' dotfiles'"
 
     # downloads the yt video and extracts the audio
     abbr -a --set-cursor mp3dl yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 \"%\"
@@ -96,13 +99,22 @@ if status is-interactive
     # source ~/.config/fish/functions/fzf_key_bindings.fish
     set -gx FZF_DEFAULT_OPTS "--reverse --height=80% --bind=ctrl-z:ignore"
 
-    # Configure auto-attach/exit to your likings (default is off)
-    # set ZELLIJ_AUTO_ATTACH true
-    # set ZELLIJ_AUTO_EXIT false
-    # eval (zellij setup --generate-auto-start fish | string collect)
 
-    # soft serve
-    source /Users/max/dotfiles/fish/soft-serve.fish
+    # Configure auto-attach/exit to your likings (default is off).
+    # set ZELLIJ_AUTO_ATTACH true
+    # set ZELLIJ_AUTO_EXIT true
+    # eval (zellij setup --generate-auto-start fish | string collect)
+    # if not set -q ZELLIJ
+    #     if test "$ZELLIJ_AUTO_ATTACH" = true
+    #         zellij attach -c Default
+    #     else
+    #         zellij
+    #     end
+
+    #     if test "$ZELLIJ_AUTO_EXIT" = true
+    #         kill $fish_pid
+    #     end
+    # end
 
     # zoxide setup | needs to be at the end
     zoxide init fish | source
