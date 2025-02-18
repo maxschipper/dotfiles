@@ -108,16 +108,18 @@ C-l = ["delete_selection", "move_char_right", "paste_before"]
 # <Y> and <P> yank and paste from the default register, <y> and <p> use a custom register "y"
 # this way you can yank text, then delete stuff and still be able to paste the yanked text with <p>
 # if you want to paste text you previously deleted with d you can use <P>
+
+# use the system clipboard for yank, to use the default use Y/P
+y = "@\"+Y"
+p = "@\"+P"
 P = "paste_after"
 Y = "yank"
-y = "@\"yY"
-p = "@\"yP"
 
 [keys.select]
+y = "@\"+Y"
+p = "@\"+P"
 P = "paste_after"
 Y = "yank"
-y = "@\"yY"
-p = "@\"yP"
 
 
 [keys.normal.space]
