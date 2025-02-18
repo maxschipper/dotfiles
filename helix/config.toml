@@ -97,6 +97,8 @@ S-tab = "unindent"
 
 minus = "search"
 
+w = "move_prev_word_start"
+
 # Control+j|k can be used to move lines around, WARNING: breaks when used with multiple cursors
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
