@@ -133,9 +133,6 @@ e = ":buffer-close"
 f = "file_picker_in_current_directory"
 F = "file_picker"
 
-u = "@:theme my-"
-# x = "@<esc>x|true_false<ret>strue|false<ret>"
-x = "@<esc>xs= ?true|= ?false|= ?yes|= ?no|= ?y|= ?n|= ?on|= ?off<ret>|toggle<ret>"
 
-# l = ":sh zellij run -c -i -- lazygit"
+# yazi side bar for helix using zellij terminal multiplexer
 Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize -"
