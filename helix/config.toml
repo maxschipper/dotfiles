@@ -14,8 +14,11 @@ shell           = ["fish", "-c"]
 color-modes     = true 
 continue-comments = false
 
-# experimental
+# helix doesnt seem to recognize xterm-ghostty
+undercurl = true
 
+
+# experimental
 end-of-line-diagnostics = "hint"
 # end-of-line-diagnostics = "info"
 
