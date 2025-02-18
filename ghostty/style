@@ -4,8 +4,9 @@ theme = catppuccin-macchiato
 # custom-shader = shaders/tft.glsl
 # custom-shader = shaders/starfield.glsl
 
+
 background-opacity = .7
-background-blur-radius = 20
+background-blur-radius = 70
 
 selection-foreground = 
 selection-background = 
