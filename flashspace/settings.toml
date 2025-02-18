@@ -10,6 +10,7 @@ enableSpaceControlAnimations = false
 floatTheFocusedApp = 'cmd+ctrl+opt+e'
 focusDown = 'cmd+ctrl+opt+j'
 focusLeft = 'cmd+ctrl+opt+h'
+focusNextWorkspaceWindow = 'cmd+ctrl+opt+tab'
 focusRight = 'cmd+ctrl+opt+l'
 focusUp = 'cmd+ctrl+opt+k'
 menuBarDisplayAliases = 'Built-in Retina Display=Main;Optix MAG27CQ=Secondary'
