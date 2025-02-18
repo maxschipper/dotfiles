@@ -1,11 +1,46 @@
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+max_completion_items = 3             # set max completion results len for each group: words, snippets, unicode-input
+feature_words = false                # enable completion by word
+feature_snippets = true              # enable snippets
+snippets_first = true                # completions will return before snippets by default
+snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for example text `xsq|` become `x^2|` when snippet `sq` has body `^2`
+feature_unicode_input = false        # enable "unicode input"
+feature_paths = false                # enable path completion
+
+
+# [language-server.scls.environment]
+# RUST_LOG = "info,simple-completion-language-server=info"
+# LOG_FILE = "/tmp/simple-completion-lsp.log"
+
+
+
+# GOLANG
 [[language]]
 name = "go"
 auto-format = true    
 formatter = { command = "goimports" }
-language-servers = [ "gopls", "golangci-lint-lsp" ]
+# language-servers = [ "helix-gpt" ]
+# language-servers = [ "lsp-ai" ]
+language-servers = [ "gopls", "golangci-lint-lsp", "scls" ]
+# language-servers = [ "gopls", "golangci-lint-lsp" ]
 # language-servers = [ "gopls", "golangci-lint-langserver", { name = "helix-gpt", except-features = [ "code-action" ] } ]
 # language-servers = [ "gopls", "golangci-lint-langserver", "helix-gpt" ]
+
  
+ [[language]]
+name = "templ"
+auto-format = true
+# # language-servers = [ "templ", "scls" ]
+# language-servers = [ "templl" ]
+
+# [language-server.templl]
+# command = "templ"
+# args= ["lsp"]
+# block-comment-tokens = { start = "<!--", end = "-->" }
+
 
 [[language]]
 name = "c"
@@ -27,44 +62,19 @@ name = "devicetree"
 file-types = ["dts", "dtsi", "keymap", "overlay"]
 
 
-
-# [[language]]
-# name = "arduino"
-# scope = "source.ino"
-# file-types = ["ino"]
-# # language-servers = [ "arduino" ]
-# language-servers = [ "clangd-arduino" ]
-
-# [language-server.arduino]
-# # filetypes = ["ino"]
-# command = "arduino-language-server" 
-# args = [
-#     "-cli-config", "/path/to/arduino-cli.yaml",
-#     "-clangd", "/usr/local/opt/llvm/bin/clangd",
-#     "-cli", "/usr/local/bin/arduino-cli",
-#     "-cli", "-config $HOME/arduino/arduino-cli.yaml",
-#     "-fqbn", "arduino:avr:uno"
-# ] 
-
-# [language-server.clangd-arduino]
-# command = "clangd" 
-
-
-
-# [language-server.test]
-# command = "clang-format"
-# args = ["--fallback-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never}"] 
-
-
+# FISH
 [[language]]
 name = "fish"
-language-servers = [ "fish-lsp", "helix-gpt" ]
+# TODO: broken
+# language-servers = [ "fish-lsp" ]
+# language-servers = [ "fish-lsp", "helix-gpt" ]
 
 [language-server.fish-lsp]
 command = "fish-lsp"
 args= ["start"]
 
-# LATEX config
+
+# LATEX 
 [[language]]
 name = "latex"
 # language-servers = [ "texlab", "helix-gpt" ]
@@ -105,6 +115,10 @@ filetypes = "bib"
 event = "save"
 command = "bibtex-tidy %file%"
 
+
+
+# HELIX-GPT
+
 # OLLAMA
 # [language-server.helix-gpt]
 # timeout = 60
@@ -119,18 +133,54 @@ command = "bibtex-tidy %file%"
 # CODEIUM
 [language-server.helix-gpt]
 timeout = 60
-command = "/Users/max/Documents/data-up/code/private/helix-gpt/helix-gpt-deno/helix-gpt"
+command = "/Users/max/code/personal/helix-gpt/helix-gpt-deno/helix-gpt"
 args = [
  "--handler", "codeium",
- "--logFile", "/Users/max/Documents/data-up/code/private/helix-gpt/codeium.log",
+ # "--logFile", "/Users/max/code/personal/helix-gpt/helix-gpt-deno/helix-gpt/log/codeium.log",
 ]
 
 
 # openai
 # [language-server.helix-gpt]
 # timeout = 60
-# command = "/Users/max/Documents/data-up/code/private/helix-gpt/helix-gpt-deno/helix-gpt"
+# # command = "/Users/max/Documents/data-up/code/private/helix-gpt/helix-gpt-deno/helix-gpt"
+# command = "/Users/max/code/personal/helix-gpt/helix-gpt-deno/helix-gpt"
 # args = [
-# #  "--handler", "openai",
-#  "--logFile", "/Users/max/Documents/data-up/code/private/helix-gpt/openai.log",
+#  "--handler", "openai",
+#  "--logFile", "/Users/max/Documents/data-up/code/private/helix-gpt/openai-llama.log",
 # ]
+
+
+
+##############################
+## Configuration for lsp-ai ##
+##############################
+# not working, crashes on start
+# 2025-02-07T22:06:21.189 helix_lsp::transport [ERROR] lsp-ai err: <- StreamClosed
+
+[language-server.lsp-ai]
+command = "lsp-ai"
+args = [ "--use-seperate-log-file" ]
+
+[language-server.lsp-ai.config.memory]
+file_store = { }
+
+[language-server.lsp-ai.config.models.model1]
+type = "open_ai"
+chat_endpoint = "https://192.168.178.22:8080/v1/chat/completions"
+completions_endpoint = "https://192.168.178.22:8080/v1/completions"
+model =  "gpt-3.5-turbo"
+auth_token = ""
+
+[language-server.lsp-ai.config.completion]
+model = "model1"
+
+[language-server.lsp-ai.config.completion.parameters]
+max_tokens = 64
+max_context = 1024
+
+## Configure the messages per your needs
+[[language-server.lsp-ai.config.completion.parameters.messages]]
+role = "system"
+content = "Instructions:\n- You are an AI programming assistant.\n- Given a piece of code with the cursor location marked by \"<CURSOR>\", replace \"<CURSOR>\" with the correct code or comment.\n- First, think step-by-step.\n- Describe your plan for what to build in pseudocode, written out in great detail.\n- Then output the code replacing the \"<CURSOR>\"\n- Ensure that your completion fits within the language context of the provided code snippet (e.g., Python, JavaScript, Rust).\n\nRules:\n- Only respond with code or comments.\n- Only replace \"<CURSOR>\"; do not include any previously written code.\n- Never include \"<CURSOR>\" in your response\n- If the cursor is within a comment, complete the comment meaningfully.\n- Handle ambiguous cases by providing the most contextually appropriate completion.\n- Be consistent with your responses."
+
