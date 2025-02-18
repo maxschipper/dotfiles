@@ -133,6 +133,9 @@ e = ":buffer-close"
 f = "file_picker_in_current_directory"
 F = "file_picker"
 
+# runs toggle_script on the last word in the current line
+# see toggle_script at fish/functions/toggle_script.fish
+l = "@glbe|toggle_script<ret>"
 
 # yazi side bar for helix using zellij terminal multiplexer
 Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize -"
