@@ -4,21 +4,21 @@ add_newline = true
 
 
 format = """
-[](color_orange)\
+[](color1)\
 $os\
 $username\
 
-[](bg:color_yellow fg:color_orange)\
+[](bg:color2 fg:color1)\
 $directory\
 
-[](fg:color_yellow bg:color_aqua)\
+[](fg:color2 bg:color3)\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status\
 $git_metrics\
 
-[](fg:color_aqua bg:color_blue)\
+[](fg:color3 bg:color4)\
 $c\
 $rust\
 $ruby\
@@ -32,7 +32,7 @@ $lua\
 $python\
 $package\
 
-[](fg:color_blue bg:color_bg3)\
+[](fg:color4 bg:color5)\
 $docker_context\
 $conda\
 $jobs\
@@ -47,7 +47,7 @@ $localip\
 $time\
 $shell\
 $shlvl\
-[ ](fg:color_bg3 bg:none)\
+[ ](fg:color5 bg:none)\
 
 
 ${custom.todo}\
@@ -55,27 +55,12 @@ ${custom.todo}\
 $line_break\
 $character\
 """
+palette = 'catppuccin_macchiato'
 
-
-
-
-palette = 'gruvbox_dark'
-
-[palettes.gruvbox_dark]
-color_fg0    = '#fbf1c7'
-color_bg1    = '#3c3836'
-color_bg3    = '#665c54'
-color_blue   = '#458588'
-color_aqua   = '#689d6a'
-color_green  = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red    = '#cc241d'
-color_yellow = '#d79921'
 
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "bg:color1 fg:base"
 format = "[$symbol ]($style)"
 
 [os.symbols]
@@ -102,12 +87,12 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = false
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_purple"
+style_user = "bg:color1 fg:base"
+style_root = "bg:color1 fg:mauve"
 format = '[$user ]($style)'
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style = "fg:base bg:color2"
 format = "[   $path ]($style)"
 truncation_length = 5
 truncation_symbol = "…/"
@@ -124,12 +109,12 @@ truncate_to_repo = true
 [git_branch]
 disabled = false
 symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch(:$remote_branch) ](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bg:color3"
+format = '[[ $symbol $branch(:$remote_branch) ](fg:base bg:color3)]($style)'
 
 [git_commit]
 disabled = false
-style = "bg:color_aqua"
+style = "bg:color3"
 tag_symbol = ' 🏷 '
 tag_disabled = false
 format ="[\\($hash$tag\\) ]($style)"
@@ -139,96 +124,96 @@ disabled = false
 
 [git_status]
 disabled = false
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bg:color3"
+format = '[[($all_status$ahead_behind )](fg:base bg:color3)]($style)'
 
 [git_metrics]
 disabled = true
-added_style = "bg:color_aqua fg:color_purple"
-deleted_style = "bg:color_aqua fg:red"
+added_style = "bg:color3 fg:mauve"
+deleted_style = "bg:color3 fg:red"
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
 
 [nodejs]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 
 [lua]
 symbol = ' '
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [ruby]
 symbol = ' '
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [package]
 symbol = '󰏗 '
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [aws]
 symbol = ' '
-style = "bg:color_blue"
-format = '[[ $symbol( $profile)(\[$duration\] )](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $profile)(\[$duration\] )](fg:base bg:color4)]($style)'
 
 
 [c]
 symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [golang]
 symbol = "󰟓 "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [php]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [java]
 symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [python]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:color5"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color5)]($style)'
 
 [conda]
-style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:color5"
+format = '[[ $symbol( $environment) ](fg:#83a598 bg:color5)]($style)'
 
 [jobs]
 symbol = ' '
 number_threshold = 1
-style = "bg:color_bg3"
-format = '[[ $symbol ](fg:color_fg0 bg:color_bg3)]($style)'
+style = "bg:color5"
+format = '[[ $symbol ](fg:base bg:color5)]($style)'
 
 
 [fill]
@@ -239,7 +224,7 @@ symbol = " "
 [custom.todo]
 command = "cat /Users/max/.config/starship/reminder-string-prompt"
 when = "test -s /Users/max/.config/starship/reminder-string-prompt"
-style = "bg:color_bg1 fg:color_fg0"
+style = "bg:base fg:color5"
 format = "[$output ]($style)"
 
 
@@ -252,7 +237,7 @@ not_executable_symbol = ' '
 not_found_symbol = ' '
 sigint_symbol = ' '  #     
 signal_symbol = '⚡'
-style = "bg:color_bg3 fg:red"
+style = "bg:color5 fg:red"
 format = '[ $symbol$common_meaning$signal_name$maybe_int]($style)'
 map_symbol = true
 
@@ -260,8 +245,8 @@ map_symbol = true
 [sudo]
 disabled = false
 symbol = '󰟵'	#	󰟵  󱫖 󱫕	󱥠	󰦝		
-# style = 'bg:color_bg1 fg:color_fg0'
-style = "bg:color_bg3 fg:color_fg0"
+# style = 'bg:base fg:base'
+style = "bg:color5 fg:base"
 format = '[ $symbol ]($style)'
 
 
@@ -269,24 +254,24 @@ format = '[ $symbol ]($style)'
 format = "[ $symbol$percentage]($style)"
 [[battery.display]]
 threshold = 30
-# style = 'fg:red bg:color_bg1'
-style = "bg:color_bg3 fg:color_yellow"
+# style = 'fg:red bg:base'
+style = "bg:color5 fg:red"
 
 
 [memory_usage]
 disabled = false
 threshold = 80
 symbol = ''
-# style = 'bg:color_bg1 fg:color_fg0'
-style = "bg:color_bg3 fg:color_yellow"
+# style = 'bg:base fg:base'
+style = "bg:color5 fg:red"
 format = '[ $symbol ${ram}]($style)'
 
 
 [localip]
 disabled = false
 ssh_only = true
-# style = 'bg:color_bg1 fg:color_fg0'
-style = "bg:color_bg3 fg:color_fg0"
+# style = 'bg:base fg:base'
+style = "bg:color5 fg:base"
 format = '[ $localipv4]($style)'
 
 
@@ -296,15 +281,15 @@ show_milliseconds = true
 min_time = 100 # default 5_000
 show_notifications = false
 min_time_to_notify = 60_000
-style = "bg:color_bg3 fg:color_bg1"
+style = "bg:color5 fg:base"
 format = '[  $duration]($style)' #	took |  |  
 
 
 [time]
 disabled = true
 time_format = "%R"
-style = "bg:color_bg1"
-format = '[ [ $time](fg:color_fg0 bg:color_bg1)]($style)'
+style = "bg:color5"
+format = '[ [ $time](fg:base bg:color5)]($style)'
 
 [shell]
 disabled = false
@@ -314,16 +299,16 @@ powershell_indicator = '_'
 bash_indicator = '󱆃'
 cmd_indicator = ' '
 unknown_indicator = ' '
-# style = 'bg:color_bg1 fg:color_fg0'
-style = "bg:color_bg3 fg:color_fg0"
+# style = 'bg:base fg:base'
+style = "bg:color5 fg:base"
 format = '[$indicator]($style)'
 
 [shlvl]
 disabled = false
 threshold = 3
 symbol = '󰹺'
-# style = 'bg:color_bg1 fg:bold yellow'
-style = "bg:color_bg3 fg:color_fg0"
+# style = 'bg:base fg:bold yellow'
+style = "bg:color5 fg:base"
 format = '[$symbol$shlvl]($style)'
 
 
@@ -332,9 +317,67 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+success_symbol = '[](bold fg:green)'
+error_symbol = '[](bold fg:red)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:mauve)'
+vimcmd_replace_symbol = '[](bold fg:mauve)'
+vimcmd_visual_symbol = '[](bold fg:yellow)'
+
+
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
+
+
+# red = "#ed8796"
+color1 = "#ed8796"
+
+# peach = "#f5a97f"
+color2 = "#f5a97f"
+
+# green = "#a6da95"
+color3 = "#a6da95"
+
+# blue = "#8aadf4"
+color4 = "#8aadf4"
+
+# mauve = "#c6a0f6"
+color5 = "#c6a0f6"
+
+# maroon = "#ee99a0"
+# yellow = "#eed49f"
+# sapphire = "#7dc4e4"
+# pink = "#f5bde6"
+
+# flamingo = "#f0c6c6"
+# sky = "#91d7e3"
+# rosewater = "#f4dbd6"
+# teal = "#8bd5ca"
+# lavender = "#b7bdf8"
