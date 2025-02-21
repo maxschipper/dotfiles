@@ -22,6 +22,11 @@ bundleIdentifier = 'com.neohtop.dev'
 iconPath = '/Applications/NeoHtop.app/Contents/Resources/icon.icns'
 name = 'NeoHtop'
 
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.ActivityMonitor'
+iconPath = '/System/Applications/Utilities/Activity Monitor.app/Contents/Resources/AppIcon.icns'
+name = 'Activity Monitor'
+
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+t'
 display = 'Optix MAG27CQ'
