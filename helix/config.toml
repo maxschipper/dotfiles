@@ -1,4 +1,5 @@
-theme = "my-starlight-transparent"
+theme = "my-catppuccin_transparent"
+# theme = "my-starlight-transparent"
 
 [editor]
 mouse           = true
@@ -14,8 +15,11 @@ shell           = ["fish", "-c"]
 color-modes     = true 
 continue-comments = false
 
-# experimental
+# helix doesnt seem to recognize xterm-ghostty
+undercurl = true
 
+
+# experimental
 end-of-line-diagnostics = "hint"
 # end-of-line-diagnostics = "info"
 
@@ -116,6 +120,7 @@ y = "@\"+Y"
 p = "@\"+P"
 P = "paste_after"
 Y = "yank"
+R = "replace_selections_with_clipboard"
 
 [keys.select]
 y = "@\"+Y"

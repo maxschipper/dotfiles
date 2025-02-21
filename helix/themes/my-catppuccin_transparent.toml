@@ -1,0 +1,7 @@
+inherits = "my-catppuccin_mocha"
+# inherits = "my-catppuccin_macchiato"
+
+"ui.background" = { fg = "text" }
+
+[palette]
+surface1 = "#8386A0"
