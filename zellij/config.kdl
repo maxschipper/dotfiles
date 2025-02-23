@@ -12,8 +12,8 @@ keybinds clear-defaults=true {
         bind "Super l" { MoveFocusOrTab "Right"; }
         bind "Super j" { MoveFocus "Down"; }
         bind "Super k" { MoveFocus "Up"; }
-        bind "Super +" { Resize "Increase"; }
-        bind "Super -" { Resize "Decrease"; }
+        bind "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
         bind "Super ," { PreviousSwapLayout; }
         bind "Super ." { NextSwapLayout; }
         bind "Super n" { NewPane; }
