@@ -124,8 +124,9 @@ disabled = false
 
 [git_status]
 disabled = false
-style = "bg:color3"
-format = '[[($all_status$ahead_behind )](fg:base bg:color3)]($style)'
+style = "bg:color_aqua"
+# format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+format = '[[($ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_metrics]
 disabled = true
