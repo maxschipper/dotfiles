@@ -72,31 +72,49 @@ layout {
                 mode_session       "#[fg=$blue]#[bg=$blue,fg=$bg,bold]SESSION#[bg=$bg,fg=$blue]"
                 mode_move          "#[fg=$blue]#[bg=$blue,fg=$bg,bold]MOVE#[bg=$bg,fg=$blue]"
                 mode_prompt        "#[fg=$blue]#[bg=$blue,fg=$bg,bold]PROMPT#[bg=$bg,fg=$blue]"
-                mode_tmux          "#[fg=$magenta]#[bg=$magenta,fg=$bg,bold]TMUX#[bg=$bg,fg=$magenta]"
+                mode_tmux          "#[fg=$magenta]#[bg=$magenta,fg=$bg,bold]LEADER#[bg=$bg,fg=$magenta]"
 
                 // TODO: switch index with indicators
                 // formatting for inactive tabs
-                tab_normal            "#[bg=$bg,fg=$blue]#[bg=$blue,fg=$bg,bold]{index}{floating_indicator}#[bg=$bg,fg=$blue,bold]"
-                tab_normal_fullscreen "#[bg=$bg,fg=$blue]#[bg=$blue,fg=$bg,bold]{index}{fullscreen_indicator}#[bg=$bg,fg=$blue,bold]"
-                tab_normal_sync       "#[bg=$bg,fg=$blue]#[bg=$blue,fg=$bg,bold]{index}{sync_indicator}#[bg=$bg,fg=$blue,bold]"
+                // tab_normal            "#[bg=$bg,fg=$blue]#[bg=$blue,fg=$bg,bold]{index}{floating_indicator}#[bg=$bg,fg=$blue,bold]"
+                // tab_normal_fullscreen "#[bg=$bg,fg=$blue]#[bg=$blue,fg=$bg,bold]{index}{fullscreen_indicator}#[bg=$bg,fg=$blue,bold]"
+                // tab_normal_sync       "#[bg=$bg,fg=$blue]#[bg=$blue,fg=$bg,bold]{index}{sync_indicator}#[bg=$bg,fg=$blue,bold]"
 
+
+
+                // formatting for inactive tabs (no color)
+                tab_normal            "#[bg=$bg,fg=$light-grey]{index}{floating_indicator}"
+                tab_normal_fullscreen "#[bg=$bg,fg=$light-grey]{index}{fullscreen_indicator}"
+                tab_normal_sync       "#[bg=$bg,fg=$light-grey]{index}{sync_indicator}"
+
+                // active
+                tab_active            "#[bg=$bg,fg=$white,bold]{index}{floating_indicator}#[bg=$bg,fg=$light-grey,bold]{name}"
+                tab_active_fullscreen "#[bg=$bg,fg=$white,bold]{index}{fullscreen_indicator}#[bg=$bg,fg=$light-grey,bold]{name}"
+                tab_active_sync       "#[bg=$bg,fg=$white,bold]{index}{sync_indicator}#[bg=$bg,fg=$light-grey,bold]{name}"
+
+                // tab_active            "#[bg=$bg,fg=$dark-grey]#[bg=$dark-grey,fg=$bg,bold]{floating_indicator}{index}#[bg=$bg,fg=$dark-grey,bold]"
+                // tab_active_fullscreen "#[bg=$bg,fg=$dark-grey]#[bg=$dark-grey,fg=$bg,bold]{fullscreen_indicator}{index}#[bg=$bg,fg=$dark-grey,bold]"
+                // tab_active_sync       "#[bg=$bg,fg=$dark-grey]#[bg=$dark-grey,fg=$bg,bold]{sync_indicator}{index}#[bg=$bg,fg=$dark-grey,bold]"
+
+
+                
                 // formatting for the current active tab (NO NAME)
                 // tab_active              "#[bg=$bg,fg=$cyan]#[bg=$cyan,fg=$bg,bold] {index}{floating_indicator} #[bg=$bg,fg=$cyan,bold]"
                 // tab_active_fullscreen   "#[bg=$bg,fg=$cyan]#[bg=$cyan,fg=$bg,bold] {index}{fullscreen_indicator} #[bg=$bg,fg=$cyan,bold]"
                 // tab_active_sync         "#[bg=$bg,fg=$cyan]#[bg=$cyan,fg=$bg,bold] {index}{sync_indicator} #[bg=$bg,fg=$cyan,bold]"
 
                 // formatting for the current active tab (shows name on active tab)
-                tab_active            "#[bg=$bg,fg=$green]#[bg=$green,fg=$bg,bold] {floating_indicator} {index} {name}#[bg=$bg,fg=$green,bold]"
-                tab_active_fullscreen "#[bg=$bg,fg=$green]#[bg=$green,fg=$bg,bold] {fullscreen_indicator} {index} {name}#[bg=$bg,fg=$green,bold]"
-                tab_active_sync       "#[bg=$bg,fg=$green]#[bg=$green,fg=$bg,bold] {sync_indicator} {index} {name}#[bg=$bg,fg=$green,bold]"
+                // tab_active            "#[bg=$bg,fg=$green]#[bg=$green,fg=$bg,bold] {floating_indicator} {index} {name}#[bg=$bg,fg=$green,bold]"
+                // tab_active_fullscreen "#[bg=$bg,fg=$green]#[bg=$green,fg=$bg,bold] {fullscreen_indicator} {index} {name}#[bg=$bg,fg=$green,bold]"
+                // tab_active_sync       "#[bg=$bg,fg=$green]#[bg=$green,fg=$bg,bold] {sync_indicator} {index} {name}#[bg=$bg,fg=$green,bold]"
 
                 // separator between the tabs
-                tab_separator           "#[bg=$bg] "
+                tab_separator           "#[fg=$dark-grey,bg=$bg] ⏽ "
 
                 // indicators
-                tab_sync_indicator       "  "
-                tab_fullscreen_indicator " 󰊓 "
-                tab_floating_indicator   " 󰹙 "
+                tab_sync_indicator       " "
+                tab_fullscreen_indicator " " // 󰊓     
+                tab_floating_indicator   " 󰹙"
 
 
                 // command_git_branch_command     "git rev-parse --abbrev-ref HEAD"

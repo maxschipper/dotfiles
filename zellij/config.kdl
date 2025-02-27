@@ -21,9 +21,8 @@ keybinds clear-defaults=true {
         bind "Super m" { ToggleFloatingPanes; }
         bind "Super e" { TogglePaneEmbedOrFloating; }
         bind "Super f" { ToggleFocusFullscreen; }
-        bind "Super t" { NewTab {
-            name " "
-        }; }
+        bind "Super t" { NewTab; }
+        bind "Super r" { SwitchToMode "RenameTab"; }
         bind "Super g" { Run "lazygit" {
             close_on_exit true
         }; FocusNextPane; ToggleFocusFullscreen;  }

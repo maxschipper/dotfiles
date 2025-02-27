@@ -117,6 +117,11 @@ if status is-interactive
     #         kill $fish_pid
     #     end
     # end
+    # Check if we're in Zellij and set empty tab name on shell startup
+    if test -n "$ZELLIJ"
+        zellij action rename-tab ""
+    end
+
 
     # zoxide setup | needs to be at the end
     zoxide init fish | source
