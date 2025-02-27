@@ -27,6 +27,11 @@ bundleIdentifier = 'com.apple.ActivityMonitor'
 iconPath = '/System/Applications/Utilities/Activity Monitor.app/Contents/Resources/AppIcon.icns'
 name = 'Activity Monitor'
 
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.caldis.Mos'
+iconPath = '/Applications/Mos.app/Contents/Resources/AppIcon.icns'
+name = 'Mos'
+
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+t'
 display = 'Optix MAG27CQ'
@@ -80,6 +85,11 @@ name = 'ChatGPT'
 bundleIdentifier = 'com.anthropic.claudefordesktop'
 iconPath = '/Applications/Claude.app/Contents/Resources/electron.icns'
 name = 'Claude'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.4B3D78A6-9751-4720-AB8D-48B7D7C66A00'
+iconPath = '/Users/max/Applications/T3 Chat.app/Contents/Resources/ApplicationIcon.icns'
+name = 'T3 Chat'
 
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+p'

@@ -88,6 +88,8 @@ if status is-interactive
 
     #APP SETTINGS
 
+    set -gx DOCKER_HOST "ssh://max@192.168.178.176/run/user/1000/podman/podman.sock"
+
     #### STARSHIP START
     starship init fish | source
     set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
