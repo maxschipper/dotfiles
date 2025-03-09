@@ -54,11 +54,13 @@ layout {
                 hide_frame_except_for_search "true"
                 hide_frame_except_for_scroll "true"
 
-                // 󰘳  󰀶   󰀵     
-
-                mode_normal        "#[fg=$mauve]#[bg=$mauve,fg=$bg,bold]󰘳 #[bg=$bg,fg=$mauve]"
-                // mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold]NORMAL#[bg=$bg,fg=$green]"
-                // mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold] #[bg=$bg,fg=$green]"
+                // 󰘳  󰀶   󰀵        
+                //        󰘻      󰸳 󱥸  
+                mode_normal        "#[fg=$mauve]#[bg=$mauve,fg=$bg,bold]#[bg=$bg,fg=$mauve]"
+                // mode_normal        "#[fg=$mauve]#[bg=$mauve,fg=$bg,bold]󰘳 #[bg=$bg,fg=$mauve]"
+                // mode_normal        "#[fg=$mauve]#[bg=$mauve,fg=$bg,bold] 󰀵 #[bg=$bg,fg=$mauve]"
+                // mode_normal        "#[fg=$mauve]#[bg=$mauve,fg=$bg,bold]NORMAL#[bg=$bg,fg=$mauve]"
+                // mode_normal        "#[fg=$mauve]#[bg=$mauve,fg=$bg,bold] #[bg=$bg,fg=$mauve]"
                 // mode_normal        "#[fg=$green]#[bg=$green,fg=$bg,bold] #[bg=$bg,fg=$green]"
                 mode_locked        "#[fg=$red]#[bg=$red,fg=$bg,bold]LOCKED  #[bg=$bg,fg=$red]"
                 mode_resize        "#[fg=$blue]#[bg=$blue,fg=$bg,bold]RESIZE#[bg=$bg,fg=$blue]"
