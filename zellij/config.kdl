@@ -14,8 +14,8 @@ keybinds clear-defaults=true {
         bind "Super k" { MoveFocus "Up"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
-        bind "Super ," { PreviousSwapLayout; }
-        bind "Super ." { NextSwapLayout; }
+        bind "Super ;" { PreviousSwapLayout; }
+        bind "Super ," { NextSwapLayout; }
         bind "Super n" { NewPane; }
         bind "Super w" { CloseFocus; }
         bind "Super m" { ToggleFloatingPanes; }
