@@ -35,8 +35,8 @@ layout {
                 // format_center "#[bg=$bg,fg=$dark-grey] Zellij: #[bg=$bg,fg=$dark-grey]{session}"
                 // format_center "#[fg=$bg]#[bg=$bg,fg=$dark-grey] Zellij: #[bg=$bg,fg=$dark-grey]{session}#[fg=$bg]"
 
-                // format_right  "#[fg=$light-grey,bg=$bg]{datetime}"                        // no round edges 
-                format_right  "#[fg=$light-grey,bg=$bg]{datetime}#[fg=$bg]"              // right side 
+                // format_right  "#[fg=$light-grey,bg=$bg]{datetime}"                       // no round edges 
+                format_right  "#[fg=$light-grey,bg=$bg]{datetime}#[bg=$bg] #[fg=$bg]"     // right side 
                 // format_right  "#[fg=$bg]#[fg=$light-grey,bg=$bg]{datetime}#[fg=$bg]" // both sides  
 
                 format_space  "#[bg=$bg]"
@@ -122,8 +122,8 @@ layout {
                 // command_git_branch_interval    "10"
                 // command_git_branch_rendermode  "static"
 
-                datetime        " {format} "
-                datetime_format "%Y-%m-%d %H:%M"
+                datetime        "{format}"
+                datetime_format "%Y-%m-%d ⏽ %H:%M"
                 datetime_timezone "Europe/Berlin"
             }
         }
