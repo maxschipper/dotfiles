@@ -10,7 +10,6 @@ if status is-interactive
     fish_add_path /Library/TeX/texbin #       TeX
     fish_add_path $HOME/.bun/bin #            Bun
 
-
     # aliases and fish abbreviations
     ### LS ALIAS
     abbr -a l ls
@@ -44,21 +43,16 @@ if status is-interactive
     # downloads the yt video and extracts the audio
     abbr -a --set-cursor mp3dl yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 \"%\"
 
-
     # BREW abbreviations
-    abbr -a bu "brew update && brew upgrade"
+    abbr -a bu "clear && fastfetch && brew update && brew upgrade"
     abbr -a bs brew search
     abbr -a bi brew install
     abbr -a binf brew info
     # TODO: fish function "bii" will do a brew info $argv[1] then ask the user if he wants to install, if yes brew install $argv[1]
     # function bii { brew info $argv[1] && read -q "REPLY?(Install $argv[1]?) " && brew install $argv[1] }
 
-
-
     ### HELIX MACROS
     # alias ddate='date -u +%Y-%m-%d'
-
-
 
     # ENVIRONMENT VARIABLES
 
@@ -85,7 +79,6 @@ if status is-interactive
     # tell homebridge that its configs are relocated
     alias homebridge='homebridge -U $XDG_CONFIG_HOME/homebridge'
 
-
     #APP SETTINGS
 
     set -gx DOCKER_HOST "ssh://max@192.168.178.176/run/user/1000/podman/podman.sock"
@@ -100,7 +93,6 @@ if status is-interactive
     # fzf 
     # source ~/.config/fish/functions/fzf_key_bindings.fish
     set -gx FZF_DEFAULT_OPTS "--reverse --height=80% --bind=ctrl-z:ignore"
-
 
     # Configure auto-attach/exit to your likings (default is off).
     # set ZELLIJ_AUTO_ATTACH true
@@ -121,7 +113,6 @@ if status is-interactive
     if test -n "$ZELLIJ"
         zellij action rename-tab ""
     end
-
 
     # zoxide setup | needs to be at the end
     zoxide init fish | source
