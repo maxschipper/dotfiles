@@ -75,7 +75,7 @@ if status is-interactive
     set -gx GOPATH "$XDG_DATA_HOME/go"
     set -gx LESSHISTFILE /dev/null
     set -gx HOMEBREW_BUNDLE_FILE "$XDG_CONFIG_HOME/homebrew/Brewfile"
-
+    set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
     # tell homebridge that its configs are relocated
     alias homebridge='homebridge -U $XDG_CONFIG_HOME/homebridge'
 

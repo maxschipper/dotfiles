@@ -28,3 +28,5 @@
 # it uses a relative path but could also use an absolute path
 [include]
     path = ./config.secret
+[pull]
+	ff = only
