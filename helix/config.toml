@@ -42,10 +42,12 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control"]
-center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
+left = ["mode", "spinner", "version-control","separator","file-name"]
+# center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
+center = ["read-only-indicator","file-modification-indicator","file-absolute-path","file-modification-indicator", "read-only-indicator"]
 right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-type"]
-separator   = "│"
+# separator   = "│"
+separator   = " ⏽"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -128,21 +130,23 @@ p = "@\"+P"
 P = "paste_after"
 Y = "yank"
 
-
 [keys.normal.space]
 w = ":write"
 q = ":quit"
 e = ":buffer-close"
 0 = ":quit!"
 1 = ":write-quit"
-
 # only switched <f> and <F>
-f = "file_picker_in_current_directory"
+# f = "file_picker_in_current_directory"
+f = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
 F = "file_picker"
-
 # runs toggle_script on the last word in the current line
 # see toggle_script at fish/functions/toggle_script.fish
 l = "@glbe|toggle_script<ret>"
-
 # yazi side bar for helix using zellij terminal multiplexer
-Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize - && zellij action resize -"
+# Y = ":sh zellij run -c --name 'sidebar' -- fish ~/.config/helix/yazi-picker.fish && zellij action move-pane left && zellij action resize -"
+
+[keys.normal.m]
+u = "switch_to_uppercase"
+l = "switch_to_lowercase"
+t = "switch_case"
