@@ -24,12 +24,16 @@ auto-format = true
 formatter = { command = "goimports" }
 # language-servers = [ "helix-gpt" ]
 # language-servers = [ "lsp-ai" ]
-language-servers = [ "gopls", "golangci-lint-lsp", "scls" ]
-# language-servers = [ "gopls", "golangci-lint-lsp" ]
+# language-servers = [ "gopls", "golangci-lint-lsp", "scls" ]
+language-servers = [ "gopls", "golangci-lint-lsp" ]
 # language-servers = [ "gopls", "golangci-lint-langserver", { name = "helix-gpt", except-features = [ "code-action" ] } ]
 # language-servers = [ "gopls", "golangci-lint-langserver", "helix-gpt" ]
 
- 
+
+# fix for golangci-lint v2 removing "--out-format json". fix already merged to main so can probably be removed after next version. current version: helix 25.01.1 (e7ac2fcd)
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false", "--issues-exit-code=1"]
+
  [[language]]
 name = "templ"
 auto-format = true
@@ -57,6 +61,12 @@ file-types = [{ glob = "ghostty/*" }, { glob = ".config/**/config" }, { glob = "
 
 # added .keymap and .overlay files from zmk
 # TODO: maybe do sth like glob: zmk*/**/*.keymap if there are other .keymap files
+
+[[language]]
+name = "python"
+auto-format = true
+# language-servers = ["ruff", "jedi", "pylsp"]
+
 [[language]]
 name = "devicetree"
 file-types = ["dts", "dtsi", "keymap", "overlay"]
