@@ -2,31 +2,18 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[[manager.prepend_keymap]]
-on = "P"
-run = '''
-  shell 'qlmanage -p "$@"'
-'''
-
-[[manager.prepend_keymap]]
-on   = [ ".", "f" ]
-run  = "finder update"
-desc = "Open Finder at this location"
-[[manager.prepend_keymap]]
-on   = [ ".", "F" ]
-run  = "finder cd"
-desc = "go to the Finder location"
 
 
-[[manager.prepend_keymap]]
-on   = [ "g", "k" ]
-run  = "cd ~/code"
-desc = "~/code"
 
-[[manager.prepend_keymap]]
-on   = [ "g", "v" ]
-run  = "cd /Volumes"
-desc = "Go to /Volumes"
+# [[manager.prepend_keymap]]
+# on   = [ "g", "k" ]
+# run  = "cd ~/code"
+# desc = "~/code"
+
+# [[manager.prepend_keymap]]
+# on   = [ "g", "v" ]
+# run  = "cd /Volumes"
+# desc = "Go to /Volumes"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "r" ]
@@ -34,14 +21,14 @@ run  = "cd ~/dotfiles"
 desc = "Go to ~/dotfiles"
 
 
-[[manager.prepend_keymap]]
-on   = [ ".", "a" ]
-run  = "shell 'mkdir $(date +%Y-%m-%d)'"
-desc = "Create a directory with the current date as name"
-[[manager.prepend_keymap]]
-on   = [ ".", "r" ]
-run  = "shell 'rmdir $(date +%Y-%m-%d)'"
-desc = "Remove a directory with the current date as name"
+# [[manager.prepend_keymap]]
+# on   = [ ".", "a" ]
+# run  = "shell 'mkdir $(date +%Y-%m-%d)'"
+# desc = "Create a directory with the current date as name"
+# [[manager.prepend_keymap]]
+# on   = [ ".", "r" ]
+# run  = "shell 'rmdir $(date +%Y-%m-%d)'"
+# desc = "Remove a directory with the current date as name"
 
 [[manager.prepend_keymap]]
 on = [ "l" ]

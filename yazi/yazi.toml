@@ -10,9 +10,9 @@ max_width = 3000
 max_height = 3000
 
 [opener]
-quicklook = [
-	{ run = 'qlmanage -p "$@" >/dev/null 2>/dev/null', orphan = true, for = "macos", desc = "open using the MacOS Quicklook" },
-]
+# quicklook = [
+# 	{ run = 'qlmanage -p "$@" >/dev/null 2>/dev/null', orphan = true, for = "macos", desc = "open using the MacOS Quicklook" },
+# ]
 glow = [
 	{ run = 'glow -p "$@"', block = true, orphan = false, for = "macos", desc = "open using glow" },
 ]
