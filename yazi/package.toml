@@ -34,11 +34,6 @@ rev = "8945e54"
 hash = "f28138c2e11e87962b66d583fef724c3"
 
 [[plugin.deps]]
-use = "Rolv-Apneseth/starship"
-rev = "d1cd0a3"
-hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
 rev = "8945e54"
 hash = "aef2b1a805b80cce573bb766f1459d88"
@@ -57,6 +52,11 @@ hash = "b482f4f2d3c4e0aa3f8db89a95699439"
 use = "yazi-rs/plugins:mime-ext"
 rev = "8945e54"
 hash = "b03f3d80d26b6d7bb490b1380e9cb754"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "6b0fc1e"
+hash = "ab115c6cc77f5710c27f39dfa2f3d4d"
 
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
