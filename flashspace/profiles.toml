@@ -32,6 +32,61 @@ bundleIdentifier = 'com.caldis.Mos'
 iconPath = '/Applications/Mos.app/Contents/Resources/AppIcon.icns'
 name = 'Mos'
 
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.mail'
+iconPath = '/System/Applications/Mail.app/Contents/Resources/ApplicationIcon.icns'
+name = 'Mail'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'org.freecad.FreeCAD'
+iconPath = '/Applications/FreeCAD.app/Contents/Resources/freecad.icns'
+name = 'FreeCAD-1.0.0-39109'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.F58D6563-A40D-4BCF-901F-012E1974D77B'
+iconPath = '/Users/max/Applications/Sparkasse.app/Contents/Resources/ApplicationIcon.icns'
+name = 'Sparkasse'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.iCal'
+iconPath = '/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns'
+name = 'Calendar'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Maps'
+iconPath = '/System/Applications/Maps.app/Contents/Resources/AppIcon.icns'
+name = 'Maps'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.jetbrains.goland'
+iconPath = '/Applications/GoLand.app/Contents/Resources/goland.icns'
+name = 'GoLand'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.softfever3d.orca-slicer'
+iconPath = '/Applications/OrcaSlicer.app/Contents/Resources/Icon.icns'
+name = 'OrcaSlicer'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.bambulab.bambu-studio'
+iconPath = '/Applications/BambuStudio.app/Contents/Resources/Icon.icns'
+name = 'Bambu Studio'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.9BF81699-0C74-441E-B486-6C1B281ABE9A'
+iconPath = '/Users/max/Applications/Telegram Web.app/Contents/Resources/ApplicationIcon.icns'
+name = 'Telegram Web'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Photos'
+iconPath = '/System/Applications/Photos.app/Contents/Resources/AppIcon.icns'
+name = 'Photos'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.9473CFAB-0A57-4E30-A924-64C116F7D0DD'
+iconPath = '/Users/max/Applications/JetKVM.app/Contents/Resources/ApplicationIcon.icns'
+name = 'JetKVM'
+
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+t'
 display = 'Optix MAG27CQ'
@@ -39,11 +94,6 @@ id = '201A499B-D30D-4DD0-9534-5B35DBAF5697'
 name = 'Terminal'
 shortcut = 'cmd+ctrl+opt+t'
 symbolIconName = 'apple.terminal'
-
-[profiles.workspaces.appToFocus]
-bundleIdentifier = 'com.mitchellh.ghostty'
-iconPath = '/Applications/Ghostty.app/Contents/Resources/AppIcon.icns'
-name = 'Ghostty'
 
 [[profiles.workspaces.apps]]
 bundleIdentifier = 'com.mitchellh.ghostty'
@@ -66,7 +116,7 @@ name = 'Arc'
 [[profiles.workspaces.apps]]
 bundleIdentifier = 'app.zen-browser.zen'
 iconPath = '/Applications/Zen Browser.app/Contents/Resources/firefox.icns'
-name = 'Zen Browser'
+name = 'Zen'
 
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+c'
@@ -77,11 +127,6 @@ shortcut = 'cmd+ctrl+opt+c'
 symbolIconName = 'sparkles'
 
 [[profiles.workspaces.apps]]
-bundleIdentifier = 'com.apple.Safari.WebApp.9247C344-0C32-405F-9557-495E33E5F0BA'
-iconPath = '/Users/max/Applications/ChatGPT.app/Contents/Resources/ApplicationIcon.icns'
-name = 'ChatGPT'
-
-[[profiles.workspaces.apps]]
 bundleIdentifier = 'com.anthropic.claudefordesktop'
 iconPath = '/Applications/Claude.app/Contents/Resources/electron.icns'
 name = 'Claude'
@@ -90,6 +135,11 @@ name = 'Claude'
 bundleIdentifier = 'com.apple.Safari.WebApp.4B3D78A6-9751-4720-AB8D-48B7D7C66A00'
 iconPath = '/Users/max/Applications/T3 Chat.app/Contents/Resources/ApplicationIcon.icns'
 name = 'T3 Chat'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.9247C344-0C32-405F-9557-495E33E5F0BA'
+iconPath = '/Users/max/Applications/ChatGPT.app/Contents/Resources/ApplicationIcon.icns'
+name = 'ChatGPT'
 
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+p'
