@@ -13,12 +13,13 @@ if status is-interactive
     # aliases and fish abbreviations
     ### LS ALIAS
     abbr -a l ls
-    # alias ls='lsd -AF'
+    alias ls='lsd -AF'
     abbr -a llst 'lsd --long --tree --total-size -S'
 
     alias rls='source ~/.config/fish/config.fish'
-    # alias cd='z'
+    alias cd='z'
     abbr -a c clear
+    abbr -a clf 'clear && fastfetch'
     alias lg='lazygit'
     alias f='y'
     alias hxx='hx .'
@@ -31,14 +32,13 @@ if status is-interactive
     abbr -a cata 'bat *.*'
 
     # NIXOS
-    abbr -a nixconf 'sudo hx /etc/nixos/configuration.nix'
-    abbr -a nixb 'sudo nixos-rebuild switch'
-    abbr -a nixt 'sudo nixos-rebuild test'
-
+    abbr -a nixconf ' hx /home/max/.config/nix/configuration.nix'
+    abbr -a nixb 'nh os switch /home/max/.config/nix/'
+    abbr -a nixt 'nh os test /home/max/.config/nix/'
 
     # ENVIRONMENT VARIABLES
 
-    # set -gx EDITOR hx
+    set -gx EDITOR hx
 
     # Set XDG Base Directories according to the standard
     # set -gx XDG_DATA_HOME "$HOME/.local/share"
@@ -55,7 +55,6 @@ if status is-interactive
     # set -gx TERMINFO_DIRS "$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
     # set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
     # set -gx GOPATH "$XDG_DATA_HOME/go"
-
 
     #APP SETTINGS
 
@@ -93,6 +92,6 @@ if status is-interactive
     end
 
     # zoxide setup | needs to be at the end
-    # zoxide init fish | source
+    zoxide init fish | source
 
 end # interactive
