@@ -16,6 +16,11 @@ feature_paths = false                # enable path completion
 # LOG_FILE = "/tmp/simple-completion-lsp.log"
 
 
+# Nix
+[[language]]
+name = "nix"
+auto-format = true    
+formatter = { command = "nixfmt" }
 
 # GOLANG
 [[language]]
