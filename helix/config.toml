@@ -139,7 +139,7 @@ e = ":buffer-close"
 # only switched <f> and <F>
 # f = "file_picker_in_current_directory"
 f = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
-F = "file_picker"
+# F = "file_picker"
 # runs toggle_script on the last word in the current line
 # see toggle_script at fish/functions/toggle_script.fish
 l = "@glbe|toggle_script<ret>"
