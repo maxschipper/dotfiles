@@ -4,7 +4,7 @@ config-file = "style"
 config-file = "others"
 
 
-command = zellij attach -c 
+# command = zellij attach -c 
 initial-command = 
 wait-after-command = true
 abnormal-command-exit-runtime = 1000

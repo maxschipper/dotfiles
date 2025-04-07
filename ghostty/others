@@ -6,7 +6,6 @@ shell-integration-features = no-cursor,no-sudo,no-title
 
 working-directory = 
 
-window-vsync = true
 
 window-theme = auto
 
