@@ -27,7 +27,7 @@ keybinds clear-defaults=true {
             close_on_exit true
         }; FocusNextPane; ToggleFocusFullscreen;  }
 
-        bind "Super s" { LaunchOrFocusPlugin "file:/Users/max/.config/zellij/plugins/zellij-choose-tree.wasm" {
+        bind "Super s" { LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij-choose-tree.wasm" {
             floating true
             close_on_exit true
             move_to_focused_tab true
@@ -41,7 +41,7 @@ keybinds clear-defaults=true {
     }
     tmux {
         bind "y" {
-        LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
+        LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij_forgot.wasm" {
             "LOAD_ZELLIJ_BINDINGS" "true"
             floating true
             };
@@ -50,7 +50,7 @@ keybinds clear-defaults=true {
         
         // bind to open monocle in a new floating pane and open any results in a new tiled/floating pane
         bind "z" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
+            LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/monocle.wasm" {
                 floating true
             };
             SwitchToMode "Normal"
@@ -201,7 +201,7 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Normal"
         }
-        bind "s" { LaunchOrFocusPlugin "file:/Users/max/.config/zellij/plugins/zellij-choose-tree.wasm" {
+        bind "s" { LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij-choose-tree.wasm" {
             floating true
             move_to_focused_tab true
             show_plugins false
@@ -246,7 +246,7 @@ plugins {
     filepicker location="zellij:strider" {
         cwd "/"
     }
-    sessionpicker location="file:~/.config/zellij/plugins/zellij-choose-tree.wasm"
+    sessionpicker location="file:$HOME/.config/zellij/plugins/zellij-choose-tree.wasm"
 
 }
 
