@@ -8,26 +8,26 @@ keybinds clear-defaults=true {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
 
-        bind "Super h" { MoveFocusOrTab "Left"; }
-        bind "Super l" { MoveFocusOrTab "Right"; }
-        bind "Super j" { MoveFocus "Down"; }
-        bind "Super k" { MoveFocus "Up"; }
+        bind "Ctrl h" { MoveFocusOrTab "Left"; }
+        bind "Ctrl l" { MoveFocusOrTab "Right"; }
+        bind "Ctrl j" { MoveFocus "Down"; }
+        bind "Ctrl k" { MoveFocus "Up"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
-        bind "Super ;" { PreviousSwapLayout; }
-        bind "Super ," { NextSwapLayout; }
-        bind "Super n" { NewPane; }
-        bind "Super w" { CloseFocus; }
-        bind "Super m" { ToggleFloatingPanes; }
-        bind "Super e" { TogglePaneEmbedOrFloating; }
-        bind "Super f" { ToggleFocusFullscreen; }
-        bind "Super t" { NewTab; }
-        bind "Super r" { SwitchToMode "RenameTab"; }
-        bind "Super g" { Run "lazygit" {
+        bind "Ctrl ;" { PreviousSwapLayout; }
+        bind "Ctrl ," { NextSwapLayout; }
+        bind "Ctrl n" { NewPane; }
+        bind "Ctrl w" { CloseFocus; }
+        bind "Ctrl m" { ToggleFloatingPanes; }
+        bind "Ctrl e" { TogglePaneEmbedOrFloating; }
+        bind "Ctrl f" { ToggleFocusFullscreen; }
+        bind "Ctrl t" { NewTab; }
+        bind "Ctrl r" { SwitchToMode "RenameTab"; }
+        bind "Alt g" { Run "lazygit" {
             close_on_exit true
         }; FocusNextPane; ToggleFocusFullscreen;  }
 
-        bind "Super s" { LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij-choose-tree.wasm" {
+        bind "Ctrl s" { LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij-choose-tree.wasm" {
             floating true
             close_on_exit true
             move_to_focused_tab true
@@ -230,7 +230,7 @@ keybinds clear-defaults=true {
     //     bind "Ctrl h" { SwitchToMode "Move"; }
     // }
     shared_except "tmux" "locked" {
-        bind "Super a" { SwitchToMode "Tmux"; }
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
     }
 }
 
