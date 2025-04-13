@@ -1,5 +1,5 @@
 -- full config
---[[ require("yatline"):setup({
+ require("yatline"):setup({
 	show_background = false,
 
 	display_header_line = false,
@@ -53,4 +53,4 @@
 			}
 		}
 	},
-}) --]]
+})

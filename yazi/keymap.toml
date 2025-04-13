@@ -2,7 +2,15 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
+[[manager.prepend_keymap]]
+on = "<Tab>"
+run = "spot"
+desc = "Spot hovered file"
 
+[[manager.prepend_keymap]]
+on   = "O"
+run  = "plugin open-with-cmd block"
+desc = "Open with command in the terminal"
 
 
 # [[manager.prepend_keymap]]
@@ -14,6 +22,11 @@
 # on   = [ "g", "v" ]
 # run  = "cd /Volumes"
 # desc = "Go to /Volumes"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "n" ]
+run  = "cd ~/.config/nix"
+desc = "Go to ~/dotfiles"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "r" ]
@@ -104,8 +117,12 @@ keymap = [
 	{ on = [ "<C-r>" ],   run = "toggle_all",            desc = "Inverse selection of all files" },
 
 	# Operation
-	{ on = [ "o" ],         run = "open",                        desc = "Open the selected files" },
-	{ on = [ "O" ],         run = "open --interactive",          desc = "Open the selected files interactively" },
+	# { on = [ "o" ],         run = "open",                        desc = "Open the selected files" },
+	# { on = [ "O" ],         run = "open --interactive",          desc = "Open the selected files interactively" },
+	# switched o and O, O gets overwritten by open-with-cmd plugin
+	{ on = [ "o" ],         run = "open --interactive",          desc = "Open the selected files interactively" },
+	{ on = [ "O" ],         run = "open",                        desc = "Open the selected files" },
+
 	{ on = [ "<Enter>" ],   run = "open",                        desc = "Open the selected files" },
 	{ on = [ "<C-Enter>" ], run = "open --interactive",          desc = "Open the selected files interactively" },
 	{ on = [ "y" ],         run = "yank",                        desc = "Copy the selected files" },

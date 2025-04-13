@@ -58,6 +58,26 @@ use = "imsi32/yatline"
 rev = "6b0fc1e"
 hash = "ab115c6cc77f5710c27f39dfa2f3d4d"
 
+[[plugin.deps]]
+use = "josephschmitt/auto-layout"
+rev = "626a601"
+hash = "747a700c90fffc5b187a6094fd0661b0"
+
+[[plugin.deps]]
+use = "boydaihungst/file-extra-metadata"
+rev = "0c061a2"
+hash = "433d4fcb211b823b44bdb00451ef4934"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "433cf30"
+hash = "86e0312b01bc5762813c6c1d0517f073"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "6c639b4"
+hash = "5614c46d5de76623c283d415bfac8025"
+
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
 rev = "b4cc9f2"
