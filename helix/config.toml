@@ -125,10 +125,14 @@ Y = "yank"
 R = "replace_selections_with_clipboard"
 
 [keys.select]
+k = ["extend_line_up", "extend_to_line_bounds"]
+j = ["extend_line_down", "extend_to_line_bounds"]
+
 y = "@\"+Y"
 p = "@\"+P"
 P = "paste_after"
 Y = "yank"
+
 
 [keys.normal.space]
 w = ":write"
