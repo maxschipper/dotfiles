@@ -125,12 +125,11 @@ disabled = false
 
 [git_status]
 disabled = false
-style = "bg:color_aqua"
-# format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
-format = '[[($ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bg:color3"
+format = '[($all_status$ahead_behind)(fg:base bg:color3)]($style)'
 
 [git_metrics]
-disabled = true
+disabled = false
 added_style = "bg:color3 fg:mauve"
 deleted_style = "bg:color3 fg:red"
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
