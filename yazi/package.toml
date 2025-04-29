@@ -59,11 +59,6 @@ rev = "2ecf715"
 hash = "38e2ea4703ea606d4eef574e8e8b8fd7"
 
 [[plugin.deps]]
-use = "josephschmitt/auto-layout"
-rev = "626a601"
-hash = "747a700c90fffc5b187a6094fd0661b0"
-
-[[plugin.deps]]
 use = "boydaihungst/file-extra-metadata"
 rev = "0c061a2"
 hash = "433d4fcb211b823b44bdb00451ef4934"
