@@ -12,6 +12,15 @@ on   = "O"
 run  = "plugin open-with-cmd block"
 desc = "Open with command in the terminal"
 
+[[manager.prepend_keymap]]
+on = "<Tab>"
+run = "spot"
+desc = "Spot hovered file"
+
+[[manager.prepend_keymap]]
+on   = "O"
+run  = "plugin open-with-cmd block"
+desc = "Open with command in the terminal"
 
 # [[manager.prepend_keymap]]
 # on   = [ "g", "k" ]
@@ -22,6 +31,11 @@ desc = "Open with command in the terminal"
 # on   = [ "g", "v" ]
 # run  = "cd /Volumes"
 # desc = "Go to /Volumes"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "n" ]
+run  = "cd ~/.config/nix"
+desc = "Go to ~/dotfiles"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "n" ]
