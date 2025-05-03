@@ -165,6 +165,7 @@ keybinds clear-defaults=true {
     }
     search {
         // bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
