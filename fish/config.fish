@@ -12,8 +12,8 @@ if status is-interactive
 
     # aliases and fish abbreviations
     ### LS ALIAS
-    abbr -a l ls
     alias ls='lsd -AF'
+    alias l='lsd -AF --group-directories-first --blocks git --blocks name --blocks permission --blocks user --blocks group --blocks size --blocks date --date relative'
     abbr -a llst 'lsd --long --tree --total-size -S'
 
     alias cd='z'
