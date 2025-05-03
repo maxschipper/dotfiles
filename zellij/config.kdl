@@ -19,10 +19,11 @@ keybinds clear-defaults=true {
         bind "Super n" { NewPane; }
         bind "Super w" { CloseFocus; }
         bind "Super m" { ToggleFloatingPanes; }
-        bind "Super e" { TogglePaneEmbedOrFloating; }
+        bind "Super Shift f" { TogglePaneEmbedOrFloating; }
         bind "Super f" { ToggleFocusFullscreen; }
         bind "Super t" { NewTab; }
         bind "Super r" { SwitchToMode "RenameTab"; }
+        bind "Super e" { EditScrollback; SwitchToMode "Normal"; }
         bind "Super g" { Run "lazygit" {
             close_on_exit true
         }; FocusNextPane; ToggleFocusFullscreen;  }
