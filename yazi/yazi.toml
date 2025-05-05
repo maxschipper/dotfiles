@@ -76,11 +76,17 @@ append_previewers = [
   { name = "*", run = "hexyl" },
 ]
 
+# git status iconc for files
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
 
-# [[plugin.prepend_fetchers]]
-# id   = "git"
-# name = "*"
-# run  = "git"
+# git status iconc for directories
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
 
 # [[plugin.prepend_fetchers]]
 # id   = "git"
