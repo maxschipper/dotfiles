@@ -49,7 +49,7 @@
 "markup.heading.3" = { bg = "green" }
 "markup.heading.4" = { bg = "yellow" }
 "markup.heading.5" = { bg = "pink" }
-"markup.heading"   = { fg = "green", bg = "surface1", modifiers = ["bold"] }
+"markup.heading"   = { fg = "green", bg = "surface2", modifiers = ["bold"] }
 "markup.list" = "mauve"
 # "markup.list.unchecked" = "overlay2"
 "markup.list.unchecked" = "red"
