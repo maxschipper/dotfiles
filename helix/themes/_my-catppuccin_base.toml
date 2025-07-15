@@ -102,7 +102,7 @@
 
 "ui.cursor" = { fg = "base", bg = "secondary_cursor" }
 "ui.cursor.primary" = { fg = "base", bg = "rosewater" }
-"ui.cursor.match" = { fg = "peach", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "peach", bg = "mauve", modifiers = ["bold"] }
 
 "ui.cursor.primary.normal" = { fg = "base", bg = "lavender" }
 "ui.cursor.primary.insert" = { fg = "base", bg = "green" }
@@ -123,7 +123,7 @@
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
 "diagnostic.info" = { underline = { color = "sky", style = "curl" } }
-"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.hint" = { color="teal", style = "curl" }
 
 error = "red"
 warning = "yellow"
