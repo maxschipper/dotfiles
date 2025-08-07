@@ -1,9 +1,8 @@
 keybind=clear
 keybind = ctrl+shift+comma=reload_config
-keybind = ctrl+shift+q=quit
 
 # copy paste
-keybind = ctrl+v=paste_from_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
 keybind = ctrl+shift+c=copy_to_clipboard
 
 # font resizing

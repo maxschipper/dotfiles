@@ -1,4 +1,4 @@
-theme = catppuccin-macchiato
+# theme = catppuccin-macchiato
 
 # custom-shader = shaders/bloom025.glsl
 # custom-shader = shaders/tft.glsl
@@ -35,23 +35,12 @@ mouse-scroll-multiplier = 1
 mouse-hide-while-typing = true
 
 # Initial window size 
-window-width = 200
-window-height = 200
+# window-width = 200
+# window-height = 200
 
 window-decoration = true
 macos-titlebar-style = hidden
 macos-window-shadow = true
-
-# Custom app icon
-macos-icon = custom-style
-# aluminum, beige, plastic, chrome
-macos-icon-frame = plastic
-macos-icon-ghost-color = #FF8F8B
-macos-icon-screen-color = #528ABA,#000000
-#0B25B4
-#  macos-icon-ghost-color = #c9642a
-# macos-icon-screen-color = #739b6f,#548387
-
 
 
 palette = 0=#1d1f21
