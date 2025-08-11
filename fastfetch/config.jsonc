@@ -59,7 +59,7 @@
     {
       "type": "command",
       "key": "{$2}│{$1}   Flake  {$2}│{$1}",
-      "text": "$HOME/nix/scripts/flake/lastLocalCommit.sh",
+      "text": "$NH_FLAKE/scripts/flake/lastLocalCommit.sh",
       "format": "{$1}{<18}{$2}│{$1}"
     },
     {
