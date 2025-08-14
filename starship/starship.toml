@@ -12,6 +12,7 @@ $username\
 $directory\
 
 [](fg:color2 bg:color3)\
+$custom\
 $git_branch\
 $git_commit\
 $git_state\
@@ -95,17 +96,22 @@ format = '[$user ]($style)'
 [directory]
 style = "fg:base bg:color2"
 format = "[   $path ]($style)"
-truncation_length = 5
+truncation_length = 7
 truncation_symbol = "…/"
 truncate_to_repo = true
 
 [directory.substitutions]
-"Documents" = "󰈙 "
+# "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
 "Desktop" = " "
+# '~/Documents/data-up' = 'cloud'
+# '~/Documents/data-up/code' = 'code'
+'~/.config' = '.config'
+'~/dotfiles' = 'dotfiles'
+
 
 [git_branch]
 disabled = false
@@ -118,7 +124,7 @@ disabled = false
 style = "bg:color3"
 tag_symbol = ' 🏷 '
 tag_disabled = false
-format ="[\\($hash$tag\\) ]($style)"
+format = "[\\($hash$tag\\) ]($style)"
 
 [git_state]
 disabled = false
@@ -197,6 +203,7 @@ style = "bg:color4"
 format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
 
 [python]
+disabled = true
 symbol = ""
 style = "bg:color4"
 format = '[[ $symbol( $version) ](fg:base bg:color4)]($style)'
@@ -221,7 +228,6 @@ format = '[[ $symbol ](fg:base bg:color5)]($style)'
 symbol = " "
 
 
-
 [custom.todo]
 command = "cat /Users/max/.config/starship/reminder-string-prompt"
 when = "test -s /Users/max/.config/starship/reminder-string-prompt"
@@ -229,14 +235,13 @@ style = "bg:base fg:color5"
 format = "[$output ]($style)"
 
 
-
 [status]
 disabled = false
 success_symbol = ''
-symbol = ' '   #     󰜺  
+symbol = ' '                                                      #     󰜺  
 not_executable_symbol = ' '
 not_found_symbol = ' '
-sigint_symbol = ' '  #     
+sigint_symbol = ' '                                               #     
 signal_symbol = '⚡'
 style = "bg:color5 fg:red"
 format = '[ $symbol$common_meaning$signal_name$maybe_int]($style)'
@@ -245,7 +250,7 @@ map_symbol = true
 
 [sudo]
 disabled = false
-symbol = '󰟵'	#	󰟵  󱫖 󱫕	󱥠	󰦝		
+symbol = '󰟵'     #	󰟵  󱫖 󱫕	󱥠	󰦝		
 # style = 'bg:base fg:base'
 style = "bg:color5 fg:base"
 format = '[ $symbol ]($style)'
@@ -279,7 +284,7 @@ format = '[ $localipv4]($style)'
 [cmd_duration]
 disabled = false
 show_milliseconds = true
-min_time = 100 # default 5_000
+min_time = 100                    # default 5_000
 show_notifications = false
 min_time_to_notify = 60_000
 style = "bg:color5 fg:base"
@@ -299,7 +304,7 @@ fish_indicator = ''
 powershell_indicator = '_'
 bash_indicator = '󱆃'
 cmd_indicator = ' '
-unknown_indicator = ' '
+# unknown_indicator = ' '
 # style = 'bg:base fg:base'
 style = "bg:color5 fg:base"
 format = '[$indicator]($style)'
@@ -325,7 +330,42 @@ vimcmd_replace_one_symbol = '[](bold fg:mauve)'
 vimcmd_replace_symbol = '[](bold fg:mauve)'
 vimcmd_visual_symbol = '[](bold fg:yellow)'
 
+# custom module for jj status
+[custom.jj]
+disabled = true
+ignore_timeout = false
+description = "The current jj status"
+detect_folders = [".jj"]
+symbol = "🥋 "
+style = "bg:color3"
+# format = '[$command]($style)'
+command = '''
+jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
+  separate(" ",
+    change_id.shortest(4),
+    bookmarks,
+    "|",
+    concat(
+      if(conflict, "💥"),
+      if(divergent, "🚧"),
+      if(hidden, "👻"),
+      if(immutable, "🔒"),
+    ),
+    raw_escape_sequence("\x1b[1;32m") ++ if(empty, "(empty)"),
+    raw_escape_sequence("\x1b[1;32m") ++ coalesce(
+      truncate_end(29, description.first_line(), "…"),
+      "(no description set)",
+    ) ++ raw_escape_sequence("\x1b[0m"),
+  )
+'
+'''
 
+
+# re-enable git_branch as long as we're not in a jj repo
+[custom.git_branch]
+when = true
+command = "jj root >/dev/null 2>&1 || starship module git_branch"
+description = "Only show git_branch if we're not in a jj repo"
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
@@ -356,7 +396,6 @@ mantle = "#1e2030"
 crust = "#181926"
 
 
-
 # red = "#ed8796"
 color1 = "#ed8796"
 
@@ -370,7 +409,7 @@ color3 = "#a6da95"
 color4 = "#8aadf4"
 
 # mauve = "#c6a0f6"
-color5 = "#c6a0f6"
+color5 = "#c6a0f6" # "#c6a0f6"
 
 # maroon = "#ee99a0"
 # yellow = "#eed49f"
