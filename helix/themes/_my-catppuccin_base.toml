@@ -43,6 +43,7 @@
 
 "special" = "blue" # fuzzy highlight
 
+# MARKDOWN
 "markup.heading.marker" = { fg = "surface0", modifiers = ["dim", "italic"] }
 "markup.heading.1" = { bg = "teal" }
 "markup.heading.2" = { bg = "mauve" }
@@ -54,8 +55,8 @@
 # "markup.list.unchecked" = "overlay2"
 "markup.list.unchecked" = "red"
 "markup.list.checked" = "green"
-"markup.bold" = { fg = "teal", modifiers = ["bold"] }
-"markup.italic" = { modifiers = ["italic"] }
+"markup.bold" = { fg = "red", modifiers = ["bold"] }
+"markup.italic" = { fg = "yellow",modifiers = ["italic"] }
 "markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
 "markup.link.text" = "blue"
 "markup.raw" = "flamingo"
@@ -102,7 +103,7 @@
 
 "ui.cursor" = { fg = "base", bg = "secondary_cursor" }
 "ui.cursor.primary" = { fg = "base", bg = "rosewater" }
-"ui.cursor.match" = { fg = "peach", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "peach", bg = "mauve", modifiers = ["bold"] }
 
 "ui.cursor.primary.normal" = { fg = "base", bg = "lavender" }
 "ui.cursor.primary.insert" = { fg = "base", bg = "green" }
@@ -123,7 +124,7 @@
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
 "diagnostic.info" = { underline = { color = "sky", style = "curl" } }
-"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.hint" = { color="teal", style = "curl" }
 
 error = "red"
 warning = "yellow"
