@@ -10,59 +10,116 @@ snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for exampl
 feature_unicode_input = false        # enable "unicode input"
 feature_paths = false                # enable path completion
 
-
 # [language-server.scls.environment]
 # RUST_LOG = "info,simple-completion-language-server=info"
 # LOG_FILE = "/tmp/simple-completion-lsp.log"
 
+# custom markdown-pdf
+# [[language]]
+# name = "markdown-pdf"
+# scope = "source.markdown"
+# file-types = ["pdfmd"]
+# language-servers = [ "marksman" ]
+# # indent = { tab-width = 2, unit = "  " }
+# # block-comment-tokens = { start = "<!--", end = "-->" }
+# # formatter = { command = "pandoc", args = ["--output", "output.pdf"] }
+
+# markdown zk zettelkasten
+[[language]]
+name = "markdown"
+# language-servers = [ "zk", "marksman", "markdown-oxide" ]
+language-servers = [ "zk" ]
+[language-server.zk]
+command = "zk"
+args = [ "lsp" ]
+
+
+[language-server.colors] # once https://github.com/helix-editor/helix/pull/12308 is released
+command = "uwu_colors"
+# args = [ "--variable-completions" ]
+# [[language]]
+# name = "toml"
+# language-servers = ["colors"]
+
+# Typst
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+auto-format = true
+formatter = { command = "typstyle" }
+
+[language-server.tinymist]
+command = "tinymist"
+[language-server.tinymist.config]
+outputPath = "$root/target/$dir/$name"
+# exportPdf = "onType" # use onType when not using the html web preview below
+# exportPdf = "onSave"
+preview.background.enabled = true
+# preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=auto"] #light mode
+preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never"] # dark mode
+  # Typst END
 
 # Nix
 [[language]]
 name = "nix"
-auto-format = true    
+auto-format = true
 formatter = { command = "nixfmt" }
+  # Nix END
 
 # GOLANG
 [[language]]
 name = "go"
-auto-format = true    
+auto-format = true
 formatter = { command = "goimports" }
 # language-servers = [ "helix-gpt" ]
 # language-servers = [ "lsp-ai" ]
 # language-servers = [ "gopls", "golangci-lint-lsp", "scls" ]
-language-servers = [ "gopls", "golangci-lint-lsp" ]
+language-servers = ["gopls", "golangci-lint-lsp"]
 # language-servers = [ "gopls", "golangci-lint-langserver", { name = "helix-gpt", except-features = [ "code-action" ] } ]
 # language-servers = [ "gopls", "golangci-lint-langserver", "helix-gpt" ]
 
 
 # fix for golangci-lint v2 removing "--out-format json". fix already merged to main so can probably be removed after next version. current version: helix 25.01.1 (e7ac2fcd)
 [language-server.golangci-lint-lsp.config]
-command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false", "--issues-exit-code=1"]
+command = [
+  "golangci-lint",
+  "run",
+  "--output.json.path=stdout",
+  "--show-stats=false",
+  "--issues-exit-code=1",
+]
 
- [[language]]
+[[language]]
 name = "templ"
 auto-format = true
-# # language-servers = [ "templ", "scls" ]
-# language-servers = [ "templl" ]
+language-servers = [ "templ", "tailwindcss-ls" ]
 
-# [language-server.templl]
-# command = "templ"
-# args= ["lsp"]
-# block-comment-tokens = { start = "<!--", end = "-->" }
-
+[language-server.tailwindcss-ls]
+config = { userLanguages = { templ = "html", "*.templ" = "html" } }
+  # Go END
 
 [[language]]
 name = "c"
 auto-format = true
 # language-servers = [ "clangd", { name = "helix-gpt", only-features = [ "completion" ] } ]
-language-servers = [ "clangd", { name = "helix-gpt", except-features = [ "code-action" ] } ]
+language-servers = [
+  "clangd",
+  { name = "helix-gpt", except-features = [
+    "code-action",
+  ] },
+]
 # indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "bash"
 scope = "source.bash"
 injection-regex = "(shell|bash|zsh|sh)"
-file-types = [{ glob = "ghostty/*" }, { glob = ".config/**/config" }, { glob = "*.conf" }, { glob = "*rc" }]
+file-types = [
+  { glob = "ghostty/*" },
+  { glob = ".config/**/config" },
+  { glob = "*.conf" },
+  { glob = "*rc" },
+]
 
 # added .keymap and .overlay files from zmk
 # TODO: maybe do sth like glob: zmk*/**/*.keymap if there are other .keymap files
@@ -86,14 +143,14 @@ name = "fish"
 
 [language-server.fish-lsp]
 command = "fish-lsp"
-args= ["start"]
+args = ["start"]
 
 
 # LATEX 
 [[language]]
 name = "latex"
 # language-servers = [ "texlab", "helix-gpt" ]
-language-servers = [ "texlab" ]
+language-servers = ["texlab"]
 
 [language-server.texlab.config.texlab.chktex]
 onOpenAndSave = true
@@ -101,7 +158,7 @@ onEdit = true
 
 [language-server.texlab.config.texlab.forwardSearch]
 executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
-args = [ "-g", "-r", "%l", "%p", "%f" ]
+args = ["-g", "-r", "%l", "%p", "%f"]
 # executable = "zathura"
 # args = [ "--synctex-forward", "%l:%c:%f", "%p" ]
 
@@ -113,13 +170,13 @@ forwardSearchAfter = true
 onSave = true
 executable = "tectonic"
 args = [
- "-X",
- "compile",
- "--synctex",
- "--keep-logs",
- # "--keep-intermediates",
- "--outdir=build",
- "%f",
+  "-X",
+  "compile",
+  "--synctex",
+  "--keep-logs",
+  # "--keep-intermediates",
+  "--outdir=build",
+  "%f",
 ]
 
 [[language]]
@@ -129,7 +186,6 @@ name = "bibtex"
 filetypes = "bib"
 event = "save"
 command = "bibtex-tidy %file%"
-
 
 
 # HELIX-GPT
@@ -150,8 +206,9 @@ command = "bibtex-tidy %file%"
 timeout = 60
 command = "/Users/max/code/personal/helix-gpt/helix-gpt-deno/helix-gpt"
 args = [
- "--handler", "codeium",
- # "--logFile", "/Users/max/code/personal/helix-gpt/helix-gpt-deno/helix-gpt/log/codeium.log",
+  "--handler",
+  "codeium",
+  # "--logFile", "/Users/max/code/personal/helix-gpt/helix-gpt-deno/helix-gpt/log/codeium.log",
 ]
 
 
@@ -166,7 +223,6 @@ args = [
 # ]
 
 
-
 ##############################
 ## Configuration for lsp-ai ##
 ##############################
@@ -175,16 +231,16 @@ args = [
 
 [language-server.lsp-ai]
 command = "lsp-ai"
-args = [ "--use-seperate-log-file" ]
+args = ["--use-seperate-log-file"]
 
 [language-server.lsp-ai.config.memory]
-file_store = { }
+file_store = {}
 
 [language-server.lsp-ai.config.models.model1]
 type = "open_ai"
 chat_endpoint = "https://192.168.178.22:8080/v1/chat/completions"
 completions_endpoint = "https://192.168.178.22:8080/v1/completions"
-model =  "gpt-3.5-turbo"
+model = "gpt-3.5-turbo"
 auth_token = ""
 
 [language-server.lsp-ai.config.completion]
@@ -198,4 +254,3 @@ max_context = 1024
 [[language-server.lsp-ai.config.completion.parameters.messages]]
 role = "system"
 content = "Instructions:\n- You are an AI programming assistant.\n- Given a piece of code with the cursor location marked by \"<CURSOR>\", replace \"<CURSOR>\" with the correct code or comment.\n- First, think step-by-step.\n- Describe your plan for what to build in pseudocode, written out in great detail.\n- Then output the code replacing the \"<CURSOR>\"\n- Ensure that your completion fits within the language context of the provided code snippet (e.g., Python, JavaScript, Rust).\n\nRules:\n- Only respond with code or comments.\n- Only replace \"<CURSOR>\"; do not include any previously written code.\n- Never include \"<CURSOR>\" in your response\n- If the cursor is within a comment, complete the comment meaningfully.\n- Handle ambiguous cases by providing the most contextually appropriate completion.\n- Be consistent with your responses."
-

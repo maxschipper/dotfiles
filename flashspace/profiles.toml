@@ -1,5 +1,3 @@
-selectedProfileId = 'ECB65C15-5A07-4F5A-A922-7368BE70F490'
-
 [[profiles]]
 id = 'ECB65C15-5A07-4F5A-A922-7368BE70F490'
 name = 'Default'
@@ -10,7 +8,7 @@ display = 'Optix MAG27CQ'
 id = '9A4641EA-DA11-465C-B3FD-6FBE5C54546E'
 name = 'Default'
 shortcut = 'cmd+ctrl+opt+d'
-symbolIconName = 'rectangle.3.group'
+symbolIconName = '1.square'
 
 [[profiles.workspaces.apps]]
 bundleIdentifier = 'com.apple.Music'
@@ -48,11 +46,6 @@ iconPath = '/Users/max/Applications/Sparkasse.app/Contents/Resources/Application
 name = 'Sparkasse'
 
 [[profiles.workspaces.apps]]
-bundleIdentifier = 'com.apple.iCal'
-iconPath = '/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns'
-name = 'Calendar'
-
-[[profiles.workspaces.apps]]
 bundleIdentifier = 'com.apple.Maps'
 iconPath = '/System/Applications/Maps.app/Contents/Resources/AppIcon.icns'
 name = 'Maps'
@@ -87,6 +80,26 @@ bundleIdentifier = 'com.apple.Safari.WebApp.9473CFAB-0A57-4E30-A924-64C116F7D0DD
 iconPath = '/Users/max/Applications/JetKVM.app/Contents/Resources/ApplicationIcon.icns'
 name = 'JetKVM'
 
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.TV'
+iconPath = '/System/Applications/TV.app/Contents/Resources/AppIcon.icns'
+name = 'TV'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.iCal'
+iconPath = '/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns'
+name = 'Calendar'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.DiskUtility'
+iconPath = '/System/Applications/Utilities/Disk Utility.app/Contents/Resources/AppIcon.icns'
+name = 'Disk Utility'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Preview'
+iconPath = '/System/Applications/Preview.app/Contents/Resources/AppIcon.icns'
+name = 'Preview'
+
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+ctrl+opt+shift+t'
 display = 'Optix MAG27CQ'
@@ -94,6 +107,11 @@ id = '201A499B-D30D-4DD0-9534-5B35DBAF5697'
 name = 'Terminal'
 shortcut = 'cmd+ctrl+opt+t'
 symbolIconName = 'apple.terminal'
+
+[profiles.workspaces.appToFocus]
+bundleIdentifier = 'com.mitchellh.ghostty'
+iconPath = '/Applications/Ghostty.app/Contents/Resources/AppIcon.icns'
+name = 'Ghostty'
 
 [[profiles.workspaces.apps]]
 bundleIdentifier = 'com.mitchellh.ghostty'
@@ -118,36 +136,15 @@ bundleIdentifier = 'app.zen-browser.zen'
 iconPath = '/Applications/Zen Browser.app/Contents/Resources/firefox.icns'
 name = 'Zen'
 
-[[profiles.workspaces]]
-assignAppShortcut = 'cmd+ctrl+opt+shift+c'
-display = 'Built-in Retina Display'
-id = 'AF80A3D1-FCFC-47D3-8B2D-A4CEBCEBFA0D'
-name = 'AI'
-shortcut = 'cmd+ctrl+opt+c'
-symbolIconName = 'sparkles'
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.brave.Browser'
+iconPath = '/Applications/Brave Browser.app/Contents/Resources/app.icns'
+name = 'Brave Browser'
 
 [[profiles.workspaces.apps]]
-bundleIdentifier = 'com.anthropic.claudefordesktop'
-iconPath = '/Applications/Claude.app/Contents/Resources/electron.icns'
-name = 'Claude'
-
-[[profiles.workspaces.apps]]
-bundleIdentifier = 'com.apple.Safari.WebApp.4B3D78A6-9751-4720-AB8D-48B7D7C66A00'
-iconPath = '/Users/max/Applications/T3 Chat.app/Contents/Resources/ApplicationIcon.icns'
-name = 'T3 Chat'
-
-[[profiles.workspaces.apps]]
-bundleIdentifier = 'com.apple.Safari.WebApp.9247C344-0C32-405F-9557-495E33E5F0BA'
-iconPath = '/Users/max/Applications/ChatGPT.app/Contents/Resources/ApplicationIcon.icns'
-name = 'ChatGPT'
-
-[[profiles.workspaces]]
-assignAppShortcut = 'cmd+ctrl+opt+shift+p'
-display = 'Built-in Retina Display'
-id = 'D1D05D6B-AD72-4F04-BB5F-C9A86961E138'
-name = 'Live Preview'
-shortcut = 'cmd+ctrl+opt+p'
-symbolIconName = 'livephoto'
+bundleIdentifier = 'com.kagi.kagimacOS'
+iconPath = '/Applications/Orion.app/Contents/Resources/AppIcon.icns'
+name = 'Orion'
 
 [[profiles.workspaces.apps]]
 bundleIdentifier = 'org.mozilla.firefox'
@@ -180,3 +177,92 @@ name = 'Reminders'
 bundleIdentifier = 'md.obsidian'
 iconPath = '/Applications/Obsidian.app/Contents/Resources/icon.icns'
 name = 'Obsidian'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'cmd+ctrl+opt+shift+c'
+display = 'Built-in Retina Display'
+id = '83E1DD99-A386-4CB4-849B-17F33F24D394'
+name = 'AI'
+shortcut = 'cmd+ctrl+opt+c'
+symbolIconName = 'sparkles'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.4B3D78A6-9751-4720-AB8D-48B7D7C66A00'
+iconPath = '/Users/max/Applications/T3 Chat.app/Contents/Resources/ApplicationIcon.icns'
+name = 'T3 Chat'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.9247C344-0C32-405F-9557-495E33E5F0BA'
+iconPath = '/Users/max/Applications/ChatGPT.app/Contents/Resources/ApplicationIcon.icns'
+name = 'ChatGPT'
+
+[[profiles.workspaces]]
+display = 'Built-in Retina Display'
+id = '1137FCDB-FE61-4051-A56F-57D8F9336695'
+name = 'Preview'
+shortcut = 'cmd+ctrl+opt+p'
+symbolIconName = 'doc.append'
+
+[profiles.workspaces.appToFocus]
+bundleIdentifier = 'com.mitchellh.ghostty'
+iconPath = '/Applications/Ghostty.app/Contents/Resources/AppIcon.icns'
+name = 'Ghostty'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.mitchellh.ghostty'
+iconPath = '/Applications/Ghostty.app/Contents/Resources/AppIcon.icns'
+name = 'Ghostty'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.kagi.kagimacOS'
+iconPath = '/Applications/Orion.app/Contents/Resources/AppIcon.icns'
+name = 'Orion'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'net.sourceforge.skim-app.skim'
+iconPath = '/Applications/Skim.app/Contents/Resources/Skim.icns'
+name = 'Skim'
+
+[[profiles.workspaces]]
+display = 'Built-in Retina Display'
+id = '557EF6AA-1BA1-4B40-965F-A936AAEE5040'
+name = 'Finder'
+shortcut = 'cmd+ctrl+opt+f'
+symbolIconName = 'faceid'
+
+[profiles.workspaces.appToFocus]
+bundleIdentifier = 'com.apple.finder'
+iconPath = '/System/Library/CoreServices/Finder.app/Contents/Resources/Finder.icns'
+name = 'Finder'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.finder'
+iconPath = '/System/Library/CoreServices/Finder.app/Contents/Resources/Finder.icns'
+name = 'Finder'
+
+[[profiles.workspaces]]
+apps = []
+assignAppShortcut = 'cmd+ctrl+opt+shift+2'
+display = 'Built-in Retina Display'
+id = '76FA93DE-029D-4B6B-A349-683674ABA90C'
+name = '2'
+shortcut = 'cmd+ctrl+opt+2'
+symbolIconName = '2.square.fill'
+
+[[profiles.workspaces]]
+apps = []
+assignAppShortcut = 'cmd+ctrl+opt+shift+3'
+display = 'Built-in Retina Display'
+id = '6B3C7ED5-0E6D-438B-8CFF-FA7F1907F1F8'
+name = '3'
+shortcut = 'cmd+ctrl+opt+3'
+symbolIconName = '3.square.fill'
+
+[[profiles.workspaces]]
+apps = []
+assignAppShortcut = 'cmd+ctrl+opt+shift+4'
+display = 'Built-in Retina Display'
+id = '996D367D-D0AD-4551-9C13-2E326F3A5308'
+name = '4'
+shortcut = 'cmd+ctrl+opt+4'
+symbolIconName = '4.square.fill'

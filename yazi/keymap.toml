@@ -2,78 +2,101 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[[manager.prepend_keymap]]
-on = "P"
-run = '''
-  shell 'qlmanage -p "$@"'
-'''
+[[mgr.prepend_keymap]]
+on   = [ "m", "z" ]
+run = """
+shell --block -- paths=$(for path in "$@"; do echo "${path#"$PWD/"}"; done); zip -r archive.zip $paths
+"""
+desc = "Zip selected files into archive.zip"
 
-[[manager.prepend_keymap]]
+# [[mgr.prepend_keymap]]
+# on   = [ "" ]
+# run  = "shell --block 'lazygit'"
+# desc = "Open LayzGit"
+
+[[mgr.prepend_keymap]]
+on = "<C-p>"
+run = "shell 'cb paste' --block"
+desc = "Paste from system clipboard" 
+
+[[mgr.prepend_keymap]]
+on = "<C-y>"
+run = "shell 'cb copy $@' --block"
+desc = "Copy to system clipboard" 
+
+
+# [[mgr.prepend_keymap]]
+# on = "P"
+# run = '''
+#   shell 'qlmanage -p "$@"'
+# '''
+
+[[mgr.prepend_keymap]]
 on   = [ ".", "f" ]
 run  = "finder update"
 desc = "Open Finder at this location"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ ".", "F" ]
 run  = "finder cd"
 desc = "go to the Finder location"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<Tab>"
 run = "spot"
 desc = "Spot hovered file"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = "O"
 run  = "plugin open-with-cmd block"
 desc = "Open with command in the terminal"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "k" ]
-run  = "cd ~/code"
-desc = "~/code"
+run  = "cd ~/dev"
+desc = "~/dev"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "v" ]
 run  = "cd /Volumes"
 desc = "Go to /Volumes"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "n" ]
 run  = "cd ~/.config/nix"
 desc = "Go to ~/dotfiles"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "r" ]
 run  = "cd ~/dotfiles"
 desc = "Go to ~/dotfiles"
 
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ ".", "a" ]
 run  = "shell 'mkdir $(date +%Y-%m-%d)'"
 desc = "Create a directory with the current date as name"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ ".", "r" ]
 run  = "shell 'rmdir $(date +%Y-%m-%d)'"
 desc = "Remove a directory with the current date as name"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = [ "l" ]
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "c", "m" ]
 run  = "plugin chmod"
 desc = "Chmod on selected files"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = "F"
 run  = "plugin smart-filter"
 desc = "Smart filter"
 
 
-[manager]
+[mgr]
 keymap = [
 	{ on = [ "!" ], run = "hidden",             desc = "" },
 	{ on = [ "<Esc>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },

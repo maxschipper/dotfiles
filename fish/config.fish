@@ -4,6 +4,7 @@ if status is-interactive
     ### ADD TO $PATH
     fish_add_path $HOME/.local/bin
     fish_add_path $XDG_DATA_HOME/go/bin #     Go
+    abbr -a gox 'go tool'
     fish_add_path $XDG_DATA_HOME/cargo/bin #  Rust
     fish_add_path $XDG_DATA_HOME/npm/bin #    Node.js
     fish_add_path /usr/local/opt/llvm/bin #   LLVM
@@ -17,17 +18,22 @@ if status is-interactive
     abbr -a llst 'lsd --long --tree --total-size -S'
 
     alias cd='z'
+    alias man=batman
     abbr -a rls 'source ~/.config/fish/config.fish'
-    alias rmds='rm .DS_Store'
+    abbr -a rmds 'rm .DS_Store'
     alias rmdsall="find . -type f -name '.DS_Store' -ls -delete"
     alias cl='clear && ls'
     alias clf='clear && fastfetch'
     abbr -a c clear
     alias lg='lazygit'
+    abbr -a lj lazyjj
+    abbr --command jj -a sp split
+    abbr -a jjcd 'cd $(jj root --ignore-working-copy)'
     alias f='y'
     alias hxx='hx .'
     alias todo='glow .todo.md'
     abbr -a todos 'rg --color=always "TODO:" --hidden .'
+    abbr -a --set-cursor rgg 'rg --color=always --smart-case --hidden "%" .'
     abbr -a gitinit 'git init && git add . && git commit -m "Initial commit"'
     abbr -a gorun 'clear && go run main.go'
     alias make='gmake'
@@ -39,6 +45,9 @@ if status is-interactive
     # alias man='man -P bat'
     abbr -a zs 'zellij attach --create-background'
     abbr -a dotfiles zellij attach -c "' dotfiles'"
+    abbr -a cn 'zellij action rename-tab ""'
+    abbr -a templui 'go tool templui'
+    abbr --set-cursor --command zk -a new 'new -t "%"'
 
     # downloads the yt video and extracts the audio
     abbr -a --set-cursor mp3dl yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 \"%\"
@@ -57,6 +66,8 @@ if status is-interactive
     # ENVIRONMENT VARIABLES
 
     set -gx EDITOR hx
+
+    set -gx RISCV "$HOME/.local/bin/spike"
 
     # Set XDG Base Directories according to the standard
     set -gx XDG_DATA_HOME "$HOME/.local/share"
@@ -84,8 +95,8 @@ if status is-interactive
     set -gx DOCKER_HOST "ssh://max@192.168.178.176/run/user/1000/podman/podman.sock"
 
     #### STARSHIP START
-    starship init fish | source
     set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+    starship init fish | source
     # enables the transient prompt for starship
     enable_transience
     #### STARSHIP END
@@ -110,9 +121,11 @@ if status is-interactive
     #     end
     # end
     # Check if we're in Zellij and set empty tab name on shell startup
-    if test -n "$ZELLIJ"
-        zellij action rename-tab ""
-    end
+
+    # clear the zellij tab name
+    # if test -n "$ZELLIJ"
+    #     zellij action rename-tab ""
+    # end
 
     # zoxide setup | needs to be at the end
     zoxide init fish | source

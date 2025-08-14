@@ -12,10 +12,18 @@ keybinds clear-defaults=true {
         bind "Super l" { MoveFocusOrTab "Right"; }
         bind "Super j" { MoveFocus "Down"; }
         bind "Super k" { MoveFocus "Up"; }
+
+        bind "Super Shift h" { MovePane "Left"; }
+        bind "Super Shift j" { MovePane "Down"; }
+        bind "Super Shift k" { MovePane "Up"; }
+        bind "Super Shift l" { MovePane "Right"; }
+
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
+
         bind "Super ;" { PreviousSwapLayout; }
         bind "Super ," { NextSwapLayout; }
+
         bind "Super n" { NewPane; }
         bind "Super w" { CloseFocus; }
         bind "Super m" { ToggleFloatingPanes; }
@@ -409,7 +417,7 @@ mirror_session true
 // May need to be disabled for certain unsupported terminals
 // Default: true
 //
-// styled_underlines false
+styled_underlines true
 
 // Enable or disable writing of session metadata to disk (if disabled, other sessions might not know
 // metadata info on this session)

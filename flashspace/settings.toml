@@ -17,13 +17,17 @@ focusLeft = 'cmd+ctrl+opt+h'
 focusNextWorkspaceWindow = 'cmd+ctrl+opt+tab'
 focusRight = 'cmd+ctrl+opt+l'
 focusUp = 'cmd+ctrl+opt+k'
+keepUnassignedAppsOnSwitch = false
 menuBarDisplayAliases = 'Built-in Retina Display=Main;Optix MAG27CQ=Secondary'
 menuBarTitleTemplate = '$WORKSPACE'
 pipApps = []
+pipScreenCornerOffset = 15
+restoreHiddenAppsOnSwitch = true
 runScriptOnLaunch = ''
 runScriptOnProfileChange = ''
 runScriptOnWorkspaceChange = ''
 showFloatingNotifications = true
+showMenuBarIcon = true
 showMenuBarTitle = false
 showSpaceControl = 'cmd+ctrl+opt+space'
 skipEmptyWorkspacesOnSwitch = true
@@ -53,3 +57,18 @@ name = 'System Settings'
 bundleIdentifier = 'org.pqrs.Karabiner-EventViewer'
 iconPath = '/Applications/Karabiner-EventViewer.app/Contents/Resources/app.icns'
 name = 'Karabiner-EventViewer'
+
+[[floatingApps]]
+bundleIdentifier = 'com.dortania.opencore-legacy-patcher'
+iconPath = '/Library/Application Support/Dortania/OpenCore-Patcher.app/Contents/Resources/OC-Patcher.icns'
+name = 'OpenCore-Patcher'
+
+[[floatingApps]]
+bundleIdentifier = 'net.sourceforge.skim-app.skim'
+iconPath = '/Applications/Skim.app/Contents/Resources/Skim.icns'
+name = 'Skim'
+
+[[floatingApps]]
+bundleIdentifier = 'com.apple.Safari.WebApp.9BF81699-0C74-441E-B486-6C1B281ABE9A'
+iconPath = '/Users/max/Applications/Telegram Web.app/Contents/Resources/ApplicationIcon.icns'
+name = 'Telegram Web'

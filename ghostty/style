@@ -5,8 +5,9 @@ theme = catppuccin-macchiato
 # custom-shader = shaders/starfield.glsl
 
 
-background-opacity = .7
-background-blur-radius = 70
+# background-opacity = .7
+# background-opacity = .88
+# background-blur-radius = 70
 
 selection-foreground = 
 selection-background = 
@@ -43,7 +44,7 @@ macos-titlebar-style = hidden
 macos-window-shadow = true
 
 # Custom app icon
-macos-icon = custom-style
+# macos-icon = custom-style
 # aluminum, beige, plastic, chrome
 macos-icon-frame = plastic
 macos-icon-ghost-color = #FF8F8B

@@ -111,6 +111,7 @@ X     = "extend_line_above"
 ret   = "insert_newline" # ret = ["open_below", "normal_mode"]
 tab   = "indent"
 S-tab = "unindent"
+"+" = "@ms*"
 
 minus = "search"
 "," = "command_mode"
@@ -130,11 +131,21 @@ C-l = ["delete_selection", "move_char_right", "paste_before"]
 # if you want to paste text you previously deleted with d you can use <P>
 
 # use the system clipboard for yank, to use the default use Y/P
-y = "yank_to_clipboard"
-p = "paste_clipboard_after"
-P = "paste_after"
-Y = "yank"
-R = "replace_selections_with_clipboard"
+# y = "yank_to_clipboard"
+# p = "paste_clipboard_after"
+# P = "paste_after"
+# Y = "yank"
+# R = "replace_selections_with_clipboard"
+
+# use cb clipboard
+y = "@:pipe-to cb copy_hx<ret>"
+p = "@p:insert-output cb paste_hx<ret>"
+R = "@d:insert-output cb paste_hx<ret>"
+D = "@:pipe cb copy_hxdel<ret>"
+
+# system clipboard
+Y = "yank_to_clipboard"
+P = "paste_clipboard_after"
 
 [keys.select]
 k = ["extend_line_up", "extend_to_line_bounds"]
@@ -144,6 +155,10 @@ y = "@\"+Y"
 p = "@\"+P"
 P = "paste_after"
 Y = "yank"
+[keys.normal.space.d]
+d = "diagnostics_picker"
+n = "goto_next_diag"
+p = "goto_prev_diag"
 
 
 [keys.normal.space]
@@ -204,4 +219,4 @@ l.i = '@oh.Logger.Info("")<esc>2hi'
 l.d = '@oh.Logger.Debug("")<esc>2hi'
 
 # log add - adds yanked var to existing log entry
-l.a = '@gli, "", <esc>4hp3lp'
+l.a = '@gli, "", <esc>4hp3lP'

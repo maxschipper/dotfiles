@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 ratio = [1,2,3]
 show_hidden = true
 show_symlink = true
@@ -16,6 +16,9 @@ quicklook = [
 glow = [
 	{ run = 'glow -p "$@"', block = true, orphan = false, for = "macos", desc = "open using glow" },
 ]
+skim = [
+	{ run = 'open -a Skim "$@"', block = false, orphan = true, for = "macos", desc = "open using SkimPDF" },
+]
 
 [open]
 prepend_rules = [
@@ -26,7 +29,7 @@ prepend_rules = [
 	{ name = "*.jpeg", use = "quicklook" },
 	{ name = "*.png", use = "quicklook" },
 	{ name = "*.heic", use = "quicklook" },
-	{ name = "*.pdf", use = "quicklook" },
+	{ name = "*.pdf", use = [ "quicklook" , "skim" ] },
 	{ name = "*.mp3", use = "quicklook" },
 	{ name = "*.wav", use = "quicklook" },
 	{ name = "*.key", use = [ "quicklook", "open" ] },
