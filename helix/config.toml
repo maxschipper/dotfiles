@@ -8,7 +8,7 @@ completion-timeout = 50
 #rulers         = [80, 120]
 cursorline      = true
 # cursorcolumn    = true
-bufferline      = "multiple"
+bufferline      = "always"
 line-number     = "relative"
 scrolloff       = 8
 shell           = ["fish", "-c"]
@@ -42,15 +42,26 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control","separator","file-name"]
+# left = ["mode", "spinner", "version-control"] #"file-name","file-absolute-path"
+# # center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
 # center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
-center = ["read-only-indicator","file-modification-indicator","file-absolute-path","file-modification-indicator", "read-only-indicator"]
-right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-type"]
+# # right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-type"]
+# right = ["diagnostics",  "position", "position-percentage", "total-line-numbers", "file-encoding", "separator", "file-type"]
+
+
+# center = ["file-name"]
+# right = ["diagnostics",  "position", "position-percentage", "total-line-numbers", "file-encoding", "separator", "file-type"]
+# "version-control"
+left = ["mode", "spinner", "file-modification-indicator", "file-absolute-path", "file-modification-indicator", "read-only-indicator"]
+right = ["diagnostics", "version-control", "separator", "file-type", "separator",  "position", "position-percentage", "total-line-numbers", "file-encoding"]
+
+
+
 # separator   = "│"
 separator   = " ⏽"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+mode.normal = "NORMAL "
+mode.insert = "INSERT "
+mode.select = "SELECT "
 
 [editor.lsp]
 display-inlay-hints = true
@@ -66,7 +77,7 @@ tab     = "all"
 
 [editor.whitespace.characters]
 space   = " "
-nbsp    = "⍽"    # Non Breaking SPace
+nbsp    = "⍽"    # Non Breaking Space
 nnbsp   = "␣"
 tab     = "→"
 newline = "⏎"
@@ -81,7 +92,7 @@ skip-levels = 1
 enable            = true
 max-wrap          = 25
 max-indent-retain = 40
-wrap-indicator    = " ↪"
+wrap-indicator    = "↪"
 
 [editor.file-picker]
 hidden    = false
@@ -100,8 +111,10 @@ X     = "extend_line_above"
 ret   = "insert_newline" # ret = ["open_below", "normal_mode"]
 tab   = "indent"
 S-tab = "unindent"
+"+" = "@ms*"
 
 minus = "search"
+"," = "command_mode"
 
 w = "move_prev_word_start"
 
@@ -118,11 +131,21 @@ C-l = ["delete_selection", "move_char_right", "paste_before"]
 # if you want to paste text you previously deleted with d you can use <P>
 
 # use the system clipboard for yank, to use the default use Y/P
-y = "yank_to_clipboard"
-p = "paste_clipboard_after"
-P = "paste_after"
-Y = "yank"
-R = "replace_selections_with_clipboard"
+# y = "yank_to_clipboard"
+# p = "paste_clipboard_after"
+# P = "paste_after"
+# Y = "yank"
+# R = "replace_selections_with_clipboard"
+
+# use cb clipboard
+y = "@:pipe-to cb copy_hx<ret>"
+p = "@p:insert-output cb paste_hx<ret>"
+R = "@d:insert-output cb paste_hx<ret>"
+D = "@:pipe cb copy_hxdel<ret>"
+
+# system clipboard
+Y = "yank_to_clipboard"
+P = "paste_clipboard_after"
 
 [keys.select]
 k = ["extend_line_up", "extend_to_line_bounds"]
@@ -132,18 +155,42 @@ y = "@\"+Y"
 p = "@\"+P"
 P = "paste_after"
 Y = "yank"
+[keys.normal.space.d]
+d = "diagnostics_picker"
+n = "goto_next_diag"
+p = "goto_prev_diag"
+
 
 
 [keys.normal.space]
 w = ":write"
 q = ":quit"
-e = ":buffer-close"
+Q = ":buffer-close"
 0 = ":quit!"
-1 = ":write-quit"
+
+# F = "file_picker"
 # only switched <f> and <F>
 # f = "file_picker_in_current_directory"
-f = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
-# F = "file_picker"
+
+# floating
+# f = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
+
+# fullscreen
+y = ":sh zellij run -n 'Yazi File Picker for Helix' -c -- bash ~/.config/helix/yazi-picker_in-place.sh open"
+
+# standalone script
+# f = ":sh $HOME/.config/helix/yazi-picker_full.sh"
+# f = ":sh zellij run -n 'Yazi File Picker for Helix' -c -- bash ~/.config/helix/yazi-picker_full.sh && zellij action toggle-fullscreen"
+
+# once https://github.com/helix-editor/helix/pull/12527 is released
+# E = [
+#     ":sh rm -f /tmp/unique-file-h21a434",
+#     ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+#     ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+#     ":open %sh{cat /tmp/unique-file-h21a434}",
+#     ":redraw"
+#     ]
+
 # runs toggle_script on the last word in the current line
 # see toggle_script at fish/functions/toggle_script.fish
 l = "@glbe|toggle_script<ret>"
@@ -154,3 +201,23 @@ l = "@glbe|toggle_script<ret>"
 u = "switch_to_uppercase"
 l = "switch_to_lowercase"
 t = "switch_case"
+
+##################
+#    SNIPPETS    #
+##################
+[keys.normal.space.n]
+# if err not nil with error log
+n = '''@oif err != nil {<esc>doh.Logger.Error("", "err", err)<esc>o<backspace>}<esc>kgl13hi'''
+
+# if err != nil snippet
+e = '''@oif err != nil {
+}<esc>ko<tab>'''
+
+# log <level> - adds log with the given level
+l.e = '@oh.Logger.Error("", "err", err)<esc>14hi'
+l.w = '@oh.Logger.Warn("")<esc>2hi'
+l.i = '@oh.Logger.Info("")<esc>2hi'
+l.d = '@oh.Logger.Debug("")<esc>2hi'
+
+# log add - adds yanked var to existing log entry
+l.a = '@gli, "", <esc>4hp3lP'
