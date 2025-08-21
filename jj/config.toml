@@ -1,0 +1,8 @@
+[user]
+name = "Max Schipper"
+email = "max.schipper1@gmx.de"
+
+[ui]
+default-command = "log"
+merge-editor = ":builtin"
+movement.edit = true
