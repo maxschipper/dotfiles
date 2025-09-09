@@ -1,8 +1,9 @@
 [mgr]
-ratio = [1,2,3]
+# ratio = [1,2,3]
+ratio = [2,4,4]
 show_hidden = true
 show_symlink = true
-title_format = "yazi"
+# title_format = "{cwd}"
 
 [preview]
 wrap = "yes"
@@ -10,35 +11,43 @@ max_width = 3000
 max_height = 3000
 
 [opener]
-# quicklook = [
-# 	{ run = 'qlmanage -p "$@" >/dev/null 2>/dev/null', orphan = true, for = "macos", desc = "open using the MacOS Quicklook" },
-# ]
+
+
+edit = [
+	# { run = '$XDG_CONFIG_HOME/yazi/helix-with-title.sh "$@"', block = true, for = "unix" },
+	{ run = '$HOME/.config/yazi/helix-with-title.sh "$@"', block = true, for = "unix" },
+]
 glow = [
-	{ run = 'glow -p "$@"', block = true, orphan = false, for = "macos", desc = "open using glow" },
+	{ run = 'glow -p "$@"', block = true, orphan = false, for = "unix", desc = "open using glow" },
+]
+imv = [
+	{ run = 'imv "$@"', block = true, orphan = false, for = "linux", desc = "open using imv" },
+]
+mpv = [
+	{ run = 'mpv "$@"', orphan = true, for = "linux", desc = "open using mpv" },
+]
+zathura = [
+	{ run = 'zathura "$@"', orphan = true, for = "unix", desc = "open using zathura" },
+]
+dragondrop = [
+	{ run = 'dragon-drop -x -a "$@"', block = true, orphan = false, for = "linux", desc = "Drag and Drop" },
 ]
 
 [open]
 prepend_rules = [
-  # { mime = "{image,audio,video}/*", use = "quicklook"},
-  # { name = "*.json", use = "edit" },
-	# { name = "*.html", use = [ "open", "edit" ] },
-	{ name = "*.jpg", use = "quicklook" },
-	{ name = "*.jpeg", use = "quicklook" },
-	{ name = "*.png", use = "quicklook" },
-	{ name = "*.heic", use = "quicklook" },
-	{ name = "*.pdf", use = "quicklook" },
-	{ name = "*.mp3", use = "quicklook" },
-	{ name = "*.wav", use = "quicklook" },
-	{ name = "*.key", use = [ "quicklook", "open" ] },
-	{ name = "*.pages", use = [ "quicklook", "open" ] },
-	{ name = "*.doc", use = [ "quicklook", "open" ] },
-	{ name = "*.docx", use = [ "quicklook", "open" ] },
+  { mime = "image/*", use = "imv"},
+  { mime = "{audio,video}/*", use = "mpv"},
+	{ name = "*.pdf", use = ["zathura","open"] },
+	# { name = "*.key", use = [ "quicklook", "open" ] },
+	# { name = "*.pages", use = [ "quicklook", "open" ] },
+	# { name = "*.doc", use = [ "quicklook", "open" ] },
+	# { name = "*.docx", use = [ "quicklook", "open" ] },
 
 	{ name = "*.md", use = [ "edit", "glow" ] },
 ]
-# append_rules = [
-# 	{ name = "*", use = [ "edit" ,"quicklook" ] },
-# ]
+append_rules = [
+	{ name = "*", use = [ "edit" ,"open" , "dragondrop" ] },
+]
 
 
 
@@ -77,15 +86,15 @@ append_previewers = [
 ]
 
 
-# [[plugin.prepend_fetchers]]
-# id   = "git"
-# name = "*"
-# run  = "git"
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
 
-# [[plugin.prepend_fetchers]]
-# id   = "git"
-# name = "*/"
-# run  = "git"
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
 
 # [[plugin.prepend_fetchers]]
 # id   = "mime"
