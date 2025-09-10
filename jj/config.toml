@@ -1,8 +1,10 @@
 [user]
-name = "Max Schipper"
-email = "max.schipper1@gmx.de"
+name = "Max S"
+email = "150921823+maxschipper@users.noreply.github.com"
 
 [ui]
 default-command = "log"
 merge-editor = ":builtin"
 movement.edit = true
+pager = "less -FRX"
+paginate = "auto"
