@@ -1,3 +1,30 @@
 [ui]
   highlight_dark = "#5b6078" # default "#282a36"
   # auto_refresh_interval = 0
+
+  
+[custom_commands]
+# "show diff" = { key = ["U"], args = ["diff", "-r", "$change_id", "--color", "always"], show = "diff" }
+# "show oplog diff" = { key = ["ctrl+o"], args = ["op", "show",  "$operation_id", "--color", "always"], show = "diff" }
+# "resolve vscode" = { key = ["R"], args = ["resolve", "--tool", "vscode"], show = "interactive" }
+# "new main" = { args = ["new", "main"] }
+# "tug" = { key = ["ctrl+t"], args = ["bookmark", "move", "--from", "closest_bookmark($change_id)", "--to", "closest_pushable($change_id)"] }
+
+# "edit file" = { args }
+
+
+
+[custom_commands."new note commit"]
+key = ["N"]
+args = ["new", "--no-edit", "-A", "$change_id"]
+
+
+[leader.e]
+context = [ "$file", "$change_id" ]
+help = "Edit file in @"
+send = [ "$", "$EDITOR $file", "enter" ]
+
+[leader.E]
+context = [ "$file", "$change_id" ]
+help = "Edit file in change"
+send = [ "$", "jj edit $change_id && $EDITOR $file", "enter" ]
