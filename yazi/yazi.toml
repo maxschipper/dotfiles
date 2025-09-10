@@ -13,37 +13,19 @@ max_height = 3000
 [opener]
 
 
-edit = [
-	# { run = '$XDG_CONFIG_HOME/yazi/helix-with-title.sh "$@"', block = true, for = "unix" },
-	{ run = '$HOME/.config/yazi/helix-with-title.sh "$@"', block = true, for = "unix" },
-]
-glow = [
-	{ run = 'glow -p "$@"', block = true, orphan = false, for = "unix", desc = "open using glow" },
-]
-imv = [
-	{ run = 'imv "$@"', block = true, orphan = false, for = "linux", desc = "open using imv" },
-]
-mpv = [
-	{ run = 'mpv "$@"', orphan = true, for = "linux", desc = "open using mpv" },
-]
-zathura = [
-	{ run = 'zathura "$@"', orphan = true, for = "unix", desc = "open using zathura" },
-]
-dragondrop = [
-	{ run = 'dragon-drop -x -a "$@"', block = true, orphan = false, for = "linux", desc = "Drag and Drop" },
-]
+edit = [ { run = '$HOME/.config/yazi/helix-with-title.sh "$@"', block = true, for = "unix" } ]
+glow = [ { run = 'glow -p "$@"', block = true, orphan = false, for = "unix", desc = "open using glow" } ]
+imv = [ { run = 'imv "$@"', block = true, orphan = false, for = "linux", desc = "open using imv" } ]
+mpv = [ { run = 'mpv "$@"', orphan = true, for = "linux", desc = "open using mpv" } ]
+zathura = [ { run = 'zathura "$@"', orphan = true, for = "unix", desc = "open using zathura" } ]
+dragondrop = [ { run = 'dragon-drop -x -a "$@"', block = true, orphan = false, for = "linux", desc = "Drag and Drop" } ]
 
 [open]
 prepend_rules = [
   { mime = "image/*", use = "imv"},
   { mime = "{audio,video}/*", use = "mpv"},
-	{ name = "*.pdf", use = ["zathura","open"] },
-	# { name = "*.key", use = [ "quicklook", "open" ] },
-	# { name = "*.pages", use = [ "quicklook", "open" ] },
-	# { name = "*.doc", use = [ "quicklook", "open" ] },
-	# { name = "*.docx", use = [ "quicklook", "open" ] },
-
-	{ name = "*.md", use = [ "edit", "glow" ] },
+  { name = "*.pdf", use = ["zathura","open"] },
+  { name = "*.md", use = [ "edit", "glow" ] },
 ]
 append_rules = [
 	{ name = "*", use = [ "edit" ,"open" , "dragondrop" ] },
@@ -53,36 +35,45 @@ append_rules = [
 
 [plugin]
 prepend_previewers = [
-	# Archive previewer
-	{ mime = "application/*zip",            run = "ouch" },
-	{ mime = "application/x-tar",           run = "ouch" },
-	{ mime = "application/x-bzip2",         run = "ouch" },
-	{ mime = "application/x-7z-compressed", run = "ouch" },
-	{ mime = "application/x-rar",           run = "ouch" },
-	{ mime = "application/x-xz",            run = "ouch" },
-	# mediainfo
+  # Archive previewer
+  { mime = "application/*zip",            run = "ouch" },
+  { mime = "application/x-tar",           run = "ouch" },
+  { mime = "application/x-bzip2",         run = "ouch" },
+  { mime = "application/x-7z-compressed", run = "ouch" },
+  { mime = "application/x-rar",           run = "ouch" },
+  { mime = "application/x-xz",            run = "ouch" },
+  # mediainfo
   { mime = "{image,audio,video}/*", run = "mediainfo"},
   { mime = "application/subrip", run = "mediainfo"},
 
-	# not working??
+  # not working??
   # { mime = "application/octet-stream", run = "hexyl"},
 
-	# Markdown
-  { name = "*.md*", run = "glow" },
+  # Markdown
+  # { name = "*.md*", run = "glow" },
   # { name = "*.md", run = "mdcat" },
 
-	# Rich (slow, dont use for md or code)
+  # Rich (slow, dont use for md or code)
   { name = "*.csv*", run = "rich-preview"}, # for csv files
-  # { name = "*.md", run = "rich-preview" }, # for markdown (.md) files
   { name = "*.rst*", run = "rich-preview"}, # for restructured text (.rst) files
   { name = "*.ipynb*", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
-  # { name = "*.json*", run = "rich-preview"}, # for json (.json) files
+
+  #piper
+  { name = "*.tar*", run  = 'piper --format=url -- tar tf "$1"' },
+  { name = "*.json*", run  = 'piper -- bat -p --color=always "$1"' },
+  { name = "*.md*", run  = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+
+
+
+
+
 ]
 
 append_previewers = [
-	# Binary previewer
+  # Binary previewer
   # { mime = "text/*", run = "code"},
-  { name = "*", run = "hexyl" },
+  { name = "*",run  = 'piper -- hexyl --border=none --terminal-width=$w "$1"'},
+  # { name = "*", run = "hexyl" },
 ]
 
 

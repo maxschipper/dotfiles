@@ -1,6 +1,8 @@
 require("full-border"):setup()
 require("git"):setup()
+require("recycle-bin"):setup()
 
+--[[
 require("starship"):setup({
     -- Hide flags (such as filter, find and search). This is recommended for starship themes which
     -- are intended to go across the entire width of the terminal.
@@ -10,8 +12,9 @@ require("starship"):setup({
     -- Custom starship configuration file to use
     -- config_file = "~/.config/starship_full.toml", -- Default: nil
 })
+--]]
 
 -- removes the top header line
 require("yatline"):setup({
-	-- display_header_line = false,
+	display_header_line = false,
 })

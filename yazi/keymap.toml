@@ -2,6 +2,22 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
+
+[[mgr.prepend_keymap]]
+on = [ ".", "s" ]
+run  = "plugin what-size"
+desc = "Calc size of selection or cwd" 
+
+[[mgr.prepend_keymap]]
+on   = [ "m", "c" ]
+run  = "plugin git-files"
+desc = "Show Git file changes"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a"]
+run = "plugin copy-file-contents"
+desc = "Copy contents of file"
+
 [[mgr.prepend_keymap]]
 on = "<Tab>"
 run = "spot"
@@ -37,6 +53,45 @@ desc = "~/dev"
 on   = [ "g", "n" ]
 run  = "cd ~/nix"
 desc = "Go to ~/nix"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "t" ]
+run  = "plugin recycle-bin open"
+desc = "Go to Trash"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "r" ]
+run  = "plugin cd-git-root"
+desc = "Go to git repo root"
+
+# Recycle-bin plugin
+
+[[mgr.prepend_keymap]]
+# open the trash
+on = [ "R", "o", ]
+run = "plugin recycle-bin open"
+desc = "Open Trash"
+
+[[mgr.prepend_keymap]]
+# Empty the trash
+on = [ "R", "e", ]
+run = "plugin recycle-bin empty"
+desc = "Empty Trash" 
+[[mgr.prepend_keymap]]
+# Delete selected items from trash
+on = [ "R", "d", ]
+run = "plugin recycle-bin delete"
+desc = "Delete from Trash" 
+[[mgr.prepend_keymap]]
+# Empty trash by days since deleted
+on = [ "R", "D", ]
+run = "plugin recycle-bin emptyDays"
+desc = "Empty by days deleted" 
+[[mgr.prepend_keymap]]
+# Restore selected items from trash
+on = [ "R", "r", ]
+run = "plugin recycle-bin restore"
+desc = "Restore from Trash" 
 
 
 
@@ -213,7 +268,7 @@ keymap = [
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
-	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },
+	{ on = [ "g", "T" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
 
 	# Help
@@ -376,3 +431,4 @@ keymap = [
 	# Filtering
 	{ on = [ "/" ], run = "filter", desc = "Apply a filter for the help items" },
 ]
+
