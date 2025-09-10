@@ -10,30 +10,30 @@
     "width": 11
   },
   "display": {
-      "separator": "",     // Separator between keys and values
-      // "constants": ["\u001b[37m", "\u001b[38;5;16m", "\u001b[38;5;17m", "\u001b[38;5;18m"],
-      "constants": ["\u001b[37m", "\u001b[90m", "\u001b[38;5;17m", "\u001b[38;5;18m"],
+    "separator": "", // Separator between keys and values
+    // "constants": ["\u001b[37m", "\u001b[38;5;16m", "\u001b[38;5;17m", "\u001b[38;5;18m"],
+    "constants": [
+      "\u001b[37m",
+      "\u001b[90m",
+      "\u001b[38;5;17m",
+      "\u001b[38;5;18m"
+    ],
+    "color": {
+      "keys": "black", // Key color
+      "title": "black" // Title color
+    },
+    "key": {
+      "width": 15, // Aligns keys to this width
+      "type": "string" // string, icon, both, or none
+    },
+    "percent": {
+      "type": 2, // 1=number, 2=bar, 3=both, 9=colored number
       "color": {
-          "keys": "black",    // Key color
-          "title": "black"     // Title color
-      },
-      "key": {
-          "width": 15,       // Aligns keys to this width
-          "type": "string"   // string, icon, both, or none
-      },
-      "bar": {
-          "width": 5,       // Width of percentage bars
-          "charElapsed": "", // Character for elapsed portion
-          "charTotal": ""   // Character for total portion
-      },
-      "percent": {
-          "type": 2,         // 1=number, 2=bar, 3=both, 9=colored number
-          "color": {
-              "green": "white",
-              "yellow": "light_yellow",
-              "red": "light_red"
-          }
+        "green": "white",
+        "yellow": "light_yellow",
+        "red": "light_red"
       }
+    }
   },
   "modules": [
     "break",
@@ -41,10 +41,10 @@
       "type": "custom",
       // "format": "\u001b[90m╭───┬────────┬───────────────────╮"
       "format": "{$2}╭───────────┬───────────────────╮"
-        // ╭─────┬─────╮
-        // │     │     │
-        // ├───────────┤
-        // ╰─────┴─────╯
+      // ╭─────┬─────╮
+      // │     │     │
+      // ├───────────┤
+      // ╰─────┴─────╯
     },
     {
       "type": "os",
