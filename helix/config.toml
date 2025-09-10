@@ -4,7 +4,8 @@ theme = "my-catppuccin_transparent"
 [editor]
 mouse           = true
 auto-completion = true
-completion-timeout = 50
+completion-timeout = 5
+idle-timeout = 250
 #rulers         = [80, 120]
 cursorline      = true
 # cursorcolumn    = true
@@ -42,21 +43,41 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-# left = ["mode", "spinner", "version-control"] #"file-name","file-absolute-path"
-# # center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
-# center = ["read-only-indicator","file-modification-indicator","file-name","file-modification-indicator", "read-only-indicator"]
-# # right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-type"]
-# right = ["diagnostics",  "position", "position-percentage", "total-line-numbers", "file-encoding", "separator", "file-type"]
+# "mode", "spinner", "file-name", "file-absolute-path", "file-base-name", "file-modification-indicator", "file-encoding", "file-line-ending", "file-indent-style", "read-only-indicator", "total-line-numbers", "file-type", "diagnostics", "workspace-diagnostics", "selections", "position", "position-percentage", "primary-selection-length", "separator", "spacer", "version-control", "register",
+
+# "spacer",
+left = [
+"mode",
+"spinner",
+"version-control",
+]
+center = [
+"read-only-indicator",
+"file-modification-indicator",
+"file-name",
+ # "file-absolute-path",
+# "file-base-name",
+"file-modification-indicator",
+"read-only-indicator",
+]
+right = [
+"diagnostics",
+"workspace-diagnostics",
+"register",
+# "file-type",
+"selections",
+"primary-selection-length",
+"position",
+"position-percentage",
+"total-line-numbers",
+"file-encoding",
+# "file-indent-style",
+# "file-line-ending",
+]
 
 
-# center = ["file-name"]
-# right = ["diagnostics",  "position", "position-percentage", "total-line-numbers", "file-encoding", "separator", "file-type"]
-# "version-control"
-left = ["mode", "spinner", "file-modification-indicator", "file-absolute-path", "file-modification-indicator", "read-only-indicator"]
-right = ["diagnostics", "version-control", "separator", "file-type", "separator",  "position", "position-percentage", "total-line-numbers", "file-encoding"]
-
-
-
+diagnostics = ["info","warning", "error"]
+workspace-diagnostics = ["info","warning", "error"]
 # separator   = "│"
 separator   = " ⏽"
 mode.normal = "NORMAL "
@@ -67,6 +88,7 @@ mode.select = "SELECT "
 display-inlay-hints = true
 display-messages = true
 auto-signature-help = true
+display-progress-messages = true
 
 [editor.whitespace.render]
 space   = "none"
@@ -131,21 +153,20 @@ C-l = ["delete_selection", "move_char_right", "paste_before"]
 # if you want to paste text you previously deleted with d you can use <P>
 
 # use the system clipboard for yank, to use the default use Y/P
-# y = "yank_to_clipboard"
-# p = "paste_clipboard_after"
-# P = "paste_after"
-# Y = "yank"
-# R = "replace_selections_with_clipboard"
+y = "yank_to_clipboard"
+p = "paste_clipboard_after"
+P = "paste_after"
+Y = "yank"
+R = "replace_selections_with_clipboard"
 
 # use cb clipboard
-y = "@:pipe-to cb copy_hx<ret>"
-p = "@p:insert-output cb paste_hx<ret>"
-R = "@d:insert-output cb paste_hx<ret>"
-D = "@:pipe cb copy_hxdel<ret>"
-
+# y = "@:pipe-to cb copy_hx<ret>"
+# p = "@p:insert-output cb paste_hx<ret>"
+# R = "@d:insert-output cb paste_hx<ret>"
+# D = "@:pipe cb copy_hxdel<ret>"
 # system clipboard
-Y = "yank_to_clipboard"
-P = "paste_clipboard_after"
+# Y = "yank_to_clipboard"
+# P = "paste_clipboard_after"
 
 [keys.select]
 k = ["extend_line_up", "extend_to_line_bounds"]
@@ -155,18 +176,19 @@ y = "@\"+Y"
 p = "@\"+P"
 P = "paste_after"
 Y = "yank"
-[keys.normal.space.d]
-d = "diagnostics_picker"
-n = "goto_next_diag"
-p = "goto_prev_diag"
 
 
+# command launcher
+[keys.normal.space.ret]
+t = ":sh chromium --app='http://localhost:23635'"
 
 [keys.normal.space]
 w = ":write"
 q = ":quit"
 Q = ":buffer-close"
 0 = ":quit!"
+
+n = "goto_next_diag"
 
 # F = "file_picker"
 # only switched <f> and <F>
@@ -176,7 +198,7 @@ Q = ":buffer-close"
 # f = ":sh zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
 
 # fullscreen
-y = ":sh zellij run -n 'Yazi File Picker for Helix' -c -- bash ~/.config/helix/yazi-picker_in-place.sh open"
+# y = ":sh zellij run -n 'Yazi File Picker for Helix' -c -- bash ~/.config/helix/yazi-picker_in-place.sh open"
 
 # standalone script
 # f = ":sh $HOME/.config/helix/yazi-picker_full.sh"
@@ -201,23 +223,3 @@ l = "@glbe|toggle_script<ret>"
 u = "switch_to_uppercase"
 l = "switch_to_lowercase"
 t = "switch_case"
-
-##################
-#    SNIPPETS    #
-##################
-[keys.normal.space.n]
-# if err not nil with error log
-n = '''@oif err != nil {<esc>doh.Logger.Error("", "err", err)<esc>o<backspace>}<esc>kgl13hi'''
-
-# if err != nil snippet
-e = '''@oif err != nil {
-}<esc>ko<tab>'''
-
-# log <level> - adds log with the given level
-l.e = '@oh.Logger.Error("", "err", err)<esc>14hi'
-l.w = '@oh.Logger.Warn("")<esc>2hi'
-l.i = '@oh.Logger.Info("")<esc>2hi'
-l.d = '@oh.Logger.Debug("")<esc>2hi'
-
-# log add - adds yanked var to existing log entry
-l.a = '@gli, "", <esc>4hp3lP'
