@@ -4,6 +4,10 @@ if status is-interactive
         fastfetch
     end
 
+    alias ls='lsd -AF'
+    alias ll='lsd -AF --group-directories-first --blocks git --blocks name --blocks permission --blocks user --blocks group --blocks size --blocks date --date relative'
+    alias l='lsd -AF1'
+
     #### STARSHIP START
     # starship init fish | source
     # set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
