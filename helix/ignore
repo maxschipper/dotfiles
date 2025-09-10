@@ -1,9 +1,8 @@
 .DS_Store
-Library/
 .github/
 node_modules/
 .cache/
-.Trash/
+Trash/
 cache/
 .pio*/
 bin/
@@ -11,7 +10,6 @@ bin/
 *.o
 *.bin
 *.class
-# makefile
 
 .localized
 *.png
