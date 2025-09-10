@@ -44,12 +44,12 @@
 "special" = "blue" # fuzzy highlight
 
 # MARKDOWN
-"markup.heading.marker" = { fg = "surface0", modifiers = ["dim", "italic"] }
-"markup.heading.1" = { bg = "teal" }
-"markup.heading.2" = { bg = "mauve" }
-"markup.heading.3" = { bg = "green" }
-"markup.heading.4" = { bg = "yellow" }
-"markup.heading.5" = { bg = "pink" }
+"markup.heading.marker" = { fg = "surface0", modifiers = ["dim","italic"] }
+"markup.heading.1" = { bg = "teal", fg = "base" }
+"markup.heading.2" = { bg = "mauve", fg = "base" }
+"markup.heading.3" = { bg = "green", fg = "base" }
+"markup.heading.4" = { bg = "yellow", fg = "base" }
+"markup.heading.5" = { bg = "pink", fg = "base" }
 "markup.heading"   = { fg = "green", bg = "surface2", modifiers = ["bold"] }
 "markup.list" = "mauve"
 # "markup.list.unchecked" = "overlay2"
@@ -124,7 +124,7 @@
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
 "diagnostic.info" = { underline = { color = "sky", style = "curl" } }
-"diagnostic.hint" = { color="teal", style = "curl" }
+"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
 
 error = "red"
 warning = "yellow"
