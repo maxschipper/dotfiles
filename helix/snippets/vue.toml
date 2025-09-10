@@ -1,0 +1,32 @@
+# language id https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers
+
+[[snippets]]
+prefix = "template"
+scope = [ "vue" ]
+body = '''<template>
+  $1
+</template>'''
+description = "template tags"
+
+[[snippets]]
+prefix = "script"
+scope = [ "vue" ]
+body = '''<script setup lang="ts">
+  $1
+</script>'''
+description = "script tags"
+
+[[snippets]]
+prefix = "yy"
+scope = [ "vue" ]
+body = '''<$1>
+  $2
+</$1>'''
+description = "tag"
+
+[[snippets]]
+prefix = "yyy"
+scope = [ "vue" ]
+body = '''<$1 />'''
+description = "tag"
+
