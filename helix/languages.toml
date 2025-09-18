@@ -1,19 +1,22 @@
 [[language]]
 name = "typescript"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "typescript"] }
+formatter = { command = "pnpm", args = ["prettier", "--parser", "typescript"] }
+
+[[language]]
+name = "javascript"
+auto-format = true
+formatter = { command = "pnpm", args = ["prettier", "--parser", "javascript"] }
 
 [[language]]
 name = "vue"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "vue"] }
-# formatter = { command = "pnpm", args = ["lint", "--fix"] }
+formatter = { command = "pnpm", args = ["prettier", "--parser", "vue"] }
 language-servers = [
-# "scls",
-# "typescript-language-server",
-# "tailwindcss-ls",
-"eslint",
-# "emmet-ls",
+"scls",
+"typescript-language-server",
+"tailwindcss-ls",
+"emmet-ls",
 ]
 
 [[language-server.typescript-language-server.config.plugins]]
@@ -61,6 +64,12 @@ feature_paths = false                # enable path completion
 [language-server.scls.environment]
 RUST_LOG = "info,simple-completion-language-server=info"
 LOG_FILE = "/tmp/simple-completion-lsp.log"
+
+
+[[language]]
+name = "hyprlang"
+file-types = [ { glob = "hypr/*.conf" }, {glob = "hypr/conf.d/*.conf"}]
+
 
 # custom markdown-pdf
 # [[language]]
