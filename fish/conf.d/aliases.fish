@@ -3,6 +3,7 @@ status is-interactive || exit
 abbr -a rls 'source ~/.config/fish/config.fish'
 
 alias cd='z'
+abbr -a cdr 'cd "$(git rev-parse --show-toplevel)"'
 abbr -a c clear
 abbr -a clf 'clear && fastfetch'
 
@@ -32,3 +33,7 @@ abbr -a pss 'ps aux | grep -i'
 abbr -a icloudpd 'icloudpd --username max.schipper1@icloud.com --directory /home/max/Pictures/icloud'
 
 abbr -a wifi 'sudo ip link set wlp3s0 up'
+
+abbr -a monoff 'hyprctl keyword monitor "eDP-1, disable"'
+abbr -a monon 'hyprctl keyword monitor "eDP-1, 2880x1800@120, 0x0, 2"'
+abbr -a sun 'hyprctl output create headless imac && sunshine && hyprctl output remove imac'
