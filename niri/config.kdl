@@ -111,6 +111,7 @@ layout {
     // You can change the default width of the new windows.
     default-column-width {
         // proportion 0.5
+        proportion 1.0
     }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width { }
@@ -232,7 +233,7 @@ layer-rule {
         color "#0007"
     }
     // Fuzzel defaults to 10 px rounded corners.
-    geometry-corner-radius 10
+    geometry-corner-radius 17
 }
 
 
@@ -270,7 +271,11 @@ window-rule {
     clip-to-geometry true
 }
 
-
+window-rule {
+    match is-floating=true
+    geometry-corner-radius 5
+    // clip-to-geometry true
+}
 
 switch-events {
     lid-close { spawn "notify-send" "The laptop lid is closed!"; }
@@ -302,18 +307,22 @@ binds {
     Mod+Shift+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=1.0"; }
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
-    F10 hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace { close-window; }
 
-    Mod+J hotkey-overlay-title=null { focus-workspace-down; }
-    Mod+K hotkey-overlay-title=null { focus-workspace-up; }
-    // Mod+J hotkey-overlay-title=null { focus-window-or-workspace-down; }
-    // Mod+K hotkey-overlay-title=null { focus-window-or-workspace-up; }
     Mod+H hotkey-overlay-title=null { focus-column-left; }
     Mod+L hotkey-overlay-title=null { focus-column-right; }
-    Mod+U hotkey-overlay-title=null { focus-window-down; }
-    Mod+I hotkey-overlay-title=null { focus-window-up; }
+
+    Mod+J hotkey-overlay-title=null { focus-window-or-workspace-down; }
+    Mod+K hotkey-overlay-title=null { focus-window-or-workspace-up; }
+    Mod+U hotkey-overlay-title=null { focus-workspace-down; }
+    Mod+I hotkey-overlay-title=null { focus-workspace-up; }
+    // either (^) this or (v) that
+    // Mod+J hotkey-overlay-title=null { focus-workspace-down; }
+    // Mod+K hotkey-overlay-title=null { focus-workspace-up; }
+    // Mod+U hotkey-overlay-title=null { focus-window-down; }
+    // Mod+I hotkey-overlay-title=null { focus-window-up; }
 
     Mod+Shift+J { move-window-down-or-to-workspace-down; }
     Mod+Shift+K { move-window-up-or-to-workspace-up; }
@@ -407,7 +416,7 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+E allow-inhibiting=false { quit; }
     Ctrl+Alt+Delete allow-inhibiting=false { quit; }
     Mod+Delete allow-inhibiting=false { quit; }
