@@ -278,10 +278,10 @@ window-rule {
 }
 
 switch-events {
-    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
-    lid-open { spawn "notify-send" "The laptop lid is open!"; }
-    tablet-mode-on { spawn "bash" "-c" "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true"; }
-    tablet-mode-off { spawn "bash" "-c" "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false"; }
+    lid-close { spawn "niri" "msg" "action" "power-off-monitors"; }
+    lid-open { spawn "niri" "msg" "action" "power-on-monitors"; }
+    tablet-mode-on { spawn "notify-send" "tablet mode on"; }
+    tablet-mode-off { spawn "notify-send" "tablet mode off"; }
 }
 
 
@@ -441,7 +441,7 @@ binds {
 
 workspace "ai" { open-on-output "eDP-1"; }
 window-rule {
-    match app-id="chatgpt"
+    match app-id="FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B"
     open-on-workspace "ai"
     open-maximized true
     open-focused true
