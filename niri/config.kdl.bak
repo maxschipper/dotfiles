@@ -1,4 +1,5 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
@@ -17,6 +18,7 @@ spawn-at-startup "awatcher"
 
 spawn-at-startup "~/nix/scripts/fix_audio.sh"
 spawn-at-startup "bash" "-c" "sleep 5 && ~/nix/scripts/activitywatch/remove-private-browsing.ts"
+
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -84,6 +86,8 @@ input {
     }
 }
 
+
+
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 output "eDP-1" {
     // off
@@ -96,6 +100,7 @@ output "eDP-1" {
     // variable-refresh-rate on-demand=true
     position x=0 y=0
 }
+
 
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -231,6 +236,8 @@ layout {
     }
 }
 
+
+
 layer-rule {
     match namespace="^caelestia-background$"
     place-within-backdrop true
@@ -258,6 +265,8 @@ layer-rule {
     // Fuzzel defaults to 10 px rounded corners.
     geometry-corner-radius 17
 }
+
+
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
@@ -302,13 +311,13 @@ window-rule {
     // clip-to-geometry true
 }
 
-
 switch-events {
     lid-close { spawn "niri" "msg" "action" "power-off-monitors"; }
     lid-open { spawn "niri" "msg" "action" "power-on-monitors"; }
     tablet-mode-on { spawn "notify-send" "tablet mode on"; }
     tablet-mode-off { spawn "notify-send" "tablet mode off"; }
 }
+
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -501,5 +510,4 @@ window-rule {
     match app-id="footclient"
     default-column-width { proportion 0.5; }
 }
-
 

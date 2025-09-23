@@ -1,0 +1,21 @@
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+cursor { hide-when-typing; hide-after-inactive-ms 5000; }
+
+overview {
+    backdrop-color "#000000"
+    workspace-shadow { off; }
+    // zoom 0.5
+}
+
+gestures { hot-corners { off; }; }
+
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
+animations {
+    // off
+    slowdown 0.9
+}

@@ -1,0 +1,32 @@
+[general]
+output_path = "~/.config/niri/new-config.kdl"
+
+[genconfig]
+sources = [
+    "~/.config/niri/src/startup.kdl",
+    "~/.config/niri/src/misc.kdl",
+    "~/.config/niri/src/input.kdl",
+    "~/.config/niri/src/output.kdl",
+    "~/.config/niri/src/layout.kdl",
+    "~/.config/niri/src/layer-rules.kdl",
+    "~/.config/niri/src/window-rules.kdl",
+    "~/.config/niri/src/switch-events.kdl",
+    "~/.config/niri/src/binds.kdl",
+    "~/.config/niri/src/workspaces.kdl",
+    # [
+    #     { group = "default", path = "~/.config/niri/sources/default_visuals.kdl" },
+    #     { group = "custom", path = "~/.config/niri/sources/custom_visuals.kdl" },
+    # ],
+]
+watch_dir = "~/.config/niri/src/"
+
+[workspaces]
+dmenu_command = "fuzzel -dmenu"
+task_delay = 0.8
+
+[workspaces.items]
+example = [
+    { workspace = 1, run = "firefox" },
+    { workspace = 2, run = "mail" },
+]
+

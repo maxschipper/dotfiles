@@ -1,0 +1,6 @@
+switch-events {
+    lid-close { spawn "niri" "msg" "action" "power-off-monitors"; }
+    lid-open { spawn "niri" "msg" "action" "power-on-monitors"; }
+    tablet-mode-on { spawn "notify-send" "tablet mode on"; }
+    tablet-mode-off { spawn "notify-send" "tablet mode off"; }
+}

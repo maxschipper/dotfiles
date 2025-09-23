@@ -1,0 +1,43 @@
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+window-rule {
+    match app-id="^org\\.wezfurlong\\.wezterm$"
+    default-column-width { }
+}
+
+window-rule {                                                                                             
+    match app-id="firefox"                                                                                
+    open-maximized true                                                                                   
+    focus-ring { off; }
+    border { off; }
+}
+window-rule {
+    match app-id="firefox" title="^Extension"
+    default-column-width { proportion 0.33; }
+    // open-floating true
+}
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    default-column-width { proportion 0.33; }
+    open-floating true
+}
+window-rule {
+    match app-id="bitwarden"
+    block-out-from "screen-capture"
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+}
+
+window-rule {
+    match is-floating=true
+    geometry-corner-radius 5
+    // clip-to-geometry true
+}
+

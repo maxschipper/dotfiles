@@ -1,0 +1,34 @@
+workspace "mail" { open-on-output "eDP-1"; }
+window-rule {
+    match app-id="thunderbird"
+    open-on-workspace "mail"
+    open-maximized true
+    open-focused true
+}
+
+workspace "ai" { open-on-output "eDP-1"; }
+window-rule {
+    match app-id="FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B"
+    open-on-workspace "ai"
+    open-maximized true
+    open-focused true
+}
+
+workspace "browser" { open-on-output "eDP-1"; }
+window-rule {
+    match at-startup=true app-id="firefox"
+    open-on-workspace "browser"
+    open-maximized true
+    open-focused true
+}
+
+workspace "console" { open-on-output "eDP-1"; }
+window-rule {
+    match at-startup=true app-id="footclient"
+    open-on-workspace "console"
+}
+window-rule {
+    match app-id="footclient"
+    default-column-width { proportion 0.5; }
+}
+

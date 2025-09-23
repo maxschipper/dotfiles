@@ -1,0 +1,157 @@
+binds {
+    // Keys consist of modifiers separated by + signs, followed by an XKB key name
+    // in the end. To find an XKB name for a particular key, you may use a program
+    // like wev.
+    //
+    // "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
+    // when running as a winit window.
+    //
+    // Most actions that you can bind here can also be invoked programmatically with
+    // `niri msg action do-something`.
+    // Mod-Shift-/, which is usually the same as Mod-?,
+    // shows a list of important hotkeys.
+    Mod+Shift+o hotkey-overlay-title=null { show-hotkey-overlay; }
+
+    // You can also use a shell. Do this if you need pipes, multiple commands, etc.
+    // Note: the entire command goes as a single argument in the end.
+    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
+
+    Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
+    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.8"; }
+    Mod+Shift+ALT+T { spawn "foot"; }
+    Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
+    F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
+    Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
+    Mod+Backspace hotkey-overlay-title=null { close-window; }
+
+    Mod+H hotkey-overlay-title=null { focus-column-left; }
+    Mod+L hotkey-overlay-title=null { focus-column-right; }
+
+    Mod+J hotkey-overlay-title=null { focus-window-or-workspace-down; }
+    Mod+K hotkey-overlay-title=null { focus-window-or-workspace-up; }
+    Mod+U hotkey-overlay-title=null { focus-workspace-down; }
+    Mod+I hotkey-overlay-title=null { focus-workspace-up; }
+    // either (^) this or (v) that
+    // Mod+J hotkey-overlay-title=null { focus-workspace-down; }
+    // Mod+K hotkey-overlay-title=null { focus-workspace-up; }
+    // Mod+U hotkey-overlay-title=null { focus-window-down; }
+    // Mod+I hotkey-overlay-title=null { focus-window-up; }
+
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
+    Mod+Shift+H hotkey-overlay-title=null { move-column-left; }
+    Mod+Shift+L hotkey-overlay-title=null { move-column-right; }
+    Mod+Shift+U { move-workspace-down; }
+    Mod+Shift+I { move-workspace-up; }
+
+    // Monitor move
+    Mod+Ctrl+H     { focus-monitor-left; }
+    Mod+Ctrl+J     { focus-monitor-down; }
+    Mod+Ctrl+K     { focus-monitor-up; }
+    Mod+Ctrl+L     { focus-monitor-right; }
+
+    Mod+Ctrl+Shift+H { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+J { move-column-to-monitor-down; }
+    Mod+Ctrl+Shift+K { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+L { move-column-to-monitor-right; }
+
+    // Mod+Left { focus-monitor-left; }
+    // Mod+Down { focus-monitor-down; }
+    // Mod+Up { focus-monitor-up; }
+    // Mod+Right { focus-monitor-right; }
+
+    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
+    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+
+    // Mod+Shift+Left { move-column-to-monitor-left; }
+    // Mod+Shift+Down { move-column-to-monitor-down; }
+    // Mod+Shift+Up { move-column-to-monitor-up; }
+    // Mod+Shift+Right { move-column-to-monitor-right; }
+
+
+    // Mod+TouchpadScrollDown { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
+    // Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
+    
+    Mod+Tab { focus-workspace-previous; }
+    Mod+a { focus-workspace "browser"; }
+    Mod+c { focus-workspace "console"; }
+    Mod+x { focus-workspace "ai"; }
+    Mod+m { focus-workspace "mail"; }
+    Mod+1 { focus-workspace 5; }
+    Mod+2 { focus-workspace 6; }
+    Mod+3 { focus-workspace 7; }
+    Mod+4 { focus-workspace 8; }
+    Mod+5 { focus-workspace 9; }
+    Mod+6 { focus-workspace 10; }
+    Mod+7 { focus-workspace 11; }
+    Mod+8 { focus-workspace 12; }
+    Mod+9 { focus-workspace 13; }
+    Mod+Shift+a { move-column-to-workspace "browser"; }
+    Mod+Shift+c { move-column-to-workspace "console"; }
+    Mod+Shift+x { move-column-to-workspace "ai"; }
+    Mod+Shift+m { move-column-to-workspace "mail"; }
+    Mod+Shift+1 { move-column-to-workspace 5; }
+    Mod+Shift+2 { move-column-to-workspace 6; }
+    Mod+Shift+3 { move-column-to-workspace 7; }
+    Mod+Shift+4 { move-column-to-workspace 8; }
+    Mod+Shift+5 { move-column-to-workspace 9; }
+    Mod+Shift+6 { move-column-to-workspace 10; }
+    Mod+Shift+7 { move-column-to-workspace 11; }
+    Mod+Shift+8 { move-column-to-workspace 12; }
+    Mod+Shift+9 { move-column-to-workspace 13; }
+    // The following binds move the focused window in and out of a column.
+    // If the window is alone, they will consume it into the nearby column to the side.
+    // If the window is already in a column, they will expel it out.
+    // Mod+BracketLeft { consume-or-expel-window-left; }
+    // Mod+BracketRight { consume-or-expel-window-right; }
+    // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma { consume-window-into-column; }
+    // Expel the bottom window from the focused column to the right.
+    Mod+Period { expel-window-from-column; }
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F hotkey-overlay-title=null { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    // Expand the focused column to space not taken up by other fully visible columns.
+    // Makes the column "fill the rest of the space".
+    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Control+C { center-column; }
+    // Center all fully visible columns on screen.
+    Mod+Ctrl+Shift+C { center-visible-columns; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Plus { set-column-width "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Plus { set-window-height "+10%"; }
+    Mod+V { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+W { toggle-column-tabbed-display; }
+
+    Print hotkey-overlay-title="Screenshot UI" { screenshot; }
+    Mod+Print hotkey-overlay-title="Screenshot entire screen" { screenshot-screen; }
+    Mod+Shift+Print hotkey-overlay-title="Screenshot current window" { screenshot-window; }
+
+    Mod+Insert hotkey-overlay-title="Color picker" { spawn "hyprpicker" "--autocopy" "--lowercase-hex"; }
+
+    Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+E allow-inhibiting=false hotkey-overlay-title=null { quit; }
+    Ctrl+Alt+Delete allow-inhibiting=false { quit; }
+    Mod+Delete allow-inhibiting=false { quit; }
+    // Powers off the monitors. To turn them back on, do any input like
+    // moving the mouse or pressing any other key.
+    Mod+Shift+P { power-off-monitors; }
+    
+    // F1 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    // F2 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    // F3 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    // F4 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    F1 { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    F2 { spawn "swayosd-client" "--output-volume" "lower"; }
+    F3 { spawn "swayosd-client" "--output-volume" "raise"; }
+    F4 { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+
+
+    F5 { spawn "swayosd-client" "--brightness" "lower"; }
+    F6 { spawn "swayosd-client" "--brightness" "raise"; }
+}
