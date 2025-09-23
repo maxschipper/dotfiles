@@ -1,23 +1,37 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+spawn-at-startup "firefox"
+
 spawn-at-startup "foot" "--server"
-spawn-at-startup "caelestia" "shell"
+// spawn-at-startup "caelestia" "shell"
 spawn-at-startup "hypridle"
-spawn-at-startup "~/nix/scripts/fix_audio.sh"
+spawn-at-startup "sunsetr"
+spawn-at-startup "swayosd-server"
+spawn-at-startup "udiskie"
+
 spawn-at-startup "aw-server"
 spawn-at-startup "awatcher"
-spawn-at-startup "udiskie"
-spawn-at-startup "swayosd-server"
+
+spawn-at-startup "~/nix/scripts/fix_audio.sh"
 spawn-at-startup "bash" "-c" "sleep 5 && ~/nix/scripts/activitywatch/remove-private-browsing.ts"
 
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-hotkey-overlay { skip-at-startup; }
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
 cursor { hide-when-typing; hide-after-inactive-ms 5000; }
 
 overview {
-    backdrop-color "#333333"
+    backdrop-color "#000000"
     workspace-shadow { off; }
+    // zoom 0.5
 }
 
 gestures { hot-corners { off; }; }
@@ -151,9 +165,10 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         // off
         width 2
-        active-color "#ffc87ff0"
-        inactive-color "#505050f0"
-        active-gradient from="#F6AFDA" to="#C6BFFF" angle=45 relative-to="workspace-view"
+        // active-color "#ffc87ff0"
+        active-color "#C6BFFF66"
+        inactive-color "#50505066"
+        // active-gradient from="#F6AFDA" to="#C6BFFF" angle=45 relative-to="workspace-view"
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
@@ -177,8 +192,8 @@ layout {
         // off
         hide-when-single-tab
         place-within-column
-        gap 5
-        width 4
+        gap 2
+        width 2
         // length total-proportion=1.0
         // position "right"
         // gaps-between-tabs 2
@@ -186,9 +201,20 @@ layout {
         // active-color "red"
         // inactive-color "gray"
         // urgent-color "blue"
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        active-gradient from="#80c8ff" to="#bbddff" angle=90
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
         // urgent-gradient from="#800" to="#a33" angle=45
+        gaps-between-tabs 5
+        // active-color "#fff"
+        inactive-color "#ffffff88"
+    }
+    /-tab-indicator {
+        width 2
+        gap -5
+        gaps-between-tabs 5
+        corner-radius 10
+        active-color "#fff"
+        inactive-color "#ffffff55"
     }
     insert-hint {
         // off
@@ -250,24 +276,28 @@ window-rule {
     focus-ring { off; }
     border { off; }
 }
+window-rule {
+    match app-id="firefox" title="^Extension"
+    default-column-width { proportion 0.33; }
+    // open-floating true
+}
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id="firefox$" title="^Picture-in-Picture$"
+    default-column-width { proportion 0.33; }
     open-floating true
 }
 window-rule {
     match app-id="bitwarden"
     block-out-from "screen-capture"
-// Use this instead if you want them visible on third-party screenshot tools.
-// block-out-from "screencast"
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
 }
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 17
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
@@ -297,19 +327,19 @@ binds {
     // `niri msg action do-something`.
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
-    Mod+Shift+o { show-hotkey-overlay; }
+    Mod+Shift+o hotkey-overlay-title=null { show-hotkey-overlay; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
-    Mod+T hotkey-overlay-title=null { spawn "footclient"; }
-    Mod+Shift+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=1.0"; }
+    Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
+    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.8"; }
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
     F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
-    Mod+Backspace { close-window; }
+    Mod+Backspace hotkey-overlay-title=null { close-window; }
 
     Mod+H hotkey-overlay-title=null { focus-column-left; }
     Mod+L hotkey-overlay-title=null { focus-column-right; }
@@ -326,8 +356,8 @@ binds {
 
     Mod+Shift+J { move-window-down-or-to-workspace-down; }
     Mod+Shift+K { move-window-up-or-to-workspace-up; }
-    Mod+Shift+H { move-column-left; }
-    Mod+Shift+L { move-column-right; }
+    Mod+Shift+H hotkey-overlay-title=null { move-column-left; }
+    Mod+Shift+L hotkey-overlay-title=null { move-column-right; }
     Mod+Shift+U { move-workspace-down; }
     Mod+Shift+I { move-workspace-up; }
 
@@ -413,11 +443,15 @@ binds {
     Mod+V { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+
+    Print hotkey-overlay-title="Screenshot UI" { screenshot; }
+    Mod+Print hotkey-overlay-title="Screenshot entire screen" { screenshot-screen; }
+    Mod+Shift+Print hotkey-overlay-title="Screenshot current window" { screenshot-window; }
+
+    Mod+Insert hotkey-overlay-title="Color picker" { spawn "hyprpicker" "--autocopy" "--lowercase-hex"; }
+
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-    Mod+Shift+E allow-inhibiting=false { quit; }
+    Mod+Shift+E allow-inhibiting=false hotkey-overlay-title=null { quit; }
     Ctrl+Alt+Delete allow-inhibiting=false { quit; }
     Mod+Delete allow-inhibiting=false { quit; }
     // Powers off the monitors. To turn them back on, do any input like
@@ -439,14 +473,6 @@ binds {
     F6 { spawn "swayosd-client" "--brightness" "raise"; }
 }
 
-workspace "ai" { open-on-output "eDP-1"; }
-window-rule {
-    match app-id="FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B"
-    open-on-workspace "ai"
-    open-maximized true
-    open-focused true
-}
-
 workspace "mail" { open-on-output "eDP-1"; }
 window-rule {
     match app-id="thunderbird"
@@ -455,12 +481,20 @@ window-rule {
     open-focused true
 }
 
+workspace "ai" { open-on-output "eDP-1"; }
+window-rule {
+    match app-id="FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B"
+    open-on-workspace "ai"
+    open-maximized true
+    open-focused true
+}
+
 workspace "browser" { open-on-output "eDP-1"; }
 window-rule {
-    match app-id="firefox"
+    match at-startup=true app-id="firefox"
     open-on-workspace "browser"
     open-maximized true
-    // open-focused true
+    open-focused true
 }
 
 workspace "console" { open-on-output "eDP-1"; }
