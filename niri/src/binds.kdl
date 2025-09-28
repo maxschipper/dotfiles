@@ -123,8 +123,8 @@ binds {
     Mod+Plus { set-column-width "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Plus { set-window-height "+10%"; }
-    Mod+V { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V { toggle-window-floating; }
+    Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
     Print hotkey-overlay-title="Screenshot UI" { screenshot; }
@@ -139,19 +139,19 @@ binds {
     Mod+Delete allow-inhibiting=false { quit; }
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    Mod+F10 { power-off-monitors; }
     
     // F1 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     // F2 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     // F3 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     // F4 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    F1 { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    F2 { spawn "swayosd-client" "--output-volume" "lower"; }
-    F3 { spawn "swayosd-client" "--output-volume" "raise"; }
-    F4 { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    F1 allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    F2 allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    F3 allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    F4 allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
 
 
-    F5 { spawn "swayosd-client" "--brightness" "lower"; }
-    F6 { spawn "swayosd-client" "--brightness" "raise"; }
+    F5 allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
+    F6 allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
 }

@@ -1,12 +1,22 @@
+// THIS FILE IS AUTO_GENERATED WITH NIRI-COMPANION
+// DO NOT EDIT IT WILL BE OVERWRITTEN
+// EDIT FILES IN THE src DIRECTORY INSTEAD AND RUN `niri-genconfig generate`
+// OR HAVE THE DAMEON RUNNING WITH `niri-genconfig dameon`
+//
+// DO NOT EDIT IT WILL BE OVERWRITTEN
+// DO NOT EDIT IT WILL BE OVERWRITTEN
+// DO NOT EDIT IT WILL BE OVERWRITTEN
+// DO NOT EDIT IT WILL BE OVERWRITTEN
+
+
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
-spawn-at-startup "firefox"
-
+spawn-at-startup "niri-genconfig" "dameon"
+spawn-at-startup "caelestia-shell"
 spawn-at-startup "foot" "--server"
-// spawn-at-startup "caelestia" "shell"
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
 spawn-at-startup "swayosd-server"
@@ -16,7 +26,7 @@ spawn-at-startup "aw-server"
 spawn-at-startup "awatcher"
 
 spawn-at-startup "~/nix/scripts/fix_audio.sh"
-spawn-at-startup "bash" "-c" "sleep 5 && ~/nix/scripts/activitywatch/remove-private-browsing.ts"
+// spawn-at-startup "bash" "-c" "sleep 5 && ~/nix/scripts/activitywatch/remove-private-browsing.ts"
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -60,21 +70,22 @@ input {
     // Omitting settings disables them, or leaves them at their default values.
     touchpad {
         // off
-        tap
+        tap // tap to click
         dwt // disable when typing
-        // drag false
-        // drag-lock
+        drag true // controls if tap-and-drag is enabled
+        // drag-lock // if set, lifting the finger off for a short time while dragging will not drop the dragged item
+        click-method "clickfinger" // can be button-areas or clickfinger, changes the click method
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
+        scroll-method "two-finger"
         // disabled-on-external-mouse
     }
     mouse {
         // off
         // natural-scroll
         // accel-speed 0.2
-        // accel-profile "flat"
+        accel-profile "flat"
         // scroll-method "no-scroll"
 
     }
@@ -435,8 +446,8 @@ binds {
     Mod+Plus { set-column-width "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Plus { set-window-height "+10%"; }
-    Mod+V { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V { toggle-window-floating; }
+    Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
     Print hotkey-overlay-title="Screenshot UI" { screenshot; }
@@ -451,21 +462,21 @@ binds {
     Mod+Delete allow-inhibiting=false { quit; }
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    Mod+F10 { power-off-monitors; }
     
     // F1 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     // F2 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     // F3 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     // F4 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    F1 { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    F2 { spawn "swayosd-client" "--output-volume" "lower"; }
-    F3 { spawn "swayosd-client" "--output-volume" "raise"; }
-    F4 { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    F1 allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    F2 allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    F3 allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    F4 allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
 
 
-    F5 { spawn "swayosd-client" "--brightness" "lower"; }
-    F6 { spawn "swayosd-client" "--brightness" "raise"; }
+    F5 allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
+    F6 allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
 }
 
 workspace "mail" { open-on-output "eDP-1"; }

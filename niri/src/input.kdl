@@ -18,21 +18,22 @@ input {
     // Omitting settings disables them, or leaves them at their default values.
     touchpad {
         // off
-        tap
+        tap // tap to click
         dwt // disable when typing
-        // drag false
-        // drag-lock
+        drag true // controls if tap-and-drag is enabled
+        // drag-lock // if set, lifting the finger off for a short time while dragging will not drop the dragged item
+        click-method "clickfinger" // can be button-areas or clickfinger, changes the click method
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
+        scroll-method "two-finger"
         // disabled-on-external-mouse
     }
     mouse {
         // off
         // natural-scroll
         // accel-speed 0.2
-        // accel-profile "flat"
+        accel-profile "flat"
         // scroll-method "no-scroll"
 
     }
