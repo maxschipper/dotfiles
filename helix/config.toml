@@ -51,16 +51,31 @@ left = [
 "spinner",
 "version-control",
 ]
+
 center = [
-"read-only-indicator",
 "file-modification-indicator",
-"file-name",
- # "file-absolute-path",
-# "file-base-name",
+"separator",
+"separator",
+"separator",
 "file-modification-indicator",
+"separator",
 "read-only-indicator",
+"separator",
+"read-only-indicator",
+"separator",
+"file-modification-indicator",
+"separator",
+"separator",
+"separator",
+"file-modification-indicator",
+#  # "file-absolute-path",
+# # "file-base-name",
+# "file-modification-indicator",
+# "read-only-indicator",
 ]
+
 right = [
+"file-name",
 "diagnostics",
 "workspace-diagnostics",
 "register",
@@ -79,7 +94,7 @@ right = [
 diagnostics = ["info","warning", "error"]
 workspace-diagnostics = ["info","warning", "error"]
 # separator   = "│"
-separator   = " ⏽"
+separator   = " "
 mode.normal = "NORMAL "
 mode.insert = "INSERT "
 mode.select = "SELECT "
