@@ -118,8 +118,11 @@ wrap-indicator    = "↪"
 
 [editor.file-picker]
 hidden    = false
-max-depth = 4
-# ignore = true
+max-depth = 20
+ignore = true
+git-ignore = true 
+git-global = false 
+git-exclude = false 
 
 [editor.gutters]
 layout = ["diff", "diagnostics", "line-numbers", "spacer"]
