@@ -14,6 +14,7 @@ bin/
 .localized
 *.png
 *.jpg
+*.avif
 *.pdf
 *.mov
 *.mp3
@@ -35,5 +36,8 @@ bin/
 *.woff2
 *.zip
 *.m4a
+*.sqlite
+*.db
+*.ico
 
 *_templ.go
