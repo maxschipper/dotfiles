@@ -1,8 +1,9 @@
 [general]
-output_path = "~/.config/niri/new-config.kdl"
+output_path = "~/.config/niri/config.kdl"
 
 [genconfig]
 sources = [
+    "~/.config/niri/src/NOTE.kdl",
     "~/.config/niri/src/startup.kdl",
     "~/.config/niri/src/misc.kdl",
     "~/.config/niri/src/input.kdl",
