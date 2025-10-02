@@ -79,11 +79,6 @@ rev = "03f6c4a"
 hash = "f14a951bf376d7fe73033c4a48aa5fa4"
 
 [[plugin.deps]]
-use = "AnirudhG07/plugins-yazi:copy-file-contents"
-rev = "71545f4"
-hash = "f8530ee84fee95dbcc26bb1d8d8019c7"
-
-[[plugin.deps]]
 use = "pirafrank/what-size"
 rev = "d896656"
 hash = "62251f94eb67648d42cdfcfb8be0fad2"
@@ -95,10 +90,10 @@ hash = "a20327710c3a8d37ee0972128dcb6a31"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "4296a38"
-hash = "1e2cc3f0f96197f3dac9591be50bb2af"
+rev = "2d73b79"
+hash = "86f1eb7e792533c80b34cdff4e191f41"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "4296a38"
-hash = "deff42490f77b222e9d3a84dc16a76c5"
+rev = "2d73b79"
+hash = "d4c41d713b325710a9dd5ae86c3f8a5f"

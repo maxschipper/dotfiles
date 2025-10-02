@@ -2,6 +2,10 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
+[[mgr.prepend_keymap]]
+ on = [ "c", "f" ]
+run = 'shell -- wl-copy < "$0"'
+desc = "Copy the file"
 
 [[mgr.prepend_keymap]]
 on = [ ".", "s" ]
@@ -12,11 +16,6 @@ desc = "Calc size of selection or cwd"
 on   = [ "m", "c" ]
 run  = "plugin git-files"
 desc = "Show Git file changes"
-
-[[mgr.prepend_keymap]]
-on = ["c", "a"]
-run = "plugin copy-file-contents"
-desc = "Copy contents of file"
 
 [[mgr.prepend_keymap]]
 on = "<Tab>"
@@ -51,12 +50,17 @@ desc = "~/dev"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "n" ]
-run  = "cd ~/nix"
-desc = "Go to ~/nix"
+run  = "cd $NH_FLAKE"
+desc = "Go to nix flake"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "C" ]
+run  = "cd ~/dev/code/dotfiles"
+desc = "Go to dotfiles"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "t" ]
-run  = "plugin recycle-bin open"
+run  = "cd ~/.local/share/Trash"
 desc = "Go to Trash"
 
 [[mgr.prepend_keymap]]
@@ -216,8 +220,7 @@ keymap = [
 	# Copy
 	{ on = [ "c", "c" ], run = "copy path",             desc = "Copy the absolute path" },
 	{ on = [ "c", "d" ], run = "copy dirname",          desc = "Copy the path of the parent directory" },
-	{ on = [ "c", "f" ], run = "copy filename",         desc = "Copy the name of the file" },
-	{ on = [ "c", "n" ], run = "copy name_without_ext", desc = "Copy the name of the file without the extension" },
+	{ on = [ "c", "n" ], run = "copy filename",         desc = "Copy the name of the file" },
 
 	# Filter
 	{ on = [ "f" ], run = "filter --smart", desc = "Filter the files" },
