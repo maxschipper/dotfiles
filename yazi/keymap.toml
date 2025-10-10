@@ -5,7 +5,7 @@
 [[mgr.prepend_keymap]]
  on = [ "c", "f" ]
 run = 'shell -- wl-copy < "$0"'
-desc = "Copy the file"
+desc = "Copy file"
 
 [[mgr.prepend_keymap]]
 on = [ ".", "s" ]
@@ -218,9 +218,9 @@ keymap = [
 	{ on = [ "m", "n" ], run = "linemode none",        desc = "Set linemode to none" },
 
 	# Copy
-	{ on = [ "c", "c" ], run = "copy path",             desc = "Copy the absolute path" },
-	{ on = [ "c", "d" ], run = "copy dirname",          desc = "Copy the path of the parent directory" },
-	{ on = [ "c", "n" ], run = "copy filename",         desc = "Copy the name of the file" },
+	{ on = [ "c", "c" ], run = "copy path",             desc = "Copy absolute path" },
+	{ on = [ "c", "d" ], run = "copy dirname",          desc = "Copy path of parent dir" },
+	{ on = [ "c", "n" ], run = "copy filename",         desc = "Copy name of file" },
 
 	# Filter
 	{ on = [ "f" ], run = "filter --smart", desc = "Filter the files" },
