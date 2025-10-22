@@ -3,7 +3,8 @@ status is-interactive || exit
 abbr -a rls 'source ~/.config/fish/config.fish'
 
 alias cd='z'
-abbr -a cdr 'cd "$(git rev-parse --show-toplevel)"'
+abbr -a cdr 'cd (git rev-parse --show-toplevel)'
+abbr -a cdt 'cd (mktemp -d)'
 abbr -a c clear
 abbr -a clf 'clear && fastfetch'
 
