@@ -16,10 +16,15 @@ binds {
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
+    // Mod+E { spawn "bash" "-c" "yazi"; }
+
+    Mod+I { spawn "swaync-client" "--toggle-panel"; }
+
     Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
     Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.8"; }
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
+    Mod+Shift+Q hotkey-overlay-title="Start quickshell if it has crashed" { spawn "caelestia-shell"; }
     F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace hotkey-overlay-title=null { close-window; }
@@ -29,8 +34,8 @@ binds {
 
     Mod+J hotkey-overlay-title=null { focus-window-or-workspace-down; }
     Mod+K hotkey-overlay-title=null { focus-window-or-workspace-up; }
-    Mod+U hotkey-overlay-title=null { focus-workspace-down; }
-    Mod+I hotkey-overlay-title=null { focus-workspace-up; }
+    // Mod+U hotkey-overlay-title=null { focus-workspace-down; }
+    // Mod+I hotkey-overlay-title=null { focus-workspace-up; }
     // either (^) this or (v) that
     // Mod+J hotkey-overlay-title=null { focus-workspace-down; }
     // Mod+K hotkey-overlay-title=null { focus-workspace-up; }
