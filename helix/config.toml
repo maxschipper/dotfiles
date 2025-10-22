@@ -187,8 +187,8 @@ R = "replace_selections_with_clipboard"
 # P = "paste_clipboard_after"
 
 [keys.select]
-k = ["extend_line_up", "extend_to_line_bounds"]
-j = ["extend_line_down", "extend_to_line_bounds"]
+K = ["extend_line_up", "extend_to_line_bounds"]
+J = ["extend_line_down", "extend_to_line_bounds"]
 
 y = "@\"+Y"
 p = "@\"+P"
@@ -198,9 +198,12 @@ Y = "yank"
 
 # command launcher
 [keys.normal.space.ret]
-t = ":sh chromium --app='http://localhost:23635'"
+# t = ":sh chromium --app='http://localhost:23635'"
+b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+j = ":sh jj show -s | tail -n +6" # j = ":sh jj st | head -n -2"
 
 [keys.normal.space]
+space = "goto_word"
 w = ":write"
 q = ":quit"
 Q = ":buffer-close"
