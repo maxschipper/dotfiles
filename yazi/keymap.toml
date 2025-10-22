@@ -3,9 +3,14 @@
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [[mgr.prepend_keymap]]
- on = [ "c", "f" ]
-run = 'shell -- wl-copy < "$0"'
+on = "Y"
+run = 'shell -- cb -c yazi copy "$0"'
 desc = "Copy file"
+
+[[mgr.prepend_keymap]]
+on = "P"
+run = 'shell --block -- cb -c yazi paste'
+desc = "Paste file"
 
 [[mgr.prepend_keymap]]
 on = [ ".", "s" ]
@@ -266,7 +271,7 @@ keymap = [
 	{ on = [ "}" ], run = "tab_swap 1",  desc = "Swap the current tab with the next tab" },
 
 	# Tasks
-	{ on = [ "W" ], run = "tasks_show", desc = "Show the tasks manager" },
+	{ on = [ "w" ], run = "tasks_show", desc = "Show the tasks manager" },
 
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
