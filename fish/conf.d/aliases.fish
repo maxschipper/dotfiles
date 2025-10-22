@@ -26,7 +26,7 @@ abbr -a cata 'bat *.*'
 
 abbr -a --set-cursor which 'readlink -f $(which %)'
 abbr -a --set-cursor --command nix shell 'shell nixpkgs#%'
-abbr -a up '~/nix/scripts/flake/checkUp2Date.sh'
+abbr -a up '$NH_FLAKE/scripts/flake/checkUp2Date.sh'
 
 abbr -a --position anywhere wlc '| wl-copy'
 abbr -a pss 'ps aux | grep -i'
