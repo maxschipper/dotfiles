@@ -103,7 +103,7 @@
 
 "ui.cursor" = { fg = "base", bg = "secondary_cursor" }
 "ui.cursor.primary" = { fg = "base", bg = "rosewater" }
-"ui.cursor.match" = { fg = "peach", bg = "mauve", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "peach", bg = "overlay0", modifiers = ["bold"] }
 
 "ui.cursor.primary.normal" = { fg = "base", bg = "lavender" }
 "ui.cursor.primary.insert" = { fg = "base", bg = "green" }
