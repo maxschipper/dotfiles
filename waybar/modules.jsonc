@@ -1,0 +1,426 @@
+{
+  "group/extras": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "extras",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/menu",
+      "tray"
+    ]
+  },
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "child-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/powermenu",
+      "power-profiles-daemon",
+      "gamemode",
+      "idle_inhibitor"
+    ]
+  },
+  "group/brightness": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "brightness",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "audio",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "custom/cachy": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "alacritty",
+    "on-click-right": "kitty"
+  },
+  "niri/workspaces": {
+    "disable-click": true,
+    "current-only": true,
+    "format": "{icon}",
+    "format-icons": {
+      "browser": "󰈹",
+      "xmail": "",
+      "mail": "󰇮",
+      "console": "",
+      "ai": "",
+      "chat": "<b></b>",
+      "xxdefault": "",
+      "xdefault": "󰄰",
+      "xactive": "󰄯"
+    }
+  },
+  "niri/window": {
+    "rotate": 270,
+    "format": "{app_id}",
+    "rewrite": {
+      "xx-firefox": "",
+      "xx-footclient": "",
+      "firefox": "Firefox",
+      "footclient": "Foot",
+      "FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B": "ChatGPT",
+      "FFPWA-01K59CKK49HX8DCT17WM0HKDP7": "YouTube"
+    },
+    "icon": false,
+    "icon-size": 18
+  },
+  "cpu": {
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>⠁</span>",
+      "<span size='14pt'>⠉</span>",
+      "<span size='14pt'>⠙</span>",
+      "<span size='14pt'>⠛</span>",
+      "<span size='14pt'>⠟</span>",
+      "<span size='14pt'>⠿</span>"
+    ],
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "footclient btop"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H\n%M}",
+    "smooth-scrolling-threshold": 2.0,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    // "calendar": {
+    //   "mode": "year",
+    //   "mode-mon-col": 3,
+    //   "weeks-pos": "right",
+    //   "on-scroll": 1,
+    //   "format": {
+    //     "months": "<span color='#ffead3'><b>{}</b></span>",
+    //     "days": "<span color='#ecc6d9'><b>{}</b></span>",
+    //     "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+    //     "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+    //     "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+    //   }
+    // },
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 4,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click": "mode",
+      "on-click-right": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "mpris": {
+    "format": "<span size='14pt'>󰐎</span>",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": true,
+    "tooltip-format": "{title}"
+  },
+  "custom/menu": {
+    "format": "<span size='16pt'>󰅃</span>",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 16,
+    "reverse-direction": true,
+    "icon-size": 16,
+    "show-passive-items": true
+  },
+  "network": {
+    "format-icons": {
+      "wifi": [
+        "<span size='12pt'>󰤯</span>",
+        "<span size='12pt'>󰤟</span>",
+        "<span size='12pt'>󰤢</span>",
+        "<span size='12pt'>󰤥</span>",
+        "<span size='12pt'>󰤨</span>"
+      ],
+      "ethernet": "<span size='12pt'>󰈀</span>",
+      "disabled": "<span size='12pt'>󰤮</span>",
+      "disconnected": "<span size='12pt'>󰤫</span>"
+    },
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon}",
+    "interval": 5,
+    "tooltip": true,
+    "tooltip-format-wifi": "{ifname}:\n{essid} @{frequency}GHz\n{ipaddr}\n{signalStrength}% {signaldBm}dBm {bandwidthTotalBytes}",
+    "tooltip-format-ethernet": "{ifname} via {gwaddr}/{cidr}\n{ipaddr}\n{bandwidthTotalBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "nm-connection-editor",
+    "on-click-right": "rfkill toggle wifi"
+  },
+  "bluetooth": {
+    "interval": 5,
+    "format-on": "<span size='14pt'>󰂯</span>",
+    "format-off": "<span size='14pt'>󰂲</span>",
+    "format-disabled": "<span size='14pt'>󰂲</span>",
+    "format-connected": "<span size='14pt'>󰂱</span>",
+    "format-no-controller": "<span size='14pt'>Err!</span>",
+    "tooltip": true,
+    "tooltip-format": "Address: {controller_address}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address}) | Battery: {device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "on-click-right": "rfkill toggle bluetooth"
+  },
+  "bluetooth#bat": {
+    "interval": 15,
+    "format-on": "",
+    "format-off": "",
+    "format-disabled": "",
+    "format-connected": "",
+    "format-no-controller": "",
+    "format-connected-battery": "{device_battery_percentage}",
+    "tooltip-format-connected-battery": "",
+    "tooltip": true,
+    "tooltip-format": "Address: {controller_address}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address}) | Battery: {device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "on-click-right": "rfkill toggle bluetooth"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span size='14pt'>󰍬</span>",
+    "format-source-muted": "<span size='14pt'>󰍭</span>",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "tooltip": false
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+  "pulseaudio": {
+    "interval": 1,
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰕿</span>",
+      "<span size='14pt'>󰖀</span>",
+      "<span size='14pt'>󰕾</span>"
+    ],
+    "format-muted": "<span size='14pt'>󰝟</span>",
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "reverse-scrolling": true,
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  },
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical",
+    "device": "intel_backlight"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "reverse-scrolling": true,
+    "smooth-scrolling-threshold": 0.2,
+    "tooltip": false
+  },
+  "battery": {
+    "interval": 5,
+    "states": {
+      "critical": 10
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='14pt'>󰁺</span>",
+      "<span size='14pt'>󰁻</span>",
+      "<span size='14pt'>󰁼</span>",
+      "<span size='14pt'>󰁽</span>",
+      "<span size='14pt'>󰁾</span>",
+      "<span size='14pt'>󰁿</span>",
+      "<span size='14pt'>󰂀</span>",
+      "<span size='14pt'>󰂁</span>",
+      "<span size='14pt'>󰂂</span>",
+      "<span size='14pt'>󰁹</span>"
+    ],
+    "format-charging": "<span size='14pt'>󰂄</span>",
+    "format-plugged": "<span size='14pt'>󰚥</span>",
+    "format-critical": "<span size='14pt'>󰂃</span>",
+    "tooltip": true,
+    "tooltip-format": "State: {capacity}%\nTime: {timeTo}\nPower: {power} Watts\nCycles: {cycles}\nHealth: {health}%"
+  },
+  "battery#percent": {
+    "interval": 5,
+    "states": {
+      "critical": 10
+    },
+    "format": "<span size='8pt'>{capacity}%</span>",
+    "format-charging": "<span size='14pt'>󰂄</span>",
+    "format-plugged": "<span size='14pt'>󰚥</span>",
+    "format-critical": "<span size='14pt'>󰂃</span>",
+    "tooltip": true,
+    "tooltip-format": "{capacity}%",
+    "tooltip-format-charging": "Charging: {capacity}%"
+  },
+  "custom/powermenu": {
+    "format": "<span size='13pt'>󰐥</span>",
+    "on-click": "$HOME/.config/fuzzel/scripts/powermenu.sh",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "<span size='14pt'>󰅶</span>",
+      "deactivated": "<span size='14pt'>󰛊</span>"
+    },
+    "timeout": 240
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "?",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "upower": {
+    "native-path": "BAT0",
+    "icon-size": 20,
+    "hide-if-empty": false,
+    "tooltip": true,
+    "xtooltip-spacing": 20
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "ignore-monitor": false,
+    "xignore": [
+      {
+        "type": "audio-in",
+        "name": "cava"
+      }
+    ]
+  },
+  "systemd-failed-units": {
+    "format": "{nr_failed}"
+  },
+  "gamemode": {
+    "format": "{glyph}",
+    // "format-alt": "{glyph} {count}",
+    "glyph": "󱎓",
+    "hide-not-running": true,
+    "use-icon": false,
+    // "icon-spacing": 4,
+    // "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+  },
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "child-hardware"
+    },
+    "modules": [
+      "cpu",
+      "load",
+      "memory",
+      "temperature#cpu",
+      "temperature#gpu",
+      "temperature#ssd"
+    ]
+  },
+  "load": {
+    "interval": 10,
+    "format": ""
+    // "max-length": 3
+  },
+  "memory": {
+    "interval": 30,
+    "format": "",
+    "tooltip-format": "Mem: {used}G / {total}G\n{percentage}% used, {avail}G available\n\nSwap:{swapUsed}/{swapTotal}"
+  },
+  "temperature#cpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "interval": 20,
+    "critical-threshold": 80,
+    "format-critical": "CPU: {temperatureC}°C ",
+    "format": "CPU",
+    "tooltip-format": "CPU: {temperatureC}󰔄"
+  },
+  "temperature#gpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+    "interval": 20,
+    "critical-threshold": 80,
+    "format-critical": "GPU: {temperatureC}°C ",
+    "format": "GPU",
+    "tooltip-format": "GPU: {temperatureC}󰔄"
+  },
+  "temperature#ssd": {
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    "interval": 20,
+    "critical-threshold": 80,
+    "format-critical": "SSD: {temperatureC}°C ",
+    "format": "SSD",
+    "tooltip-format": "SSD: {temperatureC}󰔄"
+  }
+}
