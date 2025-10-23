@@ -80,7 +80,8 @@
       "firefox": "Firefox",
       "footclient": "Foot",
       "FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B": "ChatGPT",
-      "FFPWA-01K59CKK49HX8DCT17WM0HKDP7": "YouTube"
+      "FFPWA-01K59CKK49HX8DCT17WM0HKDP7": "YouTube",
+      "org.pwmt.zathura": "Zathura"
     },
     "icon": false,
     "icon-size": 18
