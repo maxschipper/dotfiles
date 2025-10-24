@@ -43,9 +43,10 @@ window#waybar {
 #pulseaudio.microphone,
 #backlight,
 #battery,
+#battery.percent,
 #custom-powermenu {
   color: @foreground;
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 #workspaces button {
@@ -54,11 +55,11 @@ window#waybar {
 }
 
 /* #workspaces button:hover { */
-  /* color: @foreground; */
+/* color: @foreground; */
 /* } */
 
 /* #workspaces button.active { */
-  /* color: @color2; */
+/* color: @color2; */
 /* } */
 
 #privacy {
@@ -113,7 +114,21 @@ window#waybar {
 }
 
 #battery.critical {
+  color: @color9;
+}
+
+#battery.warning {
   color: @color3;
+}
+
+#battery.hint {
+  color: @color11;
+}
+
+#battery.percent {
+  /* color: @color1; */
+  padding: 2px 0;
+  margin-top: -10px;
 }
 
 tooltip {
@@ -148,4 +163,14 @@ tooltip * {
 
 #backlight-slider highlight {
   background: @color3;
+}
+
+@keyframes blink-active {
+  to {
+    background-color: lightgreen;
+  }
+}
+
+#custom-hotspot.active {
+  animation: blink-active 3s linear infinite alternate;
 }

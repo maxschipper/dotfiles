@@ -8,7 +8,8 @@
     },
     "modules": [
       "custom/menu",
-      "tray"
+      "tray",
+      "custom/hotspot"
     ]
   },
   "group/power": {
@@ -48,6 +49,29 @@
       "pulseaudio",
       "pulseaudio/slider"
     ]
+  },
+  "custom/hotspot": {
+    "format": "{icon}",
+    "interval": 5,
+    "tooltip": true,
+    "return-type": "json",
+    "format-icons": {
+      "active": "󱜠",
+      "notactive": "󱜡"
+    },
+    "exec": "waybar-hotspot -a watch",
+    "on-click": "waybar-hotspot -a toggle",
+    "on-click-right": "waybar-hotspot -a stop"
+  },
+  "custom/flake": {
+    "format": "{icon}{0}",
+    "return-type": "json",
+    "format-icons": {
+      "pending-updates": " ",
+      "updated": ""
+    },
+    "exec-if": "which waybar-updates-flake",
+    "exec": "waybar-updates-flake"
   },
   "custom/cachy": {
     "format": "",
@@ -267,6 +291,8 @@
   "battery": {
     "interval": 5,
     "states": {
+      "hint": 35,
+      "warning": 25,
       "critical": 10
     },
     "format": "{icon}",
@@ -291,19 +317,18 @@
   "battery#percent": {
     "interval": 5,
     "states": {
+      "hint": 35,
+      "warning": 25,
       "critical": 10
     },
-    "format": "<span size='8pt'>{capacity}%</span>",
-    "format-charging": "<span size='14pt'>󰂄</span>",
-    "format-plugged": "<span size='14pt'>󰚥</span>",
-    "format-critical": "<span size='14pt'>󰂃</span>",
-    "tooltip": true,
+    "format": "<span size='6pt'>{capacity}</span>",
+    "tooltip": false,
     "tooltip-format": "{capacity}%",
     "tooltip-format-charging": "Charging: {capacity}%"
   },
   "custom/powermenu": {
     "format": "<span size='13pt'>󰐥</span>",
-    "on-click": "$HOME/.config/fuzzel/scripts/powermenu.sh",
+    "on-click": "$HOME/.config/fuzzel/scripts/power-menu.sh",
     "tooltip": false
   },
   "idle_inhibitor": {
@@ -311,8 +336,8 @@
     "format-icons": {
       "activated": "<span size='14pt'>󰅶</span>",
       "deactivated": "<span size='14pt'>󰛊</span>"
-    },
-    "timeout": 240
+    }
+    // "timeout": 240
   },
   "power-profiles-daemon": {
     "format": "{icon}",

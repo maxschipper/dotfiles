@@ -20,6 +20,7 @@
     "clock",
     // "group/hardware",
     "privacy",
+    // "custom/flake",
     "systemd-failed-units"
   ],
   "modules-center": [
@@ -39,8 +40,8 @@
     // "group/brightness",
     // "backlight",
     "battery",
+    "battery#percent",
     // "upower",
-    // "battery#percent",
     "group/power"
   ]
 }
