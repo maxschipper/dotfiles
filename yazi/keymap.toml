@@ -3,6 +3,16 @@
 # "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [[mgr.prepend_keymap]]
+on = "W"
+run = 'shell -- swww img --transition-type any "$0"'
+desc = "Set img as wallpaper"
+
+[[mgr.prepend_keymap]]
+on = "<C-w>"
+run = 'shell -- swww clear'
+desc = "Clear wallpaper"
+
+[[mgr.prepend_keymap]]
 on = "Y"
 run = 'shell -- cb -c yazi copy "$0"'
 desc = "Copy file"
@@ -46,6 +56,11 @@ desc = "Open with command in the terminal"
 on   = [ "g", "k" ]
 run  = "cd ~/dev"
 desc = "~/dev"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "K" ]
+run  = "cd ~/dev/uni"
+desc = "~/dev/uni"
 
 # [[manager.prepend_keymap]]
 # on   = [ "g", "v" ]
