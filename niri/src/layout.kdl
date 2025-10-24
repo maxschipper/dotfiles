@@ -2,8 +2,9 @@
 layout {
     background-color "transparent"
     // Set gaps around windows in logical pixels.
-    gaps 10
-    center-focused-column "never" // When to center a column when changing focus, options are: - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen. - "always", the focused column will always be centered. - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
+    gaps 4
+    // center-focused-column "never" // When to center a column when changing focus, options are: - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen. - "always", the focused column will always be centered. - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
+    center-focused-column "on-overflow"
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -61,8 +62,11 @@ layout {
         // off
         width 2
         // active-color "#ffc87ff0"
-        active-color "#C6BFFF66"
-        inactive-color "#50505066"
+        // active-color "#C6BFFFff"
+        // active-color "#C6BFFFff"
+        active-color "hsl(247,0.2,0.4)"
+        // inactive-color "#50505066"
+        inactive-color "hsl(247,0.1,0.2)"
         // active-gradient from="#F6AFDA" to="#C6BFFF" angle=45 relative-to="workspace-view"
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -88,7 +92,7 @@ layout {
         hide-when-single-tab
         place-within-column
         gap 2
-        width 2
+        width 3
         // length total-proportion=1.0
         // position "right"
         // gaps-between-tabs 2
@@ -101,7 +105,8 @@ layout {
         // urgent-gradient from="#800" to="#a33" angle=45
         gaps-between-tabs 5
         // active-color "#fff"
-        inactive-color "#ffffff88"
+        // inactive-color "#ffffff88"
+        inactive-color "#999999aa"
     }
     /-tab-indicator {
         width 2
@@ -123,10 +128,9 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        left -10
-        right -10
-        top -10
-        bottom -10
-
+        left -4
+        right -4
+        top -4
+        bottom -4
     }
 }

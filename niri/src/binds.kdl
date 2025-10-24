@@ -8,8 +8,7 @@ binds {
     //
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
+
     Mod+Shift+o hotkey-overlay-title=null { show-hotkey-overlay; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -21,9 +20,10 @@ binds {
     Mod+I { spawn "swaync-client" "--toggle-panel"; }
 
     Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
-    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.8"; }
+    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.9"; }
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
+    Alt+Space hotkey-overlay-title=null { spawn "walker"; }
     Mod+Shift+Q hotkey-overlay-title="Start quickshell if it has crashed" { spawn "caelestia-shell"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace hotkey-overlay-title=null { close-window; }
@@ -121,6 +121,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
     Mod+Control+C { center-column; }
+    Mod+S { center-column; }
     // Center all fully visible columns on screen.
     Mod+Ctrl+Shift+C { center-visible-columns; }
     Mod+Minus { set-column-width "-10%"; }
@@ -162,5 +163,6 @@ binds {
     F11 hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
     Shift+F11 hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
 
-    
+    Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
+   
 }

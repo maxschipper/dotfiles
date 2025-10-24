@@ -15,7 +15,6 @@ environment {
 }
 
 spawn-at-startup "niri-genconfig" "daemon"
-// spawn-at-startup "/home/max/.local/bin/niri-genconfig daemon"
 // spawn-at-startup "niri-float-sticky"
 spawn-at-startup "foot" "--server"
 // spawn-at-startup "caelestia-shell"
@@ -24,6 +23,8 @@ spawn-at-startup "hypridle"
 spawn-at-startup "swaync"
 spawn-at-startup "swayosd-server"
 spawn-at-startup "sunsetr"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "walker --gapplication-service"
 
 spawn-at-startup "udiskie"
 
@@ -33,6 +34,7 @@ spawn-at-startup "awatcher"
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/fix_audio.sh"
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/systray-apps.sh"
 spawn-at-startup "bash" "-c" "sleep 10 && $NH_FLAKE/scripts/activitywatch/remove-private-browsing.ts"
+// spawn-at-startup "bash" "-c" "sleep 5 && $XDG_CONFIG_HOME/niri/open-float.py"
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -124,8 +126,9 @@ output "eDP-1" {
 layout {
     background-color "transparent"
     // Set gaps around windows in logical pixels.
-    gaps 10
-    center-focused-column "never" // When to center a column when changing focus, options are: - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen. - "always", the focused column will always be centered. - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
+    gaps 4
+    // center-focused-column "never" // When to center a column when changing focus, options are: - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen. - "always", the focused column will always be centered. - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
+    center-focused-column "on-overflow"
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -183,8 +186,11 @@ layout {
         // off
         width 2
         // active-color "#ffc87ff0"
-        active-color "#C6BFFF66"
-        inactive-color "#50505066"
+        // active-color "#C6BFFFff"
+        // active-color "#C6BFFFff"
+        active-color "hsl(247,0.2,0.4)"
+        // inactive-color "#50505066"
+        inactive-color "hsl(247,0.1,0.2)"
         // active-gradient from="#F6AFDA" to="#C6BFFF" angle=45 relative-to="workspace-view"
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -210,7 +216,7 @@ layout {
         hide-when-single-tab
         place-within-column
         gap 2
-        width 2
+        width 3
         // length total-proportion=1.0
         // position "right"
         // gaps-between-tabs 2
@@ -223,7 +229,8 @@ layout {
         // urgent-gradient from="#800" to="#a33" angle=45
         gaps-between-tabs 5
         // active-color "#fff"
-        inactive-color "#ffffff88"
+        // inactive-color "#ffffff88"
+        inactive-color "#999999aa"
     }
     /-tab-indicator {
         width 2
@@ -245,22 +252,18 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        left -10
-        right -10
-        top -10
-        bottom -10
-
+        left -4
+        right -4
+        top -4
+        bottom -4
     }
 }
 
 layer-rule {
-    match namespace="^caelestia-background$"
+    match namespace="^swww-daemon$"
     place-within-backdrop true
 }
-layer-rule {
-    match namespace="background$"
-    place-within-backdrop true
-}
+
 // Add a shadow for fuzzel.
 layer-rule {
     match namespace="^launcher$"
@@ -269,22 +272,28 @@ layer-rule {
         on
         draw-behind-window false
         // Softness controls the shadow blur radius. 30
-        softness 100
+        softness 50
         // Spread expands the shadow. 5
-        spread 30
+        spread 20
         // Offset moves the shadow relative to the window.
         // offset x=0 y=5
         offset x=0 y=0
         color "#0007"
     }
     // Fuzzel defaults to 10 px rounded corners.
-    geometry-corner-radius 17
+    geometry-corner-radius 10
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    match app-id="^org\\.wezfurlong\\.wezterm$"
-    default-column-width { }
+    geometry-corner-radius 15
+    clip-to-geometry true
+}
+
+window-rule {
+    match is-floating=true
+    geometry-corner-radius 5
+    clip-to-geometry true
 }
 
 window-rule {                                                                                             
@@ -292,6 +301,8 @@ window-rule {
     open-maximized true                                                                                   
     focus-ring { off; }
     border { off; }
+    geometry-corner-radius 0
+    clip-to-geometry true
 }
 window-rule {
     match app-id="firefox" title="^Extension"
@@ -313,16 +324,7 @@ window-rule {
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
-window-rule {
-    geometry-corner-radius 15
-    clip-to-geometry true
-}
 
-window-rule {
-    match is-floating=true
-    geometry-corner-radius 5
-    // clip-to-geometry true
-}
 
 
 switch-events {
@@ -342,8 +344,7 @@ binds {
     //
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
+
     Mod+Shift+o hotkey-overlay-title=null { show-hotkey-overlay; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -355,9 +356,10 @@ binds {
     Mod+I { spawn "swaync-client" "--toggle-panel"; }
 
     Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
-    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.8"; }
+    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.9"; }
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
+    Alt+Space hotkey-overlay-title=null { spawn "walker"; }
     Mod+Shift+Q hotkey-overlay-title="Start quickshell if it has crashed" { spawn "caelestia-shell"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace hotkey-overlay-title=null { close-window; }
@@ -455,6 +457,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
     Mod+Control+C { center-column; }
+    Mod+S { center-column; }
     // Center all fully visible columns on screen.
     Mod+Ctrl+Shift+C { center-visible-columns; }
     Mod+Minus { set-column-width "-10%"; }
@@ -496,7 +499,8 @@ binds {
     F11 hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
     Shift+F11 hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
 
-    
+    Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
+   
 }
 
 workspace "mail" { open-on-output "eDP-1"; }

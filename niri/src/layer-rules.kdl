@@ -1,11 +1,8 @@
 layer-rule {
-    match namespace="^caelestia-background$"
+    match namespace="^swww-daemon$"
     place-within-backdrop true
 }
-layer-rule {
-    match namespace="background$"
-    place-within-backdrop true
-}
+
 // Add a shadow for fuzzel.
 layer-rule {
     match namespace="^launcher$"
@@ -14,14 +11,14 @@ layer-rule {
         on
         draw-behind-window false
         // Softness controls the shadow blur radius. 30
-        softness 100
+        softness 50
         // Spread expands the shadow. 5
-        spread 30
+        spread 20
         // Offset moves the shadow relative to the window.
         // offset x=0 y=5
         offset x=0 y=0
         color "#0007"
     }
     // Fuzzel defaults to 10 px rounded corners.
-    geometry-corner-radius 17
+    geometry-corner-radius 10
 }
