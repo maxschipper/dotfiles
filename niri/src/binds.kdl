@@ -25,7 +25,6 @@ binds {
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
     Mod+Shift+Q hotkey-overlay-title="Start quickshell if it has crashed" { spawn "caelestia-shell"; }
-    F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace hotkey-overlay-title=null { close-window; }
 
@@ -142,9 +141,6 @@ binds {
     Mod+Shift+E allow-inhibiting=false hotkey-overlay-title=null { quit; }
     Ctrl+Alt+Delete allow-inhibiting=false { quit; }
     Mod+Delete allow-inhibiting=false { quit; }
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    Mod+F10 { power-off-monitors; }
     
     // F1 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     // F2 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -159,4 +155,12 @@ binds {
 
     F5 allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
     F6 allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
+
+    F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
+    Shift+F10 { power-off-monitors; }
+
+    F11 hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
+    Shift+F11 hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
+
+    
 }
