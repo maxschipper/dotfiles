@@ -11,6 +11,7 @@ window#waybar {
   background: @background;
 }
 
+#custom-notification:hover,
 #power-profiles-daemon:hover,
 #idle_inhibitor:hover,
 #custom-cachy:hover,
@@ -24,6 +25,7 @@ window#waybar {
   opacity: 0.5;
 }
 
+#custom-notification,
 #systemd-failed-units,
 #load,
 #temperature,

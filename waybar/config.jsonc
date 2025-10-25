@@ -33,6 +33,7 @@
   "modules-right": [
     "group/extras",
     // "clock",
+    "custom/notification",
     "network",
     // "bluetooth#bat",
     "bluetooth",
