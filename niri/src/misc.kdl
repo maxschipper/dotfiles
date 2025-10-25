@@ -4,7 +4,12 @@ hotkey-overlay {
     skip-at-startup
     hide-not-bound
 }
-cursor { hide-when-typing; hide-after-inactive-ms 5000; }
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms 5000
+    xcursor-size 24
+    xcursor-theme "capitaine-cursors-white" // dir name at /run/current-system/sw/share/icons
+}
 
 overview {
     backdrop-color "#000000"
