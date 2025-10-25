@@ -21,6 +21,7 @@
     "clock",
     // "group/hardware",
     "privacy",
+    "gamemode",
     // "custom/flake",
     "systemd-failed-units"
   ],

@@ -24,6 +24,7 @@ window#waybar {
   opacity: 0.5;
 }
 
+#systemd-failed-units,
 #load,
 #temperature,
 #memory,
@@ -173,4 +174,12 @@ tooltip * {
 
 #custom-hotspot.active {
   animation: blink-active 3s linear infinite alternate;
+}
+
+#gamemode {
+  margin-left: -50px;
+}
+
+#systemd-failed-units {
+  color: @color1;
 }
