@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Check nixpkgs lock entry for updates
+Exec=/home/max/nix/scripts/flake/check.sh
+Terminal=false

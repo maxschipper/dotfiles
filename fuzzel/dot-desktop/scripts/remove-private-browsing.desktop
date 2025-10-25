@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Remove private browsing
+Exec=/home/max/nix/scripts/activitywatch/remove-private-browsing.ts
+Terminal=true

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Calc
+Exec=/home/max/nix/scripts/calculator/calc
+Terminal=false

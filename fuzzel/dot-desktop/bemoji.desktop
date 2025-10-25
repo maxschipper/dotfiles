@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Emoji Picker
+Comment=Pick an emoji using bemoji and fuzzel
+Exec=bemoji --noline --private --file /home/max/.local/share/bemoji/emojis.txt
+Icon=edit-find
+Terminal=false
+Type=Application
+Actions=0;1;2;
+
+[Desktop Action 0]
+Name= Nerdfont Icons
+Exec=bemoji --noline --private --file /home/max/.local/share/bemoji/nerdfont.txt
+
+[Desktop Action 1]
+Name=Math Symbols
+Exec=bemoji --noline --private --file /home/max/.local/share/bemoji/math.txt
+
+[Desktop Action 2]
+Name=All
+Exec=bemoji --private --noline
+

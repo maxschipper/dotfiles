@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=SHUTDOWN
+Exec=/home/max/nix/scripts/shutdown.sh
+Terminal=true

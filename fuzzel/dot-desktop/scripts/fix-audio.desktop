@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Fix Audio Script
+Exec=/home/max/nix/scripts/fix_audio.sh
+Terminal=true

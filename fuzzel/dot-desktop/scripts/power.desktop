@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Power Menu
+Exec=/home/max/.config/fuzzel/scripts/power-menu.sh
+Terminal=false
