@@ -165,4 +165,5 @@ binds {
 
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
+    Mod+U hotkey-overlay-title="Open ToDo" { spawn-sh "footclient -T ToDo hx /home/max/.shell-todo.md"; }
 }
