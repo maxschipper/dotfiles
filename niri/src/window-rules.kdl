@@ -1,6 +1,6 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    geometry-corner-radius 15
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
