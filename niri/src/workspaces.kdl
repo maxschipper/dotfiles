@@ -16,11 +16,11 @@ window-rule {
 
 workspace "browser" { open-on-output "eDP-1"; }
 window-rule {
-    // match at-startup=true app-id="firefox"
-    match app-id="firefox"
+    match at-startup=true app-id="firefox"
+    // match app-id="firefox"
     open-on-workspace "browser"
     open-maximized true
-    open-focused true
+    // open-focused true
 }
 
 workspace "console" { open-on-output "eDP-1"; }
@@ -28,8 +28,3 @@ window-rule {
     match at-startup=true app-id="footclient"
     open-on-workspace "console"
 }
-window-rule {
-    match app-id="footclient"
-    default-column-width { proportion 0.5; }
-}
-

@@ -39,4 +39,14 @@ window-rule {
     // block-out-from "screencast"
 }
 
+window-rule {
+    match app-id="footclient"
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="footclient" title="ToDo"
+    default-column-width { proportion 0.33; }
+    // open-floating true
+}
 

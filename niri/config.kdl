@@ -45,8 +45,8 @@ hotkey-overlay {
 cursor {
     hide-when-typing
     hide-after-inactive-ms 5000
-    xcursor-theme "apple_cursor"
-    xcursor-size 96
+    xcursor-size 24
+    xcursor-theme "capitaine-cursors-white" // dir name at /run/current-system/sw/share/icons
 }
 
 overview {
@@ -127,8 +127,7 @@ layout {
     background-color "transparent"
     // Set gaps around windows in logical pixels.
     gaps 4
-    // center-focused-column "never" // When to center a column when changing focus, options are: - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen. - "always", the focused column will always be centered. - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "never" // When to center a column when changing focus, options are: - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen. - "always", the focused column will always be centered. - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -286,7 +285,7 @@ layer-rule {
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    geometry-corner-radius 15
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -325,6 +324,16 @@ window-rule {
     // block-out-from "screencast"
 }
 
+window-rule {
+    match app-id="footclient"
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="footclient" title="ToDo"
+    default-column-width { proportion 0.33; }
+    // open-floating true
+}
 
 
 switch-events {
@@ -501,6 +510,7 @@ binds {
 
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
+    Mod+U hotkey-overlay-title="Open ToDo" { spawn-sh "footclient -T ToDo hx /home/max/.shell-todo.md"; }
 }
 
 workspace "mail" { open-on-output "eDP-1"; }
@@ -521,11 +531,11 @@ window-rule {
 
 workspace "browser" { open-on-output "eDP-1"; }
 window-rule {
-    // match at-startup=true app-id="firefox"
-    match app-id="firefox"
+    match at-startup=true app-id="firefox"
+    // match app-id="firefox"
     open-on-workspace "browser"
     open-maximized true
-    open-focused true
+    // open-focused true
 }
 
 workspace "console" { open-on-output "eDP-1"; }
@@ -533,9 +543,4 @@ window-rule {
     match at-startup=true app-id="footclient"
     open-on-workspace "console"
 }
-window-rule {
-    match app-id="footclient"
-    default-column-width { proportion 0.5; }
-}
-
 
