@@ -5,8 +5,8 @@ hash = "50da29476e744dba37d77fb209328fd1"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"
-rev = "843c3fa"
-hash = "b4040931f0d2f9670ddb4923e55cd881"
+rev = "831234e"
+hash = "ed3363e256e210593f0f8e4cec3e36a9"
 
 [[plugin.deps]]
 use = "GrzegorzKozub/mdcat"
@@ -15,22 +15,22 @@ hash = "40c20e6c1085d1f45309b9f148bf4f6e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "d1c8baa"
+rev = "8f1d971"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "d1c8baa"
+rev = "8f1d971"
 hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "d1c8baa"
+rev = "8f1d971"
 hash = "8ad3e90b079190b4905f24a44f4ca06b"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "d1c8baa"
+rev = "8f1d971"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
@@ -40,12 +40,12 @@ hash = "16a10359fc2a3cd8cc8bcfbe00f744d3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-filter"
-rev = "d1c8baa"
+rev = "8f1d971"
 hash = "bcda8eeb3f4013bae156aecabfc745e8"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "d1c8baa"
+rev = "8f1d971"
 hash = "4c49c446328c4553a4ccab7facc10b21"
 
 [[plugin.deps]]
@@ -75,8 +75,8 @@ hash = "b84a85f3b513bd9c0a0ab93cc7c8e4c3"
 
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "03f6c4a"
-hash = "f14a951bf376d7fe73033c4a48aa5fa4"
+rev = "8bb6286"
+hash = "f8d05a771c1d18c87f5558cbd4ae27fa"
 
 [[plugin.deps]]
 use = "pirafrank/what-size"
@@ -85,15 +85,15 @@ hash = "62251f94eb67648d42cdfcfb8be0fad2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "d1c8baa"
-hash = "a20327710c3a8d37ee0972128dcb6a31"
+rev = "8f1d971"
+hash = "64713dcd74daf9ec644883a5895e5d1"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "2d73b79"
-hash = "86f1eb7e792533c80b34cdff4e191f41"
+rev = "f6b425a"
+hash = "4127d9d6c96862ed96a7a64b3973a5af"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "2d73b79"
-hash = "d4c41d713b325710a9dd5ae86c3f8a5f"
+rev = "f6b425a"
+hash = "14b111562c00eb1917fe3ca3ae9bb771"
