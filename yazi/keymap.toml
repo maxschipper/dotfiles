@@ -58,15 +58,28 @@ run  = "cd ~/dev"
 desc = "~/dev"
 
 [[mgr.prepend_keymap]]
+on   = [ "g", "u" ]
+run  = "cd ~/dev/uni/current"
+desc = "go to current semester"
+[[mgr.prepend_keymap]]
+on   = [ "g", "U" ]
+run  = "cd ~/dev/uni/.working"
+desc = "go to things im working on"
+
+[[mgr.prepend_keymap]]
 on   = [ "g", "K" ]
 run  = "cd ~/dev/uni"
-desc = "~/dev/uni"
+desc = ""
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "D" ]
+run  = "cd ~/Documents"
+desc = "go to Docs"
 
 # [[manager.prepend_keymap]]
 # on   = [ "g", "v" ]
 # run  = "cd /Volumes"
-# desc = "Go to /Volumes"
-
+# desc = "Go to mounts"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "n" ]
@@ -74,7 +87,7 @@ run  = "cd $NH_FLAKE"
 desc = "Go to nix flake"
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "C" ]
+on   = [ "g", "j" ]
 run  = "cd ~/dev/code/dotfiles"
 desc = "Go to dotfiles"
 
@@ -190,9 +203,9 @@ keymap = [
 	{ on = [ "<Left>" ],  run = "leave",    desc = "Go back to the parent directory" },
 	{ on = [ "<Right>" ], run = "enter",    desc = "Enter the child directory" },
 
-	{ on = [ "g", "e" ], run = "arrow bot", desc = "Move cursor to the top" },
-	{ on = [ "G" ],      run = "arrow top",  desc = "Move cursor to the bottom" },
-	{ on = [ "g", "g" ], run = "arrow top",  desc = "Move cursor to the bottom" },
+	{ on = [ "g", "e" ], run = "arrow bot", desc = "Move cursor to the bottom" },
+	{ on = [ "G" ],      run = "arrow bot",  desc = "Move cursor to the bottom" },
+	{ on = [ "g", "g" ], run = "arrow top",  desc = "Move cursor to the top" },
 
 	# Selection
 	{ on = [ "<Space>" ], run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
