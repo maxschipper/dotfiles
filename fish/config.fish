@@ -1,8 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     function fish_greeting
-        fastfetch
-        glow $HOME/.shell-todo.md -w 50
+        # fastfetch
+        # glow $HOME/.shell-todo.md -w 50
     end
 
     alias ls='lsd -AF'
