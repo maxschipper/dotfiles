@@ -16,7 +16,6 @@ environment {
 
 spawn-at-startup "niri-genconfig" "daemon"
 // spawn-at-startup "niri-float-sticky"
-spawn-at-startup "foot" "--server"
 // spawn-at-startup "caelestia-shell"
 spawn-at-startup "waybar"
 spawn-at-startup "hypridle"
@@ -24,13 +23,14 @@ spawn-at-startup "swaync"
 spawn-at-startup "swayosd-server"
 spawn-at-startup "sunsetr"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "walker --gapplication-service"
+// spawn-at-startup "walker --gapplication-service"
 
 spawn-at-startup "udiskie"
 
 spawn-at-startup "aw-server"
 spawn-at-startup "awatcher"
 
+spawn-at-startup "bash" "-c" "sleep 2 && systemctl --user restart foot-server.service"
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/fix_audio.sh"
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/systray-apps.sh"
 spawn-at-startup "bash" "-c" "sleep 10 && $NH_FLAKE/scripts/activitywatch/remove-private-browsing.ts"
@@ -60,7 +60,7 @@ gestures { hot-corners { off; }; }
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // off
-    slowdown 0.9
+    slowdown 0.7
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
@@ -180,6 +180,7 @@ layout {
     }
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
+        // on // needed after 25.08
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
         // off
@@ -336,11 +337,34 @@ window-rule {
 }
 
 
+// Indicate screencasted windows with red colors.
+/-window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+
 switch-events {
     lid-close { spawn "niri" "msg" "action" "power-off-monitors"; }
     lid-open { spawn "niri" "msg" "action" "power-on-monitors"; }
-    tablet-mode-on { spawn "notify-send" "tablet mode on"; }
-    tablet-mode-off { spawn "notify-send" "tablet mode off"; }
+    tablet-mode-on { spawn "notify-send" "-e" "-t" "2000" "tablet mode on"; }
+    tablet-mode-off { spawn "notify-send" "-e" "-t" "2000" "tablet mode off"; }
 }
 
 binds {
@@ -360,7 +384,10 @@ binds {
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
-    // Mod+E { spawn "bash" "-c" "yazi"; }
+    // TODO: give app title to yazi and btop and let niri float / fullscreen them on startup
+    //       maybe then use footclient again
+    Mod+E { spawn "foot" "yazi"; }
+    Mod+0 { spawn "foot" "btop"; }
 
     Mod+I { spawn "swaync-client" "--toggle-panel"; }
 
@@ -461,10 +488,11 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F hotkey-overlay-title=null { maximize-column; }
+    // Mod+Ctrl+F hotkey-overlay-title=null { maximize-window-to-edges; } // TODO: not released yet @25.08
     Mod+Shift+F { fullscreen-window; }
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Shift+Ctrl+F { expand-column-to-available-width; }
     Mod+Control+C { center-column; }
     Mod+S { center-column; }
     // Center all fully visible columns on screen.
@@ -524,6 +552,7 @@ window-rule {
 workspace "ai" { open-on-output "eDP-1"; }
 window-rule {
     match app-id="FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B"
+    match app-id="FFPWA-01K8NBJHQ2534PZ21G02TXZ2NA"
     open-on-workspace "ai"
     open-maximized true
     open-focused true

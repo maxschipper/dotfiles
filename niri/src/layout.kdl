@@ -56,6 +56,7 @@ layout {
     }
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
+        // on // needed after 25.08
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
         // off
