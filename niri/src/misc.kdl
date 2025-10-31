@@ -22,5 +22,5 @@ gestures { hot-corners { off; }; }
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // off
-    slowdown 0.9
+    slowdown 0.7
 }
