@@ -20,6 +20,7 @@
     "niri/workspaces",
     "clock",
     // "group/hardware",
+    "custom/notification",
     "privacy",
     "gamemode",
     // "custom/flake",
@@ -33,7 +34,7 @@
   "modules-right": [
     "group/extras",
     // "clock",
-    "custom/notification",
+    // "custom/notification",
     "network",
     // "bluetooth#bat",
     "bluetooth",

@@ -97,6 +97,7 @@
   },
   "niri/window": {
     "rotate": 270,
+    // "format": "{app_id} - {title}",
     "format": "{app_id}",
     "rewrite": {
       "xx-firefox": "",
@@ -105,6 +106,8 @@
       "footclient": "Foot",
       "FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B": "ChatGPT",
       "FFPWA-01K59CKK49HX8DCT17WM0HKDP7": "YouTube",
+      "FFPWA-01K8NBJHQ2534PZ21G02TXZ2NA": "Gemini",
+      "FFPWA-01K5Q0P0S43R5NKB6F9XWM5H6M": "iCoud",
       "org.pwmt.zathura": "Zathura"
     },
     "icon": false,
@@ -452,9 +455,9 @@
     "format": "<span size='16pt'>{icon}</span>",
     "format-icons": {
       "notification": "󱅫",
-      "none": "󰂜",
+      "none": "<span color='#2a2b3c'>󰂜</span>",
       "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
+      "dnd-none": "<span color='#676b7a'>󰪓</span>",
       "inhibited-notification": "󰂛",
       "inhibited-none": "󰪑",
       "dnd-inhibited-notification": "󰂛",
