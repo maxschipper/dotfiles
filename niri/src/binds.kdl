@@ -15,7 +15,10 @@ binds {
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
-    // Mod+E { spawn "bash" "-c" "yazi"; }
+    // TODO: give app title to yazi and btop and let niri float / fullscreen them on startup
+    //       maybe then use footclient again
+    Mod+E { spawn "foot" "yazi"; }
+    Mod+0 { spawn "foot" "btop"; }
 
     Mod+I { spawn "swaync-client" "--toggle-panel"; }
 
@@ -116,10 +119,11 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F hotkey-overlay-title=null { maximize-column; }
+    // Mod+Ctrl+F hotkey-overlay-title=null { maximize-window-to-edges; } // TODO: not released yet @25.08
     Mod+Shift+F { fullscreen-window; }
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Shift+Ctrl+F { expand-column-to-available-width; }
     Mod+Control+C { center-column; }
     Mod+S { center-column; }
     // Center all fully visible columns on screen.
