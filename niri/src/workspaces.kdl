@@ -9,6 +9,7 @@ window-rule {
 workspace "ai" { open-on-output "eDP-1"; }
 window-rule {
     match app-id="FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B"
+    match app-id="FFPWA-01K8NBJHQ2534PZ21G02TXZ2NA"
     open-on-workspace "ai"
     open-maximized true
     open-focused true
