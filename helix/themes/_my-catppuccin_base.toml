@@ -45,11 +45,11 @@
 
 # MARKDOWN
 "markup.heading.marker" = { fg = "surface0", modifiers = ["dim","italic"] }
-"markup.heading.1" = { bg = "teal", fg = "base" }
-"markup.heading.2" = { bg = "mauve", fg = "base" }
-"markup.heading.3" = { bg = "green", fg = "base" }
-"markup.heading.4" = { bg = "yellow", fg = "base" }
-"markup.heading.5" = { bg = "pink", fg = "base" }
+"markup.heading.1" = { bg = "teal", fg = "base", underline = { color = "peach", style = "double_line"} }
+"markup.heading.2" = { bg = "mauve", fg = "base", underline = { color = "yellow", style = "double_line"} }
+"markup.heading.3" = { bg = "green", fg = "base", underline = { color = "maroon", style = "double_line"} }
+"markup.heading.4" = { bg = "yellow", fg = "base", underline = { color = "mauve", style = "double_line"} }
+"markup.heading.5" = { bg = "pink", fg = "base", underline = { color = "teal", style = "double_line"} }
 "markup.heading"   = { fg = "green", bg = "surface2", modifiers = ["bold"] }
 "markup.list" = "mauve"
 # "markup.list.unchecked" = "overlay2"
@@ -57,7 +57,7 @@
 "markup.list.checked" = "green"
 "markup.bold" = { fg = "red", modifiers = ["bold"] }
 "markup.italic" = { fg = "yellow",modifiers = ["italic"] }
-"markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
+"markup.link.url" = { fg = "blue", modifiers = ["italic"], underline.style = "line" }
 "markup.link.text" = "blue"
 "markup.raw" = "flamingo"
 
@@ -103,8 +103,8 @@
 
 "ui.cursor" = { fg = "base", bg = "secondary_cursor" }
 "ui.cursor.primary" = { fg = "base", bg = "rosewater" }
-"ui.cursor.match" = { fg = "peach", bg = "overlay0", modifiers = ["bold"] }
-
+# "ui.cursor.match" = { fg = "peach", bg = "surface1", modifiers = ["bold"] }
+"ui.cursor.match" = { bg = "surface1", modifiers = ["bold"], underline = { color = "mauve", style = "double_line" } }
 "ui.cursor.primary.normal" = { fg = "base", bg = "lavender" }
 "ui.cursor.primary.insert" = { fg = "base", bg = "green" }
 "ui.cursor.primary.select" = { fg = "base", bg = "flamingo" }
@@ -123,8 +123,8 @@
 "diagnostic.unnecessary" = { modifiers = ["dim"] }
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
-"diagnostic.info" = { underline = { color = "sky", style = "curl" } }
-"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.info" = { underline = { color = "sky", style = "dotted" } }
+"diagnostic.hint" = { underline = { color = "teal", style = "dashed" } }
 
 error = "red"
 warning = "yellow"

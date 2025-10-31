@@ -4,4 +4,4 @@ inherits = "my-catppuccin_mocha"
 "ui.background" = { fg = "text" }
 
 [palette]
-surface1 = "#8386A0"
+# surface1 = "#8386A0"
