@@ -286,13 +286,13 @@ layer-rule {
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
 window-rule {
     match is-floating=true
-    geometry-corner-radius 5
+    geometry-corner-radius 4
     clip-to-geometry true
 }
 
@@ -301,14 +301,16 @@ window-rule {
     open-maximized true                                                                                   
     focus-ring { off; }
     border { off; }
-    geometry-corner-radius 0
-    clip-to-geometry true
+    // geometry-corner-radius 0
+    clip-to-geometry false
 }
+
 window-rule {
     match app-id="firefox" title="^Extension"
     default-column-width { proportion 0.33; }
     // open-floating true
 }
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -536,6 +538,9 @@ binds {
     F11 hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
     Shift+F11 hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
 
+    F8 hotkey-overlay-title="" { spawn-sh "$HOME/.config/fuzzel/scripts/power-menu.sh"; }
+
+
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
     Mod+U hotkey-overlay-title="Open ToDo" { spawn-sh "footclient -T ToDo hx /home/max/.shell-todo.md"; }
@@ -560,7 +565,7 @@ window-rule {
 
 workspace "browser" { open-on-output "eDP-1"; }
 window-rule {
-    match at-startup=true app-id="firefox"
+    match app-id="firefox"
     // match app-id="firefox"
     open-on-workspace "browser"
     open-maximized true

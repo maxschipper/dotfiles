@@ -1,12 +1,12 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
 window-rule {
     match is-floating=true
-    geometry-corner-radius 5
+    geometry-corner-radius 4
     clip-to-geometry true
 }
 
@@ -15,14 +15,16 @@ window-rule {
     open-maximized true                                                                                   
     focus-ring { off; }
     border { off; }
-    geometry-corner-radius 0
-    clip-to-geometry true
+    // geometry-corner-radius 0
+    clip-to-geometry false
 }
+
 window-rule {
     match app-id="firefox" title="^Extension"
     default-column-width { proportion 0.33; }
     // open-floating true
 }
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -50,3 +52,26 @@ window-rule {
     // open-floating true
 }
 
+
+// Indicate screencasted windows with red colors.
+/-window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
