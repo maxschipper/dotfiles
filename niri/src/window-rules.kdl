@@ -75,3 +75,10 @@ window-rule {
         inactive-color "#7d0d2d"
     }
 }
+
+window-rule {
+    match app-id="footclient" title="Calculator"
+    default-column-width { proportion 0.33; }
+    open-floating true
+}
+

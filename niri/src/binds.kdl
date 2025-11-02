@@ -169,6 +169,7 @@ binds {
 
     F8 hotkey-overlay-title="" { spawn-sh "$HOME/.config/fuzzel/scripts/power-menu.sh"; }
 
+    F12 hotkey-overlay-title="" { spawn-sh "footclient -T Calculator qalc"; }
 
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    

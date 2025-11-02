@@ -362,6 +362,13 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="footclient" title="Calculator"
+    default-column-width { proportion 0.33; }
+    open-floating true
+}
+
+
 switch-events {
     lid-close { spawn "niri" "msg" "action" "power-off-monitors"; }
     lid-open { spawn "niri" "msg" "action" "power-on-monitors"; }
@@ -540,6 +547,7 @@ binds {
 
     F8 hotkey-overlay-title="" { spawn-sh "$HOME/.config/fuzzel/scripts/power-menu.sh"; }
 
+    F12 hotkey-overlay-title="" { spawn-sh "footclient -T Calculator qalc"; }
 
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
