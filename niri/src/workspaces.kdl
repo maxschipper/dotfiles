@@ -17,7 +17,7 @@ window-rule {
 
 workspace "browser" { open-on-output "eDP-1"; }
 window-rule {
-    match at-startup=true app-id="firefox"
+    match app-id="firefox"
     // match app-id="firefox"
     open-on-workspace "browser"
     open-maximized true
