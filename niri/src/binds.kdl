@@ -167,6 +167,9 @@ binds {
     F11 hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
     Shift+F11 hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
 
+    F8 hotkey-overlay-title="" { spawn-sh "$HOME/.config/fuzzel/scripts/power-menu.sh"; }
+
+
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
     Mod+U hotkey-overlay-title="Open ToDo" { spawn-sh "footclient -T ToDo hx /home/max/.shell-todo.md"; }
