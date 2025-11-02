@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-result=$(echo -e "Lock\nLog out\nReboot\nHibernate\nPower off" | fuzzel --dmenu --placeholder="POWER MENU" --hide-prompt -l 5)
+result=$(echo -e "Shutdown\nReboot\nHibernate\nLog out" | fuzzel --dmenu --placeholder="POWER MENU" --hide-prompt -l 4)
 
-if [[ "${result}" = "Power off" ]]; then
+if [[ "${result}" = "Shutdown" ]]; then
   systemctl poweroff -i
-elif [[ "${result}" = "Lock" ]]; then
-  loginctl lock-session
 elif [[ "${result}" = "Hibernate" ]]; then
   systemctl hibernate
 elif [[ "${result}" = "Reboot" ]]; then
