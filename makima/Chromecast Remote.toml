@@ -1,0 +1,34 @@
+# code 103 KEY_UP 
+# code 105 KEY_LEFT 
+# code 106 KEY_RIGHT 
+# code 108 KEY_DOWN 
+# code 113 KEY_MUTE 
+# code 114 KEY_VOLUMEDOWN
+# code 115 KEY_VOLUMEUP
+# code 152 KEY_SCREENLOCK (Power key)
+# code 158 KEY_BACK
+# code 172 KEY_HOMEPAGE
+# code 353 KEY_SELECT     (center click)
+# code 377 KEY_TV         (switch source button)
+# code 588 KEY_CAMERA_ACCESS_DISABLE (youtube hotkey)
+# code 589 KEY_CAMERA_ACCESS_TOGGLE  (netflix hotkey)
+# code 164 KEY_PLAYPAUSE  (?)
+# code 217 KEY_SEARCH     (?)
+# code 230 KEY_KBDILLUMUP (?)
+
+[remap]
+KEY_SELECT = ["KEY_ENTER"]
+KEY_BACK = ["KEY_BACKSPACE"]
+KEY_HOMEPAGE = ["KEY_ESC"]
+KEY_VOLUMEUP = ["KEY_F3"]
+KEY_MUTE = ["KEY_F1"]
+KEY_VOLUMEDOWN = ["KEY_F2"]
+KEY_TV = ["KEY_F10"]
+
+# not working?
+# KEY_SCREENLOCK = ["KEY_"]
+# KEY_CAMERA_ACCESS_DISABLE = ["KEY_"]
+# KEY_CAMERA_ACCESS_TOGGLE = ["KEY_"]
+
+[settings]
+GRAB_DEVICE = "true" #gain exclusivity on the device
