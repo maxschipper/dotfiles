@@ -1,0 +1,20 @@
+set statusbar-home-tilde "true"
+
+
+map <C-o> file_chooser
+map r recolor
+map <C-r> rotate
+
+# map J scroll "down"
+# map K scroll "up"
+# map j navigate "next"
+# map k navigate "previous"
+
+map l navigate "next"
+map h navigate "previous"
+map j scroll "down"
+map k scroll "up"
+
+map <C-j> scroll "down"
+map <C-k> scroll "up"
+
