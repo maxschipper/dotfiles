@@ -112,7 +112,8 @@ outputPath = "$root/target/$dir/$name"
 # exportPdf = "onType" # use onType when not using the html web preview below
 # exportPdf = "onSave"
 preview.background.enabled = true
-preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=auto"] # dark mode
+preview.background.args = ["--data-plane-host=127.0.0.1:23635"]
+# preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=auto"] # dark mode
 # preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never"] # light mode
   # Typst END
 
