@@ -48,4 +48,4 @@ abbr -a edustat 'eduvpn-cli status'
 abbr -a sunsetrr 'sunsetr t 6500 100'
 
 abbr -a failed 'systemctl --failed --no-pager && systemctl --user --failed --no-pager'
-abbr -a makimaa 'sudo -b MAKIMA_CONFIG=/etc/makima makima'
+abbr -a makimaa 'sudo -Eb MAKIMA_CONFIG=/etc/makima makima'
