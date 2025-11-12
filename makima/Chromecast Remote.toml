@@ -15,20 +15,24 @@
 # code 164 KEY_PLAYPAUSE  (?)
 # code 217 KEY_SEARCH     (?)
 # code 230 KEY_KBDILLUMUP (?)
+[commands]
+KEY_VOLUMEDOWN = ["pactl set-sink-volume 104 -10%"] #X
+KEY_VOLUMEUP = ["pactl set-sink-volume 104 +10%"] #Y
+# KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
 
 [remap]
 KEY_SELECT = ["KEY_ENTER"]
 KEY_BACK = ["KEY_BACKSPACE"]
 KEY_HOMEPAGE = ["KEY_ESC"]
-KEY_VOLUMEUP = ["KEY_F3"]
-KEY_MUTE = ["KEY_F1"]
-KEY_VOLUMEDOWN = ["KEY_F2"]
-KEY_TV = ["KEY_F10"]
+# KEY_VOLUMEUP = ["KEY_F3"]
+# KEY_VOLUMEDOWN = ["KEY_F2"]
+KEY_MUTE = ["KEY_SPACE"]
+KEY_TV = ["KEY_F11"]
 
 # not working?
-# KEY_SCREENLOCK = ["KEY_"]
-# KEY_CAMERA_ACCESS_DISABLE = ["KEY_"]
-# KEY_CAMERA_ACCESS_TOGGLE = ["KEY_"]
+KEY_SCREENLOCK = ["KEY_F11"]
+KEY_CAMERA_ACCESS_DISABLE = ["KEY_F11"]
+KEY_CAMERA_ACCESS_TOGGLE = ["KEY_F11"]
 
 [settings]
 GRAB_DEVICE = "true" #gain exclusivity on the device

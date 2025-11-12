@@ -5,42 +5,60 @@
 #Relative and absolute axis events are hard coded, for example use RSTICK_UP, RSTICK_DOWN etc to rebind your analog stick.
 #This config file is tested for Xbox 360, Xbox One and Xbox Elite 2 controllers. When using a different controller, if no specific config file for your device is available, change the keycodes on the left according to those of your controller (evtest is your friend again). If your controller has a button to enable/disable analog sticks, make sure they're enabled.
 
+[commands]
+BTN_NORTH = ["pactl set-sink-volume 104 -10%"] #X
+BTN_WEST = ["pactl set-sink-volume 104 +10%"] #Y
+
 [remap]
 #Examples of Button => Key(s)
-# BTN_NORTH = ["KEY_LEFTMETA", "KEY_J"] #X
-# BTN_EAST = ["KEY_ENTER"] #Y
 BTN_SOUTH = ["KEY_ENTER"] #A
-BTN_WEST = ["KEY_BACKSPACE"] #B
-# BTN_TR = ["KEY_LEFTMETA", "KEY_L"] #RB
-# BTN_TL = ["KEY_LEFTMETA", "KEY_K"] #LB
-# BTN_START = ["KEY_LEFTMETA", "KEY_D"] #start
-# BTN_SELECT = ["KEY_ESC"] #back
-# volume?
-BTN_SELECT = ["KEY_F2"] #back
-BTN_START = ["KEY_F3" ] #start
-# BTN_THUMBR = ["KEY_LEFTMETA", "KEY_Q"] #RS
-# BTN_THUMBL = ["BTN_MIDDLE"] #LS
+BTN_EAST = ["KEY_BACKSPACE"] #B
+BTN_TR = ["BTN_LEFT"] #RB
+BTN_TL = ["KEY_TAB"] #LB
+BTN_SELECT = ["KEY_F11"] #back
+BTN_START = ["KEY_ESC" ] #start
+BTN_THUMBR = ["KEY_LEFTCTRL"] #RS
+BTN_THUMBL = ["KEY_LEFTSHIFT"] #LS
 BTN_MODE = ["KEY_ESC"] #Xbox button
-#Examples of Axis events => Key(s)
-# ABS_RZ = ["KEY_LEFTMETA", "KEY_LEFTSHIFT", "KEY_L"] #RT
-# ABS_Z = ["KEY_LEFTMETA", "KEY_LEFTSHIFT", "KEY_K"] #LT
 BTN_DPAD_UP = ["KEY_UP"] #directional pad up
 BTN_DPAD_RIGHT = ["KEY_RIGHT"] #directional pad right
 BTN_DPAD_DOWN = ["KEY_DOWN"] #directional pad down
 BTN_DPAD_LEFT = ["KEY_LEFT"] #directional pad left
-RSTICK_UP = ["KEY_UP"] #right analog stick up
-RSTICK_DOWN = ["KEY_DOWN"] #right analog stick down
+
+#Examples of Axis events => Key(s)
+# ABS_RZ = ["KEY_A"] #RT
+# ABS_Z = ["KEY_B"] #LT
+
+ABS_X = ["KEY_X"]
+ABS_Y = ["KEY_Y"]
+
+ABS_GAS = ["KEY_G"]
+ABS_BRAKE = ["KEY_B"]
+
+# RSTICK_UP = ["KEY_I"] #right analog stick up
+# RSTICK_DOWN = ["KEY_K"] #right analog stick down
+# RSTICK_LEFT = ["KEY_J"] #right analog stick LEFT
+# RSTICK_RIGHT = ["KEY_L"] #right analog stick RIGHT
+
+LSTICK_UP = ["KEY_W"] #right analog stick up
+# LSTICK_DOWN = ["KEY_S"] #right analog stick down
+LSTICK_LEFT = ["KEY_A"] #right analog stick LEFT
+# LSTICK_RIGHT = ["KEY_D"] #right analog stick RIGHT
+
 
 # [commands]
 # RSTICK_LEFT = ["foot sh -c 'pacman -Q | wc -l && sleep 1 && neofetch' && sleep 5"] #right analog stick left
 # RSTICK_RIGHT = ["firefox", "discord"] #right analog stick right
 
 [settings]
-LSTICK_SENSITIVITY = "6" #sensitivity when scrolling or moving cursor, lower value is higher sensitivity, minimum 1
-RSTICK_SENSITIVITY = "6" #sensitivity when scrolling or moving cursor, lower value is higher sensitivity, minimum 1
+# LSTICK = "bind" #cursor, scroll, bind or disabled
+# RSTICK = "bind" #cursor, scroll, bind or disabled
 LSTICK = "disabled" #cursor, scroll, bind or disabled
-RSTICK = "bind" #cursor, scroll, bind or disabled
-LSTICK_DEADZONE = "5" #integer between 0 and 128, bigger number is wider deadzone, default 5
-RSTICK_DEADZONE = "10" #integer between 0 and 128, bigger number is wider deadzone, default 5
+RSTICK = "disabled" #cursor, scroll, bind or disabled
+LSTICK_SENSITIVITY = "16" #sensitivity when scrolling or moving cursor, lower value is higher sensitivity, minimum 1
+RSTICK_SENSITIVITY = "16" #sensitivity when scrolling or moving cursor, lower value is higher sensitivity, minimum 1
+LSTICK_DEADZONE = "50" #integer between 0 and 128, bigger number is wider deadzone, default 5
+RSTICK_DEADZONE = "50" #integer between 0 and 128, bigger number is wider deadzone, default 5
 16_BIT_AXIS = "true" #necessary for Xbox controllers and Switch joycons, use false for other controllers
+# 16_BIT_AXIS = "false" #necessary for Xbox controllers and Switch joycons, use false for other controllers
 GRAB_DEVICE = "true" #gain exclusivity on the device
