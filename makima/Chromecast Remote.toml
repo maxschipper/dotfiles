@@ -16,8 +16,8 @@
 # code 217 KEY_SEARCH     (?)
 # code 230 KEY_KBDILLUMUP (?)
 [commands]
-KEY_VOLUMEDOWN = ["pactl set-sink-volume 104 -10%"] #X
-KEY_VOLUMEUP = ["pactl set-sink-volume 104 +10%"] #Y
+KEY_VOLUMEDOWN = ["pulsemixer --change-volume -10"]
+KEY_VOLUMEUP = ["pulsemixer --change-volume +10"]
 # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
 
 [remap]

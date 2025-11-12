@@ -6,8 +6,11 @@
 #This config file is tested for Xbox 360, Xbox One and Xbox Elite 2 controllers. When using a different controller, if no specific config file for your device is available, change the keycodes on the left according to those of your controller (evtest is your friend again). If your controller has a button to enable/disable analog sticks, make sure they're enabled.
 
 [commands]
-BTN_NORTH = ["pactl set-sink-volume 104 -10%"] #X
-BTN_WEST = ["pactl set-sink-volume 104 +10%"] #Y
+# BTN_NORTH = ["pactl set-sink-volume 104 -10%"] #X
+# BTN_WEST = ["pactl set-sink-volume 104 +10%"] #Y
+BTN_NORTH = ["pulsemixer --change-volume -10"]
+BTN_WEST = ["pulsemixer --change-volume +10"]
+
 
 [remap]
 #Examples of Button => Key(s)
