@@ -1,3 +1,4 @@
+set selection-clipboard clipboard
 set statusbar-home-tilde "true"
 
 
