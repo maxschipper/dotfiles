@@ -20,6 +20,6 @@ map <C-j> scroll "down"
 map <C-k> scroll "up"
 
 # not allowed in sandbox
-unmap o
-unmap <C-o>
+# unmap o
+# unmap <C-o>
 

@@ -17,7 +17,8 @@ edit = [ { run = '$HOME/.config/yazi/helix-with-title.sh "$@"', block = true, fo
 glow = [ { run = 'glow -p "$@"', block = true, orphan = false, for = "unix", desc = "open using glow" } ]
 imv = [ { run = 'imv "$@"', block = true, orphan = false, for = "linux", desc = "open using imv" } ]
 mpv = [ { run = 'mpv "$@"', orphan = true, for = "linux", desc = "open using mpv" } ]
-zathura = [ { run = 'zathura-sandbox "$@"', orphan = true, for = "unix", desc = "open using Zathura" } ]
+zathura-sanbox = [ { run = 'zathura-sandbox "$@"', orphan = true, for = "unix", desc = "open using Zathura in sandbox-mode" } ] # sandbox doesnt allow opening docs with "o"; also crashes when hot reloading
+zathura = [ { run = 'zathura "$@"', orphan = true, for = "unix", desc = "open using Zathura" } ]
 # xournalpp = [ { run = 'xournalpp "$@"', orphan = true, for = "unix", desc = "open using Xournal++" } ] # can use open instead
 dragondrop = [ { run = 'dragon-drop -x -a "$@"', block = true, orphan = false, for = "linux", desc = "Drag and Drop" } ]
 
