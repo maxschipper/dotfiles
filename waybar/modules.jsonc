@@ -207,7 +207,8 @@
     "tooltip-format-wifi": "{ifname}:\n{essid} @{frequency}GHz\n{ipaddr}\n{signalStrength}% {signaldBm}dBm {bandwidthTotalBytes}",
     "tooltip-format-ethernet": "{ifname} via {gwaddr}/{cidr}\n{ipaddr}\n{bandwidthTotalBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nm-connection-editor",
+    // "on-click": "nm-connection-editor",
+    "on-click": "footclient nmtui",
     "on-click-right": "rfkill toggle wifi"
   },
   "bluetooth": {
@@ -221,7 +222,8 @@
     "tooltip-format": "Address: {controller_address}\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address}) | Battery: {device_battery_percentage}%",
-    "on-click": "blueman-manager",
+    // "on-click": "blueman-manager",
+    "on-click": "footclient bluetuith",
     "on-click-right": "rfkill toggle bluetooth"
   },
   "bluetooth#bat": {
@@ -261,7 +263,8 @@
       "<span size='14pt'>󰕾</span>"
     ],
     "format-muted": "<span size='14pt'>󰝟</span>",
-    "on-click-right": "pavucontrol",
+    // "on-click-right": "pavucontrol",
+    "on-click-right": "footclient wiremix",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "reverse-scrolling": true,
     "tooltip": true,
