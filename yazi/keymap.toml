@@ -59,7 +59,7 @@ desc = "~/dev"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "u" ]
-run  = "cd ~/dev/uni/current"
+run  = "cd ~/dev/uni/semesters/2_25-WS"
 desc = "go to current semester"
 [[mgr.prepend_keymap]]
 on   = [ "g", "U" ]
