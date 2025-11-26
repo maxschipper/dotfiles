@@ -50,5 +50,6 @@ abbr -a sunsetrr 'sunsetr t 6500 100'
 abbr -a failed 'systemctl --failed --no-pager && systemctl --user --failed --no-pager'
 abbr -a makimaa 'sudo -Eb MAKIMA_CONFIG=/etc/makima makima'
 
-abbr -a --position anywhere YT 'chromium --kiosk --enable-extensions --user-agent="Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" https://youtube.com/tv
-'
+abbr -a --position anywhere YT 'chromium --kiosk --enable-extensions --user-agent="Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" https://youtube.com/tv'
+
+abbr -a --position anywhere yt 'chromium  --disable-infobars --user-agent="Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" https://youtube.com/tv'
