@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=YT Leanback UI
+Exec=/home/max/nix/scripts/yt-leanback-ui.sh
+Icon=youtube
+Terminal=false
+Type=Application
