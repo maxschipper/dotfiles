@@ -32,7 +32,8 @@
     "niri/window"
   ],
   "modules-right": [
-    "group/extras",
+    "tray",
+    // "group/extras",
     // "clock",
     // "custom/notification",
     "network",
