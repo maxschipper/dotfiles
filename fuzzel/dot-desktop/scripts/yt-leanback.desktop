@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=YT Leanback UI
+Name=YouTube TV
+Keywords=yt;leanback;
 Exec=/home/max/nix/scripts/yt-leanback-ui.sh
-Icon=youtube
 Terminal=false
 Type=Application
