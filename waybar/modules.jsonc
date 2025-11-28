@@ -8,8 +8,8 @@
     },
     "modules": [
       "custom/menu",
-      "tray",
-      "custom/hotspot"
+      "tray"
+      // "custom/hotspot"
     ]
   },
   "group/power": {
