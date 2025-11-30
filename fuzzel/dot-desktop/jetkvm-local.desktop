@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=JetKVM Local
+Keywords=kvm;pc;
+Exec=chromium --app=http://192.168.178.76
+Terminal=false
+Type=Application

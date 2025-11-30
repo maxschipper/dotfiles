@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=JetKVM Cloud
+Keywords=kvm;pc;
+Exec=chromium --app=https://app.jetkvm.com
+Terminal=false
+Type=Application
