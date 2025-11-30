@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Bluetuith
+Keywords=blue;bluetooth;
+Exec=bluetuith
+Terminal=true
+Type=Application

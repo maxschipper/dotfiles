@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Sound
+Keywords=volume;wire;
+Exec=wiremix --tab output
+Terminal=true
+Type=Application

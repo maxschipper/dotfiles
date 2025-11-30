@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Network
+Keywords=wifi;network;networkmanager;nmtui;
+Exec=nmtui
+Terminal=true
+Type=Application
