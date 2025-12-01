@@ -118,8 +118,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F hotkey-overlay-title=null { maximize-column; }
-    // Mod+Ctrl+F hotkey-overlay-title=null { maximize-window-to-edges; } // TODO: not released yet @25.08
+    Mod+Ctrl+F hotkey-overlay-title=null { maximize-column; }
+    Mod+F hotkey-overlay-title=null { maximize-window-to-edges; } // TODO: not released yet @25.08
     Mod+Shift+F { fullscreen-window; }
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".

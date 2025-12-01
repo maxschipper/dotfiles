@@ -12,11 +12,11 @@ window-rule {
 
 window-rule {                                                                                             
     match app-id="firefox"                                                                                
-    open-maximized true                                                                                   
-    focus-ring { off; }
-    border { off; }
+    open-maximized-to-edges true                                                                                   
+    // focus-ring { off; }
+    // border { off; }
     // geometry-corner-radius 0
-    clip-to-geometry false
+    // clip-to-geometry false
 }
 
 window-rule {
