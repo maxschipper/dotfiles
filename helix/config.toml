@@ -153,6 +153,8 @@ ret   = "insert_newline" # ret = ["open_below", "normal_mode"]
 tab   = "indent"
 S-tab = "unindent"
 "+" = "@ms*"
+"*" = "@ms_"
+"#" = "@ms$"
 
 minus = "search"
 "," = "command_mode"
@@ -195,6 +197,10 @@ y = "@\"+Y"
 p = "@\"+P"
 P = "paste_after"
 Y = "yank"
+
+"+" = "@ms*"
+"*" = "@ms_"
+"#" = "@ms$"
 
 
 # command launcher
