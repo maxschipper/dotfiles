@@ -1,5 +1,6 @@
 set selection-clipboard clipboard
 set statusbar-home-tilde "true"
+set scroll-step 60
 
 
 map <C-o> file_chooser
