@@ -115,15 +115,18 @@ binds {
     Mod+Comma { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
+
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+Ctrl+F hotkey-overlay-title=null { maximize-column; }
-    Mod+F hotkey-overlay-title=null { maximize-window-to-edges; } // TODO: not released yet @25.08
-    Mod+Shift+F { fullscreen-window; }
+
+    Mod+F { maximize-window-to-edges; } // TODO: not released yet @25.08
+    Mod+Ctrl+F { fullscreen-window; }
+    Mod+Shift+F { maximize-column; }
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
     Mod+Shift+Ctrl+F { expand-column-to-available-width; }
+
     Mod+Control+C { center-column; }
     Mod+S { center-column; }
     // Center all fully visible columns on screen.
