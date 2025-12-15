@@ -1,6 +1,6 @@
 [mgr]
 # ratio = [1,2,3]
-ratio = [2,4,4]
+ratio = [2,4,5]
 show_hidden = true
 show_symlink = true
 # title_format = "{cwd}"
