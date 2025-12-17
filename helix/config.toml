@@ -215,6 +215,7 @@ w = ":write"
 q = ":quit"
 Q = ":buffer-close"
 0 = ":quit!"
+tab = ":sh ~/.config/helix/compile-keybind.sh %{buffer_name}"
 
 n = "goto_next_diag"
 
