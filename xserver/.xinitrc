@@ -17,4 +17,5 @@ unclutter &
 
 $NH_FLAKE/scripts/yt-leanback-ui.sh &
 
+xdotool mousemove 0 0
 exec matchbox-window-manager
