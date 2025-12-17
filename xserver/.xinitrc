@@ -7,7 +7,8 @@ xset -dpms
 mkfifo /tmp/xob.pipe
 tail -f /tmp/xob.pipe | xob &
 
-sudo -E makima &
+sudo -E MAKIMA_CONFIG=/etc/makima makima &
+# sudo -E makima &
 # (sudo -E makima) > ~/makima.log 2>&1 &
 
 unclutter &
