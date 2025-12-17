@@ -98,17 +98,19 @@
   "niri/window": {
     "rotate": 270,
     // "format": "{app_id} - {title}",
-    "format": "{app_id}",
+    "format": "{title}",
+    // "format": "{app_id}",
     "rewrite": {
-      "xx-firefox": "",
-      "xx-footclient": "",
+      // "firefox": "",
+      // "footclient": "",
       "firefox": "Firefox",
-      // "footclient": "Foot",
-      "footclient": "Terminal",
+      "thunderbird": "Mail",
+      "footclient": "Terminal", // "Foot"
       "FFPWA-01K5PFY2B1ZQ3WJDE7AKV44X8B": "ChatGPT",
       "FFPWA-01K59CKK49HX8DCT17WM0HKDP7": "YouTube",
       "FFPWA-01K8NBJHQ2534PZ21G02TXZ2NA": "Gemini",
-      "FFPWA-01K5Q0P0S43R5NKB6F9XWM5H6M": "iCoud",
+      "FFPWA-01K5Q0P0S43R5NKB6F9XWM5H6M": "iCloud",
+      "FFPWA-01KC9507E9GZW294BKHAHS8ENM": "ToDo",
       "com.github.xournalpp.xournalpp": "Xournal++",
       "org.pwmt.zathura": "Zathura"
     },
