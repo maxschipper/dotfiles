@@ -4,6 +4,9 @@
 # xset s off xset s noblank
 xset -dpms
 
+mkfifo /tmp/xob.pipe
+tail -f /tmp/xob.pipe | xob &
+
 sudo -E makima &
 # (sudo -E makima) > ~/makima.log 2>&1 &
 
