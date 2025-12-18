@@ -184,11 +184,7 @@ file-types = [
 [[language]]
 name = "python"
 auto-format = true
-language-servers = [
-  "ruff",
-  # "jedi",
-  "pylsp"
-]
+# language-servers = ["ty", "ruff", "jedi", "pylsp"]
 
 [[language]]
 name = "devicetree"
