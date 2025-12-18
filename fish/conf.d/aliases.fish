@@ -27,7 +27,8 @@ abbr -a cata 'bat *.*'
 abbr -a --set-cursor which 'readlink -f $(which %)'
 abbr -a --set-cursor Which 'dirname (dirname (readlink -f $(which %)))'
 abbr -a --set-cursor --command nix shell 'shell nixpkgs#%'
-abbr -a up '$NH_FLAKE/scripts/flake/checkUp2Date.sh'
+# abbr -a up '$NH_FLAKE/scripts/flake/checkUp2Date.sh'
+abbr -a up flake-check
 abbr -a audio '$NH_FLAKE/scripts/fix_audio.sh'
 
 abbr -a --position anywhere wlc '| wl-copy'
