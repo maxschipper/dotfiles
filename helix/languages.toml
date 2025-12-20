@@ -184,7 +184,10 @@ file-types = [
 [[language]]
 name = "python"
 auto-format = true
-# language-servers = ["ty", "ruff", "jedi", "pylsp"]
+language-servers = ["ty", "ruff", "jedi", "pylsp", "zuban"]
+[language-server.zuban]
+command = "zuban"
+args = ["server"]
 
 [[language]]
 name = "devicetree"
