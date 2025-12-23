@@ -6,6 +6,7 @@ alias cd='z'
 abbr -a cdr 'cd (git rev-parse --show-toplevel)'
 abbr -a cdt 'cd (mktemp -d)'
 abbr -a c cls
+abbr -a clear cls
 abbr -a clf 'clear && fastfetch'
 
 #ls - needs to be in config.fish because they get overwritten by the default functions otherwise
