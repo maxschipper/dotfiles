@@ -14,10 +14,10 @@ abbr -a clf 'clear && fastfetch'
 # alias l='lsd -AF --group-directories-first --blocks git --blocks name --blocks permission --blocks user --blocks group --blocks size --blocks date --date relative'
 abbr -a llst 'lsd --long --tree --total-size -S'
 
-alias f='y'
-alias hxx='hx .'
-abbr -a h hx .
-alias lg='lazygit'
+# alias f='y'
+# alias hxx='hx .'
+# abbr -a h hx .
+abbr -a lg lazygit
 abbr -a ff fastfetch
 
 abbr -a todos 'rg --color=always "TODO:" --hidden .'
