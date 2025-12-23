@@ -8,7 +8,7 @@ function f --description "Smart opener: Yazi for empty, Helix for files, Fuzzy s
 
     # open files directly
     if test -e $target
-        hx $target
+        $EDITOR $target
         return
     end
 
@@ -27,14 +27,14 @@ function f --description "Smart opener: Yazi for empty, Helix for files, Fuzzy s
         return 1
     else if test $count_matches -eq 1
         echo "Found: $matches[1]"
-        hx $matches[1]
+        $EDITOR $matches[1]
     else
         # multiple matches with fd, pick one with fzf    
         # --height and --reverse to make it look nice inline
         set -l selected (string join \n $matches | fzf --height 40% --layout=reverse --header="Multiple matches found:")
 
         if test -n "$selected"
-            hx $selected
+            $EDITOR $selected
         end
     end
 end
