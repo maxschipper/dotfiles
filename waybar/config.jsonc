@@ -20,6 +20,7 @@
     "niri/workspaces",
     "clock",
     // "group/hardware",
+    "idle_inhibitor",
     "custom/notification",
     "privacy",
     "gamemode",
@@ -44,9 +45,10 @@
     "pulseaudio",
     // "group/brightness",
     // "backlight",
+    "power-profiles-daemon",
     "battery",
-    "battery#percent",
+    "battery#percent"
     // "upower",
-    "group/power"
+    // "group/power"
   ]
 }

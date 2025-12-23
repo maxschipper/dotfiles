@@ -345,7 +345,7 @@
     "format": "{icon}",
     "format-icons": {
       "activated": "<span size='14pt'>󰅶</span>",
-      "deactivated": "<span size='14pt'>󰛊</span>"
+      "deactivated": "<span color='#2a2b3c' size='14pt'>󰛊</span>"
     }
     // "timeout": 240
   },
@@ -354,10 +354,14 @@
     "tooltip-format": "Power profile: {profile}",
     "tooltip": true,
     "format-icons": {
-      "default": "?",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      // "default": "?",
+      // "performance": "",
+      // "balanced": "",
+      // "power-saver": ""
+      "default": "<span color='#F38BA8'>?</span>",
+      "performance": "<span color='#F9E2AF'></span>",
+      "balanced": "<span></span>",
+      "power-saver": "<span color='#2a2b3c'></span>"
     }
   },
   "upower": {
