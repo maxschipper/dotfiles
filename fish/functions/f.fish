@@ -6,7 +6,13 @@ function f --description "Smart opener: Yazi for empty, Helix for files, Fuzzy s
 
     set -l target $argv[1]
 
-    # open files directly
+    # if its a dir open with yazi
+    if test -d $target
+        y $target
+        return
+    end
+
+    # if its not a dir but exists its a file and open with editor
     if test -e $target
         $EDITOR $target
         return
