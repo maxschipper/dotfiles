@@ -1,0 +1,171 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "show_edit_predictions": true,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "disable_ai": false,
+  "audio": {
+    "experimental.rodio_audio": true
+  },
+  "calls": {
+    "mute_on_join": true
+  },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "cursor_shape": "bar"
+  },
+  "notification_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "collapse_untracked_diff": true,
+    "sort_by_path": false,
+    "status_style": "icon",
+  },
+  "outline_panel": {
+    "button": true,
+  },
+  "project_panel": {
+    "hide_hidden": false,
+    "hide_root": false,
+    "git_status": true,
+    "folder_icons": false,
+    "file_icons": true,
+    "entry_spacing": "comfortable",
+    "dock": "right",
+  },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.8,
+    "border_size": 2.0,
+  },
+  "window_decorations": "server",
+  "bottom_dock_layout": "full",
+  "preview_tabs": {
+    "enable_keep_preview_on_code_navigation": false,
+    "enable_preview_from_file_finder": true,
+    "enabled": true,
+  },
+  "tab_bar": {
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": false,
+  },
+  "tabs": {
+    "show_close_button": "hover",
+    "show_diagnostics": "errors",
+    "activate_on_close": "left_neighbour",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_sign_in": false,
+    "show_user_picture": false,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_branch_icon": true,
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+  },
+  "close_on_file_delete": true,
+  "use_smartcase_search": true,
+  "search": {
+    "button": true,
+    "center_on_match": true,
+    "regex": true,
+    "include_ignored": true,
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "prettier": {
+    "allowed": true,
+  },
+  "completions": {
+    "lsp_insert_mode": "replace_subsequence",
+  },
+  "colorize_brackets": true,
+  "middle_click_paste": false,
+  "word_diff_enabled": true,
+  "lsp_document_colors": "background",
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true,
+  },
+  "completion_menu_scrollbar": "auto",
+  "show_whitespaces": "trailing",
+  "fast_scroll_sensitivity": 10.0,
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "active_line_width": 2,
+    "coloring": "fixed",
+  },
+  "soft_wrap": "editor_width",
+  "toolbar": {
+    "code_actions": true,
+    "agent_review": false,
+    "selections_menu": true,
+    "quick_actions": true,
+  },
+  "scrollbar": {
+    "axes": {
+      "horizontal": false,
+    },
+    "diagnostics": "warning",
+    "show": "auto",
+  },
+  "inline_code_actions": true,
+  "relative_line_numbers": "disabled",
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "show_signature_help_after_edits": true,
+  "auto_signature_help": true,
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "auto_update": false,
+  "restore_on_startup": "last_session",
+  "redact_private_values": true,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "agent": {
+    "play_sound_when_agent_done": true,
+    "notify_when_agent_waiting": "all_screens",
+    "enable_feedback": false,
+    "dock": "left",
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "qwen/qwen2.5-coder-14b",
+    },
+    "model_parameters": [],
+  },
+  "use_system_path_prompts": false,
+  "use_system_prompts": false,
+  "helix_mode": true,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": false,
+  "base_keymap": "VSCode",
+  "icon_theme": "Catppuccin Frappé",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": "One Dark",
+}
