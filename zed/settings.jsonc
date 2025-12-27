@@ -7,25 +7,42 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "languages": {
+    "Python": {
+      "language_servers": [
+        // Disable basedpyright and enable Ty, and otherwise
+        // use the default configuration.
+        "ty",
+        "!basedpyright",
+        "...",
+      ],
+    },
+  },
+  // https://zed.dev/docs/configuring-languages#configuring-language-servers
+  "lsp": {},
   "show_edit_predictions": true,
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "disable_ai": false,
   "audio": {
-    "experimental.rodio_audio": true
+    "experimental.rodio_audio": true,
   },
   "calls": {
-    "mute_on_join": true
+    "mute_on_join": true,
   },
   "git": {
+    "blame": {
+      "show_avatar": true,
+    },
     "inline_blame": {
-      "show_commit_summary": true
-    }
+      "enabled": false,
+      "show_commit_summary": true,
+    },
   },
   "terminal": {
     "alternate_scroll": "off",
-    "cursor_shape": "bar"
+    "cursor_shape": "bar",
   },
   "notification_panel": {
     "dock": "left",
@@ -39,6 +56,9 @@
     "button": true,
   },
   "project_panel": {
+    "auto_open": {
+      "on_create": false
+    },
     "hide_hidden": false,
     "hide_root": false,
     "git_status": true,
@@ -48,13 +68,13 @@
     "dock": "right",
   },
   "active_pane_modifiers": {
-    "inactive_opacity": 0.8,
+    "inactive_opacity": 1.0,
     "border_size": 2.0,
   },
   "window_decorations": "server",
   "bottom_dock_layout": "full",
   "preview_tabs": {
-    "enable_keep_preview_on_code_navigation": false,
+    "enable_keep_preview_on_code_navigation": true,
     "enable_preview_from_file_finder": true,
     "enabled": true,
   },
@@ -94,7 +114,7 @@
     },
   },
   "prettier": {
-    "allowed": true,
+    "allowed": false,
   },
   "completions": {
     "lsp_insert_mode": "replace_subsequence",
@@ -144,13 +164,22 @@
   "redact_private_values": true,
   "when_closing_with_no_tabs": "keep_window_open",
   "agent": {
+    "profiles": {
+      "test": {
+        "name": "test",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "ask",
     "play_sound_when_agent_done": true,
     "notify_when_agent_waiting": "all_screens",
     "enable_feedback": false,
     "dock": "left",
     "default_model": {
-      "provider": "lmstudio",
-      "model": "qwen/qwen2.5-coder-14b",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
     },
     "model_parameters": [],
   },
