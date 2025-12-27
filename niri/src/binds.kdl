@@ -164,8 +164,9 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
 
-    Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
-    Shift+Alt+L { power-off-monitors; }
+    Alt+F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
+    // Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
+    // Shift+Alt+L { power-off-monitors; }
 
     Alt+P hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
     Shift+Alt+P hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
