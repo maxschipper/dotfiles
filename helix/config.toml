@@ -158,6 +158,7 @@ S-tab = "unindent"
 
 minus = "search"
 "," = "command_mode"
+";" = "flip_selections"
 
 w = "move_prev_word_start"
 
