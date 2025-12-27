@@ -1,50 +1,69 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
 // documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
     "context": "Workspace",
     "bindings": {
-      // "space e": "file_finder::Toggle",
+      "ctrl-ssharp": "dev::OpenKeyContextView",
+      "alt-e": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "Workspace && !Editor",
+    "bindings": {
       ",": "command_palette::Toggle",
+    },
+  },
+  {
+    // "context": "Editor && mode == full && vim_mode == helix_normal",
+    "context": "Editor && mode == full && VimControl",
+    "bindings": {
+      // "ctrl+o": "zed::OpenOnboarding",
+      // "escape": "vim::HelixCollapseSelection",
+      ",": "command_palette::Toggle",
+      "-": "buffer_search::Deploy",
+      "space w": "workspace::Save",
       "space e": "project_panel::ToggleFocus",
+      // "space q": "project_panel::ToggleFocus",
+      "space q": "pane::CloseActiveItem",
+      "space Q": "pane::ReopenClosedItem",
+      "space ?": "dev::OpenKeyContextView",
       "space u": [
         "task::Spawn",
         { "task_name": "jjui", "reveal_target": "center" },
       ],
-      // "space e": [
-      //   "task::Spawn",
-      //   { "task_name": "File Finder", "reveal_target": "center" },
-      // ],
     },
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "Editor && mode == full && vim_mode == helix_normal",
     "bindings": {
-      // "j k": "vim::NormalBefore"
+      "escape": "vim::HelixCollapseSelection",
     },
   },
   {
-    "context": "Editor",
+    "context": "Editor && mode == full",
     "bindings": {
-      // "ctrl+o": "zed::OpenOnboarding",
-      "ctrl+o": "command_palette::Toggle",
-      ",": "command_palette::Toggle",
-      "space w": "workspace::Save",
-      // "space q": "project_panel::ToggleFocus",
-      "space q": "pane::CloseActiveItem",
       "ctrl+w": "pane::CloseActiveItem",
-      "space Q": "pane::ReopenClosedItem",
     },
   },
   {
-    "context": "Picker > Editor",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "ctrl-h": null,
+      "a": "project_panel::NewFile",
+      "d": "project_panel::Trash",
     },
   },
+  {
+    "context": "EmptyPane",
+    "bindings": {
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      "space f": "file_finder::Toggle",
+    },
+  },
+  // {
+  //   "context": "Editor && vim_mode == insert",
+  //   "bindings": {
+  //     "j k": "vim::NormalBefore",
+  //   },
+  // },
 ]
