@@ -161,8 +161,12 @@ binds {
     XF86AudioMicMute allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
 
 
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
+    // these keys have a really slow repeat rate built in
+    XF86MonBrightnessDown allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "-10"; }
+    XF86MonBrightnessUp allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "+10"; }
+
+    Shift+XF86MonBrightnessDown allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "-2"; }
+    Shift+XF86MonBrightnessUp allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "+2"; }
 
     Alt+F10 allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
     // Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
