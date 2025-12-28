@@ -5,6 +5,12 @@
     "bindings": {
       "ctrl-ssharp": "dev::OpenKeyContextView",
       "alt-e": "workspace::ToggleRightDock",
+      "alt-t": [
+        "task::Spawn",
+        {
+          "task_name": "Open Foot at Project Root"
+        }
+      ]
     },
   },
   {

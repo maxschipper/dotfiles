@@ -3,6 +3,14 @@
 // Example:
 [
   {
+    "label": "Open Foot at Project Root",
+    "command": "footclient",
+    "args": [],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true,
+    "reveal": "never"
+  },
+  {
     "label": "File Finder",
     "command": "zed $(tv files)",
     "hide": "always",
