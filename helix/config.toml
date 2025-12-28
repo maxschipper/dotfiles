@@ -49,32 +49,19 @@ left = [
   "mode",
   "spinner",
   "version-control",
+  "read-only-indicator",
 ]
 
 center = [
   "file-modification-indicator",
-  "separator",
-  "separator",
-  "separator",
+  "file-name",
   "file-modification-indicator",
-  "separator",
-  "read-only-indicator",
-  "separator",
-  "read-only-indicator",
-  "separator",
-  "file-modification-indicator",
-  "separator",
-  "separator",
-  "separator",
-  "file-modification-indicator",
-  #  # "file-absolute-path",
-  # # "file-base-name",
-  # "file-modification-indicator",
-  # "read-only-indicator",
+
+  # "file-absolute-path",
+  # "file-base-name",
 ]
 
 right = [
-  "file-name",
   "diagnostics",
   "workspace-diagnostics",
   "register",
@@ -92,11 +79,10 @@ right = [
 
 diagnostics = ["info", "warning", "error"]
 workspace-diagnostics = ["info", "warning", "error"]
-# separator   = "│"
-separator = " "
-mode.normal = "NORMAL "
-mode.insert = "INSERT "
-mode.select = "SELECT "
+separator = " " #│
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.lsp]
 display-inlay-hints = true
