@@ -18,11 +18,6 @@ recent-windows {
     }
 
     binds {
-        Alt+Tab         { next-window; }
-        Alt+Shift+Tab   { previous-window; }
-        Alt+grave       { next-window     filter="app-id"; }
-        Alt+Shift+grave { previous-window filter="app-id"; }
-
         Mod+Tab         { next-window; }
         Mod+Shift+Tab   { previous-window; }
         Mod+grave       { next-window     filter="app-id"; }
