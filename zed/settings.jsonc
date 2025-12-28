@@ -164,6 +164,10 @@
   "redact_private_values": true,
   "when_closing_with_no_tabs": "keep_window_open",
   "agent": {
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
+    },
     "profiles": {
       "test": {
         "name": "test",
@@ -179,7 +183,7 @@
     "dock": "left",
     "default_model": {
       "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "model": "gemini-3-pro-preview",
     },
     "model_parameters": [],
   },
