@@ -8,9 +8,9 @@
       "alt-t": [
         "task::Spawn",
         {
-          "task_name": "Open Foot at Project Root"
-        }
-      ]
+          "task_name": "Open Foot at Project Root",
+        },
+      ],
     },
   },
   {
@@ -20,16 +20,30 @@
     },
   },
   {
-    // "context": "Editor && mode == full && vim_mode == helix_normal",
+    "context": "Editor && VimControl",
+    "bindings": {
+      "M": "vim::SelectLargerSyntaxNode",
+      "m c": "vim::ChangeCase",
+      "m l": "vim::ConvertToLowerCase",
+      "m u": "vim::ConvertToUpperCase",
+      "ctrl-j": "editor::MoveLineDown",
+      "ctrl-k": "editor::MoveLineUp",
+      "Q": "vim::ToggleRecord",
+      "q": "vim::ReplayLastRecording",
+    },
+  },
+  {
     "context": "Editor && mode == full && VimControl",
     "bindings": {
       // "ctrl+o": "zed::OpenOnboarding",
-      // "escape": "vim::HelixCollapseSelection",
+      "space -": "pane::DeploySearch",
       ",": "command_palette::Toggle",
       "-": "buffer_search::Deploy",
+      "space o": "projects::OpenRecent",
+      "space g": "git_panel::ToggleFocus",
+      "space F": "workspace::ToggleZoom",
       "space w": "workspace::Save",
       "space e": "project_panel::ToggleFocus",
-      // "space q": "project_panel::ToggleFocus",
       "space q": "pane::CloseActiveItem",
       "space Q": "pane::ReopenClosedItem",
       "space ?": "dev::OpenKeyContextView",
@@ -42,7 +56,22 @@
   {
     "context": "Editor && mode == full && vim_mode == helix_normal",
     "bindings": {
-      "escape": "vim::HelixCollapseSelection",
+      "f13": "vim::HelixCollapseSelection",
+      "f14": "editor::Cancel",
+      "escape": ["workspace::SendKeystrokes", "f13 f14"],
+
+      //
+      // doesnt work because it doesnt wait for the first keybind
+      // "escape": [
+      //   "action::Sequence",
+      //   ["vim::HelixCollapseSelection", "editor::Cancel"],
+      // ],
+    },
+  },
+  {
+    "context": "buffer_search_deployed > Editor && mode == full && VimControl",
+    "bindings": {
+      "escape": "buffer_search::Dismiss",
     },
   },
   {
@@ -54,8 +83,42 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
+      "l": "project_panel::Open",
       "a": "project_panel::NewFile",
       "d": "project_panel::Trash",
+      "q": "workspace::ToggleRightDock",
+      "H": "project_panel::CollapseAllEntries",
+    },
+  },
+  {
+    "context": "GitPanel && menu",
+    "bindings": {
+      "q": "git_panel::Close",
+      "a": "git_panel::OpenMenu",
+      "d": "git::Diff",
+    },
+  },
+  {
+    "context": "GitPanel > Editor && VimControl",
+    "bindings": {
+      "tab": "git_panel::FocusChanges",
+      "q": "git_panel::Close",
+    },
+  },
+  {
+    "context": "GitDiff > (Editor && VimControl && !menu)",
+    "bindings": {
+      "s": "git::ToggleStaged",
+      "l": "editor::GoToHunk",
+      "h": "editor::GoToPreviousHunk",
+      "L": "editor::ToggleFold",
+      "H": "editor::ToggleFoldAll",
+    },
+  },
+  {
+    "context": "KeyContextView",
+    "bindings": {
+      "q": "pane::CloseActiveItem",
     },
   },
   {
@@ -64,6 +127,7 @@
       // Put key bindings here (in addition to the context above) if you want them to
       // work when no editor exists.
       "space f": "file_finder::Toggle",
+      "space o": "projects::OpenRecent",
     },
   },
   // {
