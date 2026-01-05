@@ -246,7 +246,7 @@
       "provider": "google",
       "model": "gemini-3-flash-preview",
     },
-    "default_profile": "ask",
+    "default_profile": "minimal",
     "profiles": {
       "write": {
         "name": "Write",
@@ -278,6 +278,7 @@
         // We don't know which of the context server tools are safe for the "Ask" profile, so we don't enable them by default.
         // "enable_all_context_servers": true,
         "tools": {
+          "open": false,
           "diagnostics": true,
           "fetch": true,
           "list_directory": true,
@@ -285,7 +286,6 @@
           "now": true,
           "find_path": true,
           "read_file": true,
-          "open": true,
           "grep": true,
           "thinking": true,
           "web_search": true,
@@ -355,7 +355,7 @@
     "inactive_opacity": 1.0,
     "border_size": 0.5,
   },
-  "bottom_dock_layout": "full",
+  "bottom_dock_layout": "contained",
   "drop_target_size": 0.15,
   "use_system_path_prompts": false,
   "use_system_prompts": false,
@@ -363,7 +363,7 @@
   "selection_highlight": true,
   "rounded_selection": true,
 
-  "use_on_type_format": true,
+  // "use_on_type_format": true,
 
   "auto_update": false,
 }

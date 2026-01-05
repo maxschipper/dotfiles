@@ -5,6 +5,7 @@
     "bindings": {
       "ctrl-ssharp": "dev::OpenKeyContextView",
       "alt-e": "workspace::ToggleRightDock",
+      "ctrl-t": "terminal_panel::Toggle",
       "alt-t": [
         "task::Spawn",
         {
@@ -19,6 +20,12 @@
       ",": "command_palette::Toggle",
     },
   },
+  // {
+  //   "context": "Editor",
+  //   "bindings": {
+  //     "ctrl-v": "editor::Paste",
+  //   },
+  // },
   {
     "context": "Editor && VimControl",
     "bindings": {
@@ -39,8 +46,11 @@
       "space -": "pane::DeploySearch",
       ",": "command_palette::Toggle",
       "-": "buffer_search::Deploy",
+      "alt-c": "editor::SelectNext",
+      "alt-ctrl-c": "editor::SelectAllMatches",
       "space o": "projects::OpenRecent",
       "space g": "git_panel::ToggleFocus",
+      "space i": "agent::ToggleFocus",
       "space F": "workspace::ToggleZoom",
       "space w": "workspace::Save",
       "space e": "project_panel::ToggleFocus",
@@ -86,6 +96,7 @@
       "l": "project_panel::Open",
       "a": "project_panel::NewFile",
       "shift-a": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
       "d": "project_panel::Trash",
       "p": "project_panel::Paste",
       "y": "project_panel::Copy",
@@ -101,8 +112,9 @@
     "context": "GitPanel && menu",
     "bindings": {
       "q": "git_panel::Close",
-      "a": "git_panel::OpenMenu",
       "d": "git::Diff",
+      "a": "git::StageAll",
+      "A": "git::UnstageAll",
     },
   },
   {
@@ -120,6 +132,8 @@
       "h": "editor::GoToPreviousHunk",
       "L": "editor::ToggleFold",
       "H": "editor::ToggleFoldAll",
+      // "c": "git_panel::FocusEditor",
+      "c": null,
 
       // prevent most of editing in the diff
       "i": null,
@@ -136,7 +150,6 @@
       "f": null,
       "p": null,
       "q": null,
-      "c": null,
       "m": null,
 
       "I": null,
@@ -158,6 +171,22 @@
     },
   },
   {
+    "context": "AgentPanel && !(vim_mode==insert)",
+    "bindings": {
+      "tab": "agent::ToggleFocus",
+      "q": "workspace::CloseActiveDock",
+      "escape": "editor::ToggleFocus",
+    },
+  },
+  {
+    "context": "AgentPanel > Editor && VimControl",
+    "bindings": {
+      // "tab": "git_panel::FocusChanges",
+      "q": "workspace::CloseActiveDock",
+      "escape": "editor::ToggleFocus",
+    },
+  },
+  {
     "context": "KeyContextView",
     "bindings": {
       "q": "pane::CloseActiveItem",
@@ -170,6 +199,7 @@
       // work when no editor exists.
       "space f": "file_finder::Toggle",
       "space o": "projects::OpenRecent",
+      "space e": "project_panel::ToggleFocus",
     },
   },
   // {
