@@ -29,7 +29,11 @@ abbr -a --set-cursor Which 'dirname (dirname (readlink -f $(which %)))'
 
 abbr -a --set-cursor --command nix shell 'shell nixpkgs#%'
 abbr -a --set-cursor --command nix why 'why-depends /run/current-system nixpkgs#%'
+
 abbr -a n nixos
+abbr -a --command nixos a apply
+abbr -a --command nixos t 'test --yes'
+abbr -a --command nixos o option
 
 # abbr -a up '$NH_FLAKE/scripts/flake/checkUp2Date.sh'
 abbr -a up flake-check
