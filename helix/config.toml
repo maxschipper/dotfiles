@@ -191,9 +191,19 @@ Y = "yank"
 [keys.normal.space]
 space = "goto_word"
 w = ":write"
-q = ":quit"
-Q = ":buffer-close"
 0 = ":quit!"
+Q = ":quit"
+backspace = ":quit"
+# q = ":buffer-close"
+
+# not perfect, need to double quit on last buffer to close helix
+q = [
+  # ":run-shell-command sh -c 'if [ \"%{buffer_name}\" = \"[scratch]\" ]; then echo $(ps -o ppid= -p $PPID); fi'",
+  ":run-shell-command sh -c 'if [ \"%{buffer_name}\" = \"[scratch]\" ]; then kill -TERM $(ps -o ppid= -p $PPID); fi'",
+  ":buffer-close",
+]
+
+
 tab = ":sh ~/.config/helix/compile-keybind.sh %{buffer_name}"
 
 n = "goto_next_diag"
