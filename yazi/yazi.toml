@@ -11,8 +11,6 @@ max_width = 3000
 max_height = 3000
 
 [opener]
-
-
 edit = [ { run = '$HOME/.config/yazi/helix-with-title.sh "$@"', block = true, for = "unix" } ]
 glow = [ { run = 'glow -p "$@"', block = true, orphan = false, for = "unix", desc = "open using glow" } ]
 imv = [ { run = 'imv "$@"', block = true, orphan = false, for = "linux", desc = "open using imv" } ]
@@ -21,14 +19,22 @@ zathura-sanbox = [ { run = 'zathura-sandbox "$@"', orphan = true, for = "unix", 
 zathura = [ { run = 'zathura "$@"', orphan = true, for = "unix", desc = "open using Zathura" } ]
 # xournalpp = [ { run = 'xournalpp "$@"', orphan = true, for = "unix", desc = "open using Xournal++" } ] # can use open instead
 dragondrop = [ { run = 'dragon-drop -x -a "$@"', block = true, orphan = false, for = "linux", desc = "Drag and Drop" } ]
+wallpaper = [ { run = 'swww img --transition-type any "$@"', block = false, orphan = false, for = "linux", desc = "Set as wallpaper" } ]
 
 [open]
 prepend_rules = [
-  { mime = "image/*", use = "imv"},
+  { mime = "image/*", use = ["imv","wallpaper"]},
   { mime = "{audio,video}/*", use = "mpv"},
-  { name = "*.pdf", use = ["zathura","open"] },
-  { name = "*.md", use = [ "edit", "glow" ] },
-  { name = "*.xopp", use = [ "open" ] },
+
+  # only mime filter works, name is broken??
+  # { name = "*.pdf", use = ["zathura","open"] },
+  { mime = "application/pdf", use = ["zathura","open"] },
+
+  # { name = "*.md", use = [ "edit", "glow" ] },
+  { mime = "text/markdown", use = [ "edit", "glow" ] },
+
+  # { name = "*.xopp", use = [ "open" ] },
+  { mime = "application/xopp", use = [ "open" ] },
 ]
 append_rules = [
 	{ name = "*", use = [ "edit" ,"open" , "dragondrop" ] },
