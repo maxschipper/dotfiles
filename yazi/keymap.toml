@@ -54,8 +54,8 @@ desc = "Open with command in the terminal"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "k" ]
-run  = "cd ~/dev"
-desc = "~/dev"
+run  = "cd ~/dev/code"
+desc = "~/dev/code"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "u" ]
@@ -156,6 +156,11 @@ on   = "F"
 run  = "plugin smart-filter"
 desc = "Smart filter"
 
+# https://yazi-rs.github.io/docs/tips#close-input-by-esc
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
 
 [mgr]
 keymap = [
