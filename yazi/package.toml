@@ -49,11 +49,6 @@ rev = "68f7d48"
 hash = "363bd15c7e32f36a814f13e22daaf5a"
 
 [[plugin.deps]]
-use = "imsi32/yatline"
-rev = "88bd1c5"
-hash = "981acbe9b758b1af3a8154c932bb936d"
-
-[[plugin.deps]]
 use = "boydaihungst/file-extra-metadata"
 rev = "4fbb106"
 hash = "8765a20c837f4be5718f89ab1cf33b4"
