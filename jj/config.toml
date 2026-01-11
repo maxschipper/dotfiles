@@ -10,3 +10,7 @@ merge-editor = ":builtin"
 movement.edit = true
 pager = "less -FRX"
 paginate = "auto"
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
