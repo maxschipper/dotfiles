@@ -61,6 +61,10 @@
         "task::Spawn",
         { "task_name": "jjui", "reveal_target": "center" },
       ],
+      "space G": [
+        "task::Spawn",
+        { "task_name": "lazygit", "reveal_target": "center" },
+      ],
     },
   },
   {

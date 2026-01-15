@@ -8,7 +8,7 @@
     "args": [],
     "use_new_terminal": false,
     "allow_concurrent_runs": true,
-    "reveal": "never"
+    "reveal": "never",
   },
   {
     "label": "File Finder",
@@ -20,6 +20,16 @@
   {
     "label": "jjui",
     "command": "jjui",
+    "hide": "on_success",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    // "shell": {
+    //   "program": "fish",
+    // },
+  },
+  {
+    "label": "lazygit",
+    "command": "lazygit",
     "hide": "on_success",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
