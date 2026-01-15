@@ -45,6 +45,7 @@
     "context": "Editor && mode == full && VimControl",
     "bindings": {
       // "ctrl+o": "zed::OpenOnboarding",
+      "space b": "tab_switcher::ToggleAll",
       "space -": "pane::DeploySearch",
       ",": "command_palette::Toggle",
       "-": "buffer_search::Deploy",
