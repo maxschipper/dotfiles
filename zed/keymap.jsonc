@@ -29,6 +29,8 @@
   {
     "context": "Editor && VimControl",
     "bindings": {
+      "m i m": "vim::SelectLargerSyntaxNode",
+      "m d": "editor::UnwrapSyntaxNode",
       "M": "vim::SelectLargerSyntaxNode",
       "m c": "vim::ChangeCase",
       "m l": "vim::ConvertToLowerCase",
