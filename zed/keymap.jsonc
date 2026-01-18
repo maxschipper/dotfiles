@@ -15,6 +15,12 @@
     },
   },
   {
+    "context": "Terminal && screen==normal",
+    "bindings": {
+      "escape": "pane::CloseActiveItem",
+    },
+  },
+  {
     "context": "Workspace && !Editor",
     "bindings": {
       ",": "command_palette::Toggle",
