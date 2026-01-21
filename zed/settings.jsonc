@@ -34,7 +34,17 @@
     },
   },
   // https://zed.dev/docs/configuring-languages#configuring-language-servers
-  "lsp": {},
+  "lsp": {
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore",
+          },
+        },
+      },
+    },
+  },
   "disable_ai": false,
   "features": {
     "edit_prediction_provider": "zed",
