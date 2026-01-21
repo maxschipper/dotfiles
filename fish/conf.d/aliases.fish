@@ -29,6 +29,7 @@ abbr -a --set-cursor Which 'dirname (dirname (readlink -f $(which %)))'
 
 abbr -a --set-cursor --command nix shell 'shell nixpkgs#%'
 abbr -a --set-cursor --command nix why 'why-depends /run/current-system nixpkgs#%'
+abbr -a nixup 'nix flake update --commit-lock-file'
 
 abbr -a n nixos
 abbr -a --command nixos a apply
