@@ -8,16 +8,17 @@ name = "javascript"
 auto-format = true
 formatter = { command = "pnpm", args = ["prettier", "--parser", "javascript"] }
 
-[[language]]
-name = "vue"
-auto-format = true
-formatter = { command = "pnpm", args = ["prettier", "--parser", "vue"] }
-language-servers = [
-"scls",
-"typescript-language-server",
-"tailwindcss-ls",
-"emmet-ls",
-]
+# [[language]]
+# name = "vue"
+# auto-format = true
+# formatter = { command = "pnpm", args = ["prettier", "--parser", "vue"] }
+# formatter = { command = "prettier", args = ["--parser", "vue"] }
+# language-servers = [
+#   "scls",
+#   "typescript-language-server",
+#   "tailwindcss-ls",
+#   "emmet-ls",
+# ]
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
@@ -26,7 +27,7 @@ location = "/nix/store/yfyklm0c1rsl8qwqin64fc4qgcpkgp7j-vue-language-server-3.0.
 
 [language-server.eslint]
 command = "pnpm"
-args = [ "exec", "vscode-eslint-language-server", "--stdio" ]
+args = ["exec", "vscode-eslint-language-server", "--stdio"]
 [language-server.eslint.config]
 # format = { enable = true }
 format = true
@@ -49,7 +50,7 @@ showDocumentation = { enable = true }
 
 [language-server.emmet-ls]
 command = "pnpm"
-args = [ "emmet-ls", "--stdio" ]
+args = ["emmet-ls", "--stdio"]
 
 [language-server.scls]
 command = "simple-completion-language-server"
@@ -68,7 +69,7 @@ LOG_FILE = "/tmp/simple-completion-lsp.log"
 
 [[language]]
 name = "hyprlang"
-file-types = [ { glob = "hypr/*.conf" }, {glob = "hypr/conf.d/*.conf"}]
+file-types = [{ glob = "hypr/*.conf" }, { glob = "hypr/conf.d/*.conf" }]
 
 
 # custom markdown-pdf
@@ -85,10 +86,10 @@ file-types = [ { glob = "hypr/*.conf" }, {glob = "hypr/conf.d/*.conf"}]
 [[language]]
 name = "markdown"
 # language-servers = [ "zk", "marksman", "markdown-oxide" ]
-language-servers = [ "zk" ]
+language-servers = ["zk"]
 [language-server.zk]
 command = "zk"
-args = [ "lsp" ]
+args = ["lsp"]
 
 
 [language-server.colors] # once https://github.com/helix-editor/helix/pull/12308 is released
@@ -115,14 +116,18 @@ preview.background.enabled = true
 preview.background.args = ["--data-plane-host=127.0.0.1:23635"]
 # preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=auto"] # dark mode
 # preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never"] # light mode
-  # Typst END
+# Typst END
 
 # Nix
 [[language]]
 name = "nix"
 auto-format = true
 formatter = { command = "nixfmt" }
-  # Nix END
+# Nix END
+
+[language-server.nixd]
+command = "nixd"
+args = ["--inlay-hints", "--semantic-tokens"]
 
 # GOLANG
 [[language]]
@@ -150,7 +155,7 @@ command = [
 [[language]]
 name = "templ"
 auto-format = true
-language-servers = [ "templ", "tailwindcss-ls" ]
+language-servers = ["templ", "tailwindcss-ls"]
 
 [language-server.tailwindcss-ls]
 config = { userLanguages = { templ = "html", "*.templ" = "html" } }
