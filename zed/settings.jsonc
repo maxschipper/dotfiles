@@ -92,10 +92,11 @@
   },
   "tabs": {
     "git_status": true,
-    "file_icons": true,
+    "file_icons": false,
     "show_close_button": "hover",
+    "close_position": "right",
     "show_diagnostics": "errors",
-    "activate_on_close": "left_neighbour",
+    "activate_on_close": "history",
   },
   "preview_tabs": {
     "enabled": false,
