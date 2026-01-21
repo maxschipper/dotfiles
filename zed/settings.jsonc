@@ -8,7 +8,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "use_on_type_format": false,
+  "preferred_line_length": 100,
+  "hover_popover_enabled": false,
+  "session": {
+    "trust_all_worktrees": true,
+  },
   "helix_mode": true,
+  //"vim_mode": true,
   "base_keymap": "VSCode",
 
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
@@ -51,21 +58,22 @@
   },
   "show_edit_predictions": true,
   "edit_predictions": {
+    "disabled_globs": [],
     "mode": "subtle",
   },
   "cursor_blink": false,
   "linked_edits": true,
   "autosave": "off",
   "remove_trailing_whitespace_on_save": true,
-  "extend_comment_on_newline": false,
-  "extend_list_on_newline": true,
-  "indent_list_on_tab": true,
+  "extend_comment_on_newline": true,
+  // "extend_list_on_newline": true,
+  // "indent_list_on_tab": true,
   "ensure_final_newline_on_save": true,
   "format_on_save": "on",
   "git": {
-    "disable_git": false,
-    "enable_status": true,
-    "enable_diff": true,
+    // "disable_git": false,
+    // "enable_status": true,
+    // "enable_diff": true,
     "git_gutter": "tracked_files",
     "inline_blame": {
       "enabled": true,
@@ -116,11 +124,11 @@
   },
   "file_finder": {
     "file_icons": true,
-    //    "modal_max_width": "small",
-    //    "modal_max_width": "medium",
-    //    "modal_max_width": "large",
-    "modal_max_width": "xlarge",
-    //    "modal_max_width": "full"
+    // "modal_max_width": "small",
+    // "modal_max_width": "medium",
+    "modal_max_width": "large",
+    // "modal_max_width": "xlarge",
+    // "modal_max_width": "full",
     "skip_focus_for_active_in_search": true,
     "git_status": true,
     "include_ignored": "smart",
