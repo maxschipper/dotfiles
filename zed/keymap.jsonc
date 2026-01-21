@@ -5,7 +5,8 @@
     "bindings": {
       "ctrl-ssharp": "dev::OpenKeyContextView",
       "alt-e": "workspace::ToggleRightDock",
-      "ctrl-t": "terminal_panel::Toggle",
+      "ctrl-T": "terminal_panel::Toggle",
+      "ctrl-t": "workspace::NewTerminal",
       "alt-t": [
         "task::Spawn",
         {
@@ -15,32 +16,49 @@
     },
   },
   {
-    "context": "Terminal && screen==normal",
-    "bindings": {
-      "escape": "pane::CloseActiveItem",
-    },
-  },
-  {
     "context": "Workspace && !Editor",
     "bindings": {
       ",": "command_palette::Toggle",
     },
   },
+  {
+    "context": "Terminal && screen==normal",
+    "bindings": {
+      // "escape": "pane::CloseActiveItem", // also works for center terminal but kills running commands
+      "escape": "terminal_panel::Toggle",
+    },
+  },
+  {
+    // m
+    "context": "Editor && VimControl && vim_operator==helix_m",
+    "bindings": {
+      "s": "vim::PushAddSurrounds",
+      "r": "vim::PushChangeSurrounds",
+      "d": "vim::PushDeleteSurrounds",
+
+      "c": "vim::ChangeCase",
+      "L": "vim::ConvertToLowerCase",
+      "u": "vim::ConvertToUpperCase",
+    },
+  },
+  {
+    // m i
+    "context": "Editor && VimControl && vim_operator==i",
+    "bindings": {
+      "m": "vim::SelectLargerSyntaxNode",
+    },
+  },
   // {
-  //   "context": "Editor",
+  //   // m s
+  //   "context": "Editor && VimControl && vim_operator==ys",
   //   "bindings": {
-  //     "ctrl-v": "editor::Paste",
+  //     // "\"": "vim::DoubleQuotes",
   //   },
   // },
   {
     "context": "Editor && VimControl",
     "bindings": {
-      "m i m": "vim::SelectLargerSyntaxNode",
-      "m d": "editor::UnwrapSyntaxNode",
       "M": "vim::SelectLargerSyntaxNode",
-      "m c": "vim::ChangeCase",
-      "m l": "vim::ConvertToLowerCase",
-      "m u": "vim::ConvertToUpperCase",
       "ctrl-j": "editor::MoveLineDown",
       "ctrl-k": "editor::MoveLineUp",
       "Q": "vim::ToggleRecord",
@@ -50,7 +68,12 @@
   {
     "context": "Editor && mode == full && VimControl",
     "bindings": {
+      "space T": "workspace::NewCenterTerminal",
+      "space t": "terminal_panel::Toggle",
       // "ctrl+o": "zed::OpenOnboarding",
+      "space K": "editor::ShowSignatureHelp",
+      "ctrl-n": "editor::SignatureHelpNext",
+      "ctrl-p": "editor::SignatureHelpPrevious",
       "space b": "tab_switcher::ToggleAll",
       "space -": "pane::DeploySearch",
       ",": "command_palette::Toggle",
@@ -58,7 +81,7 @@
       "alt-c": "editor::SelectNext",
       "alt-ctrl-c": "editor::SelectAllMatches",
       "space o": "projects::OpenRecent",
-      "space g": "git_panel::ToggleFocus",
+      "space O": "workspace::Open",
       "space i": "agent::ToggleFocus",
       "space F": "workspace::ToggleZoom",
       "space w": "workspace::Save",
@@ -66,14 +89,9 @@
       "space q": "pane::CloseActiveItem",
       "space Q": "pane::ReopenClosedItem",
       "space ?": "dev::OpenKeyContextView",
-      "space u": [
-        "task::Spawn",
-        { "task_name": "jjui", "reveal_target": "center" },
-      ],
-      "space G": [
-        "task::Spawn",
-        { "task_name": "lazygit", "reveal_target": "center" },
-      ],
+      "space G": "git_panel::ToggleFocus",
+      "space g": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }],
+      "space u": ["task::Spawn", { "task_name": "jjui", "reveal_target": "center" }],
     },
   },
   {
@@ -106,7 +124,6 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      "l": "project_panel::Open",
       "a": "project_panel::NewFile",
       "shift-a": "project_panel::NewDirectory",
       "r": "project_panel::Rename",
@@ -119,6 +136,15 @@
 
       "q": "workspace::ToggleRightDock",
       "H": "project_panel::CollapseAllEntries",
+
+      // "L": ["workspace::SendKeystrokes", "f15 f16"],
+      // "f15": "project_panel::Open",
+      // "f16": "project_panel::ToggleFocus",
+
+      "l": "project_panel::Open",
+      "space": ["workspace::SendKeystrokes", "f13 f14"],
+      "f13": "project_panel::Open",
+      "f14": "workspace::ToggleRightDock",
     },
   },
   {
