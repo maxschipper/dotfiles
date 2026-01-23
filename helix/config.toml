@@ -1,5 +1,5 @@
-theme = "my-catppuccin_mocha_oled"
-# theme = "my-catppuccin_transparent"
+# theme = "my-catppuccin_mocha_oled"
+theme = "my-catppuccin_transparent"
 # theme = "my-starlight-transparent"
 
 [editor]
