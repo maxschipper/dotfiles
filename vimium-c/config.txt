@@ -1,0 +1,21 @@
+# Insert your preferred key mappings here.
+map J moveTabRight
+map K moveTabLeft
+map h previousTab
+map l nextTab
+
+# unmap i
+
+
+map gl lastTab
+map gh firstTab
+
+unmap -
+map - enterFindMode
+
+map s LinkHints.activateOpenInNewForegroundTab
+map a LinkHints.activateOpenInNewTab
+
+unmap ge
+map ge scrollToBottom
+map e Vomnibar.activateEditUrl
