@@ -23,7 +23,7 @@ binds {
     Mod+I { spawn "swaync-client" "--toggle-panel"; }
 
     Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
-    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.9"; }
+    Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.95"; }
     Mod+Shift+ALT+T { spawn "foot"; }
     Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
     Alt+Space hotkey-overlay-title=null { spawn "walker"; }
