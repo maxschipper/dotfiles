@@ -31,8 +31,8 @@ binds {
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace hotkey-overlay-title=null { close-window; }
 
-    Mod+H hotkey-overlay-title=null { focus-column-left; }
-    Mod+L hotkey-overlay-title=null { focus-column-right; }
+    Mod+H hotkey-overlay-title=null { focus-column-or-monitor-left; }
+    Mod+L hotkey-overlay-title=null { focus-column-or-monitor-right; }
 
     Mod+J hotkey-overlay-title=null { focus-window-or-workspace-down; }
     Mod+K hotkey-overlay-title=null { focus-window-or-workspace-up; }
@@ -46,8 +46,8 @@ binds {
 
     Mod+Shift+J { move-window-down-or-to-workspace-down; }
     Mod+Shift+K { move-window-up-or-to-workspace-up; }
-    Mod+Shift+H hotkey-overlay-title=null { move-column-left; }
-    Mod+Shift+L hotkey-overlay-title=null { move-column-right; }
+    Mod+Shift+H hotkey-overlay-title=null { move-column-left-or-to-monitor-left; }
+    Mod+Shift+L hotkey-overlay-title=null { move-column-right-or-to-monitor-right; }
     Mod+Shift+U { move-workspace-down; }
     Mod+Shift+I { move-workspace-up; }
 
