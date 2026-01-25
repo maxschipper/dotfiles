@@ -25,8 +25,8 @@ binds {
     Mod+Shift+T hotkey-overlay-title=null { spawn "footclient"; }
     Mod+T hotkey-overlay-title="footclient with black bg" { spawn "footclient" "-o" "colors.background=000000" "-o" "colors.alpha=0.95"; }
     Mod+Shift+ALT+T { spawn "foot"; }
-    Mod+Space hotkey-overlay-title=null { spawn "fuzzel"; }
-    Alt+Space hotkey-overlay-title=null { spawn "walker"; }
+    Alt+Space hotkey-overlay-title=null { spawn "fuzzel"; }
+    Mod+Space hotkey-overlay-title=null { spawn "vicinae" "toggle"; }
     Mod+Shift+Q hotkey-overlay-title="Start quickshell if it has crashed" { spawn "caelestia-shell"; }
     Mod+O repeat=false hotkey-overlay-title=null { toggle-overview; }
     Mod+Backspace hotkey-overlay-title=null { close-window; }
