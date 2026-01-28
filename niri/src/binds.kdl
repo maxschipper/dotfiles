@@ -131,10 +131,16 @@ binds {
     Mod+S { center-column; }
     // Center all fully visible columns on screen.
     Mod+Ctrl+Shift+C { center-visible-columns; }
+
     Mod+Minus { set-column-width "-10%"; }
     Mod+Plus { set-column-width "+10%"; }
+    Mod+Alt+Minus { set-column-width "-1%"; }
+    Mod+Alt+Plus { set-column-width "+1%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Plus { set-window-height "+10%"; }
+    Mod+Shift+Alt+Minus { set-window-height "-1%"; }
+    Mod+Shift+Alt+Plus { set-window-height "+1%"; }
+
     Mod+Shift+V { toggle-window-floating; }
     Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
