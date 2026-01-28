@@ -9,3 +9,7 @@ include "src/switch-events.kdl"
 include "src/binds.kdl"
 include "src/workspaces.kdl"
 include "src/layout.kdl"
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
