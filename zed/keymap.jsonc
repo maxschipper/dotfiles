@@ -68,6 +68,7 @@
   {
     "context": "Editor && mode == full && VimControl",
     "bindings": {
+      "+": "editor::ToggleInlayHints",
       "space T": "workspace::NewCenterTerminal",
       "space t": "terminal_panel::Toggle",
       // "ctrl+o": "zed::OpenOnboarding",
