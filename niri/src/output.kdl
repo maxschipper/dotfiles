@@ -12,3 +12,11 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "Microstep Optix MAG27CQ 0000000000001" {
+    // off
+    mode "2560x1440@119.991"
+    position x=-1440 y=-200
+    backdrop-color "#111111"
+    // scale 2
+}
+
