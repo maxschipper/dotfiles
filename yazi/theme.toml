@@ -1,3 +1,5 @@
 [flavor]
 # dark = "catppuccin-mocha"
-dark = "catppuccin-macchiato"
+# dark = "catppuccin-macchiato"
+dark = "tokyo-night"
+# dark = "rose-pine"

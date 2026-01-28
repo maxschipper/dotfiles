@@ -92,3 +92,13 @@ hash = "4127d9d6c96862ed96a7a64b3973a5af"
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "f6b425a"
 hash = "14b111562c00eb1917fe3ca3ae9bb771"
+
+[[flavor.deps]]
+use = "Mintass/rose-pine"
+rev = "d91f8f2"
+hash = "87da3630653b6d272e43658418599188"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "8e6296f"
+hash = "d9da921c3bd37ba32ee27a8a7a40461f"
