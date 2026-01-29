@@ -460,6 +460,23 @@
     "format": "SSD",
     "tooltip-format": "SSD: {temperatureC}󰔄"
   },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "ignore-list": [
+      "footclient"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal",
+      ".*(steam_app_[0-9]+).*": "Game"
+    }
+  },
   "custom/notification": {
     "tooltip": true,
     "format": "<span size='16pt'>{icon}</span>",

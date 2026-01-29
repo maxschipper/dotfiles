@@ -20,23 +20,26 @@
     "niri/workspaces",
     "clock",
     // "group/hardware",
-    "custom/notification",
-    "idle_inhibitor",
+    "wlr/taskbar",
+    // "custom/notification",
+    // "idle_inhibitor",
     "privacy",
     "gamemode",
     // "custom/flake",
     "systemd-failed-units"
   ],
-  "modules-center": [
-    // "mpris",
-    // "niri/workspaces",
-    "niri/window"
-  ],
+  // "modules-center": [
+  // "mpris",
+  // "niri/workspaces",
+  // "niri/window"
+  // ],
   "modules-right": [
     "tray",
     // "group/extras",
     // "clock",
     // "custom/notification",
+    "custom/notification",
+    "idle_inhibitor",
     "network",
     // "bluetooth#bat",
     "bluetooth",
