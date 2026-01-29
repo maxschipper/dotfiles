@@ -9,7 +9,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "use_on_type_format": false,
-  "preferred_line_length": 100,
+  "preferred_line_length": 110,
   "hover_popover_enabled": false,
   "session": {
     "trust_all_worktrees": true,
@@ -194,6 +194,7 @@
   "colorize_brackets": true,
   "word_diff_enabled": true,
   "lsp_document_colors": "inlay",
+  "inline_code_actions": false,
   "inlay_hints": {
     "enabled": true,
     "show_background": true,
@@ -208,6 +209,11 @@
       "platform": false,
     },
   },
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+  "show_signature_help_after_edits": true,
+  "auto_signature_help": false,
+
   "completion_menu_scrollbar": "auto",
   "show_whitespaces": "trailing",
   "indent_guides": {
@@ -231,18 +237,10 @@
     "enabled": false,
   },
   "fast_scroll_sensitivity": 5.0,
-  // "diagnostics_max_severity": "info",
-  // "inline_code_actions": true,
-  "inline_code_actions": false,
   "relative_line_numbers": "disabled",
   "drag_and_drop_selection": {
     "enabled": false,
   },
-
-  "show_completions_on_input": true,
-  "show_completion_documentation": true,
-  "show_signature_help_after_edits": true,
-  "auto_signature_help": true,
 
   "restore_on_startup": "last_session",
   "redact_private_values": true,
@@ -261,7 +259,7 @@
     "enable_feedback": false,
     "default_model": {
       "provider": "google",
-      "model": "gemini-3-pro-preview",
+      "model": "gemini-3-flash-preview",
     },
     "model_parameters": [],
     "inline_assistant_model": {
