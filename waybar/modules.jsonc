@@ -189,6 +189,7 @@
     "show-passive-items": true
   },
   "network": {
+    "family": "ipv4",
     "format-icons": {
       "wifi": [
         "<span size='12pt'>󰤯</span>",
@@ -199,15 +200,13 @@
       ],
       "ethernet": "<span size='12pt'>󰈀</span>",
       "disabled": "<span size='12pt'>󰤮</span>",
-      "disconnected": "<span size='12pt'>󰤫</span>"
+      "disconnected": "<span size='12pt'>󰤫</span>",
+      "linked": "<span size='12pt'>󱚸</span>" // 󱚸  󰤩
     },
-    "format-wifi": "{icon}",
-    "format-ethernet": "{icon}",
-    "format-disconnected": "{icon}",
-    "format-disabled": "{icon}",
+    "format": "{icon}",
     "interval": 5,
     "tooltip": true,
-    "tooltip-format-wifi": "{ifname}:\n{essid} @{frequency}GHz\n{ipaddr}\n{signalStrength}% {signaldBm}dBm {bandwidthTotalBytes}",
+    "tooltip-format-wifi": "{ifname}: {ipaddr}\n{essid} @{frequency}GHz\n{gwaddr}/{cidr}\n{signalStrength}% {signaldBm}dBm {bandwidthTotalBytes}",
     "tooltip-format-ethernet": "{ifname} via {gwaddr}/{cidr}\n{ipaddr}\n{bandwidthTotalBytes}",
     "tooltip-format-disconnected": "Disconnected",
     // "on-click": "nm-connection-editor",
