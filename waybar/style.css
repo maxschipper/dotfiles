@@ -1,7 +1,9 @@
 @import "./colors.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font Propo";
+  /* font-family: "JetBrainsMono Nerd Font Propo"; */
+  /* font-family: "Geist"; */
+  font-family: "Geist Mono";
   font-size: 16px;
   border-radius: 0;
   box-shadow: none;
