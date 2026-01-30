@@ -463,19 +463,23 @@
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 18,
+    // "tooltip-format": "{name} {app_id} {title}",
+    // "tooltip-format": "{name} | {app_id}",
+    // "tooltip-format": "{name} | {title}",
     "tooltip-format": "{title}",
     "on-click": "activate",
+    "on-click-right": "close",
     "ignore-list": [
       "footclient"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    },
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal",
-      ".*(steam_app_[0-9]+).*": "Game"
-    }
+    ]
+    // "app_ids-mapping": {
+    //   "firefoxdeveloperedition": "firefox-developer-edition"
+    // },
+    // "rewrite": {
+    //   // "Firefox Web Browser": "Firefox",
+    //   // "Foot Client": "Terminal",
+    //   ".*(steam_app_[0-9]+).*": "Game"
+    // }
   },
   "custom/notification": {
     "tooltip": true,
