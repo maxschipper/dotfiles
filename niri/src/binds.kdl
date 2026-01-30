@@ -11,10 +11,6 @@ binds {
 
     Mod+Shift+o hotkey-overlay-title=null { show-hotkey-overlay; }
 
-    // You can also use a shell. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument in the end.
-    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
-
     // TODO: give app title to yazi and btop and let niri float / fullscreen them on startup
     //       maybe then use footclient again
     Mod+E { spawn "foot" "yazi"; }
@@ -145,6 +141,7 @@ binds {
     Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
+    Alt+Shift+S hotkey-overlay-title="Screenshot UI" { screenshot; }
     Print hotkey-overlay-title="Screenshot UI" { screenshot; }
     Mod+Print hotkey-overlay-title="Screenshot entire screen" { screenshot-screen; }
     Mod+Shift+Print hotkey-overlay-title="Screenshot current window" { screenshot-window; }
@@ -161,15 +158,25 @@ binds {
     // F3 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     // F4 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    XF86AudioMute allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    // XF86AudioMute allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    // XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    // XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    // XF86AudioMicMute allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+
+    XF86AudioRaiseVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && notify-send -e -t 700 -h string:x-canonical-private-synchronous:volume -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}') 'Volume'"; }
+
+    XF86AudioLowerVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notify-send -e -t 700 -h string:x-canonical-private-synchronous:volume -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}') 'Volume'"; }
+
+    XF86AudioMute        { spawn "~/nix/scripts/volume/vol-mute.sh"; }
 
 
+    XF86MonBrightnessUp   cooldown-ms=40 { spawn-sh "brightnessctl -e set 3%+ && notify-send -e -t 700 -h string:x-canonical-private-synchronous:brightness -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') 'Brightness'"; }
+    XF86MonBrightnessDown cooldown-ms=40 { spawn-sh "brightnessctl -e set 3%- && notify-send -e -t 700 -h string:x-canonical-private-synchronous:brightness -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') 'Brightness'"; }
+
+    
     // these keys have a really slow repeat rate built in
-    XF86MonBrightnessDown allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "-10"; }
-    XF86MonBrightnessUp allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "+10"; }
+    // XF86MonBrightnessDown allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "-10"; }
+    // XF86MonBrightnessUp allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "+10"; }
 
     Shift+XF86MonBrightnessDown allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "-2"; }
     Shift+XF86MonBrightnessUp allow-when-locked=true repeat=true { spawn "swayosd-client" "--brightness" "+2"; }
@@ -178,14 +185,16 @@ binds {
     // Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "niri msg action power-off-monitors && hyprlock"; }
     // Shift+Alt+L { power-off-monitors; }
 
-    Alt+P hotkey-overlay-title="Hide/Show waybar" { spawn-sh "pkill -SIGUSR1 waybar"; }
-    Shift+Alt+P hotkey-overlay-title="Reload waybar" { spawn-sh "pkill -SIGUSR2 waybar"; }
+    Alt+P hotkey-overlay-title="Hide/Show waybar" { spawn "pkill" "-SIGUSR1" "waybar"; }
+    Shift+Alt+P hotkey-overlay-title="Reload waybar" { spawn "pkill" "-SIGUSR2" "waybar"; }
 
-    Alt+I hotkey-overlay-title="" { spawn-sh "$HOME/.config/fuzzel/scripts/power-menu.sh"; }
+    Alt+I hotkey-overlay-title="" { spawn "$HOME/.config/fuzzel/scripts/power-menu.sh"; }
 
-    XF86Calculator hotkey-overlay-title="" { spawn-sh "footclient -T Calculator qalc"; }
+    XF86Calculator hotkey-overlay-title="" { spawn "footclient" "-T" "Calculator" "qalc"; }
+
+    XF86Favorites hotkey-overlay-title="" { spawn "~/nix/scripts/led/toggle-kbd-backlight.sh"; }
 
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
-    Mod+U hotkey-overlay-title="Open ToDo" { spawn-sh "footclient -T ToDo hx /home/max/.shell-todo.md"; }
+    Mod+U hotkey-overlay-title="Open ToDo" { spawn "footclient" "-T" "ToDo" "hx" "/home/max/.shell-todo.md"; }
 }
