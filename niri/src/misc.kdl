@@ -17,7 +17,12 @@ overview {
     zoom 0.3
 }
 
-gestures { hot-corners { off; }; }
+gestures {
+    hot-corners {
+        // off
+        top-left
+    }
+}
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
