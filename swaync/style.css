@@ -123,7 +123,10 @@ trough {
   background-color: #ed8796;
 }
 
-.notification.low progress,
+.notification.low progress {
+  background-color: #585b70;
+}
+
 .notification.normal progress {
   background-color: #8aadf4;
 }
