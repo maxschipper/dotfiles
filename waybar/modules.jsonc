@@ -209,8 +209,9 @@
     "tooltip-format-wifi": "{ifname}: {ipaddr}\n{essid} @{frequency}GHz\n{gwaddr}/{cidr}\n{signalStrength}% {signaldBm}dBm {bandwidthTotalBytes}",
     "tooltip-format-ethernet": "{ifname} via {gwaddr}/{cidr}\n{ipaddr}\n{bandwidthTotalBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    // "on-click": "nm-connection-editor",
-    "on-click": "footclient nmtui",
+    "on-click": "nm-connection-editor",
+    // "on-click": "nmgui",
+    // "on-click": "footclient nmtui",
     "on-click-right": "rfkill toggle wifi"
   },
   "bluetooth": {
@@ -244,18 +245,18 @@
     "on-click": "blueman-manager",
     "on-click-right": "rfkill toggle bluetooth"
   },
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": "<span size='14pt'>󰍬</span>",
-    "format-source-muted": "<span size='14pt'>󰍭</span>",
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "tooltip": false
-  },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "vertical"
-  },
+  // "pulseaudio#microphone": {
+  //   "format": "{format_source}",
+  //   "format-source": "<span size='14pt'>󰍬</span>",
+  //   "format-source-muted": "<span size='14pt'>󰍭</span>",
+  //   "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+  //   "tooltip": false
+  // },
+  // "pulseaudio/slider": {
+  //   "min": 0,
+  //   "max": 100,
+  //   "orientation": "vertical"
+  // },
   "pulseaudio": {
     "interval": 1,
     "format": "{icon}",
@@ -265,38 +266,37 @@
       "<span size='14pt'>󰕾</span>"
     ],
     "format-muted": "<span size='14pt'>󰝟</span>",
-    // "on-click-right": "pavucontrol",
-    "on-click-right": "footclient wiremix --tab output",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pwvucontrol",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "reverse-scrolling": true,
     "tooltip": true,
-    "tooltip-format": "Volume: {volume}%\n{desc}",
-    "ignored-sinks": [
-      "Easy Effects Sink"
-    ]
+    "tooltip-format": "Volume: {volume}%\n{desc}"
+    // "ignored-sinks": [
+    //   "Easy Effects Sink"
+    // ]
   },
-  "backlight/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "vertical",
-    "device": "intel_backlight"
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": [
-      "󰃚",
-      "󰃛",
-      "󰃜",
-      "󰃝",
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
-    "reverse-scrolling": true,
-    "smooth-scrolling-threshold": 0.2,
-    "tooltip": false
-  },
+  // "backlight/slider": {
+  //   "min": 0,
+  //   "max": 100,
+  //   "orientation": "vertical",
+  //   "device": "intel_backlight"
+  // },
+  // "backlight": {
+  //   "device": "intel_backlight",
+  //   "format": "{icon}",
+  //   "format-icons": [
+  //     "󰃚",
+  //     "󰃛",
+  //     "󰃜",
+  //     "󰃝",
+  //     "󰃞",
+  //     "󰃟",
+  //     "󰃠"
+  //   ],
+  //   "reverse-scrolling": true,
+  //   "smooth-scrolling-threshold": 0.2,
+  //   "tooltip": false
+  // },
   "battery": {
     "interval": 5,
     "states": {
