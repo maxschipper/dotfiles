@@ -73,6 +73,8 @@
   "cursor_blink": false,
   "linked_edits": true,
   "autosave": "off",
+  "auto_indent_on_paste": false,
+  "auto_indent": true,
   "remove_trailing_whitespace_on_save": true,
   "extend_comment_on_newline": true,
   // "extend_list_on_newline": true,
@@ -112,7 +114,7 @@
     "file_icons": false,
     "show_close_button": "hover",
     "close_position": "right",
-    "show_diagnostics": "errors",
+    "show_diagnostics": "all",
     "activate_on_close": "history",
   },
   "preview_tabs": {
