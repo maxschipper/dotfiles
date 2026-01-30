@@ -20,12 +20,15 @@
 
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_size": 16.0,
+  "buffer_font_weight": 600.0,
   // "buffer_line_height": "standard",
   "buffer_line_height": "comfortable",
   "unnecessary_code_fade": 0.4,
 
-  "ui_font_family": "IBM Plex Sans",
+  // "ui_font_family": "IBM Plex Sans",
+  "ui_font_family": "Geist",
   "ui_font_size": 16.0,
+  "ui_font_weight": 500.0,
 
   "theme": "Tokyo Night",
   "icon_theme": "Catppuccin Frappé",
