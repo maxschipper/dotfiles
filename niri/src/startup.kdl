@@ -6,5 +6,4 @@ spawn-at-startup "vicinae" "server"
 
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/set-volume.sh"
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/led-mic-mute-off.sh"
-spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/systray-apps.sh"
 spawn-at-startup "bash" "-c" "sleep 5 && $NH_FLAKE/scripts/activitywatch/remove-private-browsing.ts"

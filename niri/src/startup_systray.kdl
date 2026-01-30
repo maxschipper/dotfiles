@@ -1,0 +1,3 @@
+spawn-at-startup "netbird-ui"
+// spawn-at-startup "tailscale" "systray"
+// spawn-at-startup "lm-studio"
