@@ -100,6 +100,13 @@ window#waybar {
   color: @color4;
 }
 
+#bluetooth.bat {
+  /* color: @color1; */
+  padding: 2px 0;
+  margin-top: -10px;
+}
+
+
 #pulseaudio.sink-muted:not(.microphone) {
   color: @color3;
 }
