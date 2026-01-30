@@ -389,8 +389,8 @@
   "use_system_path_prompts": false,
   // "use_system_prompts": true,
   "current_line_highlight": "all",
-  "selection_highlight": true,
-  "rounded_selection": true,
+  "selection_highlight": false,
+  "rounded_selection": false,
 
   // "use_on_type_format": true,
 
