@@ -170,7 +170,7 @@
     "line_numbers": true,
     "runnables": true,
     "breakpoints": true,
-    "folds": true,
+    "folds": false,
     "min_line_number_digits": 2,
   },
   "search": {
