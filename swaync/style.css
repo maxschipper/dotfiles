@@ -2,7 +2,8 @@
 * {
   all: unset;
   font-size: 14px;
-  font-family: "Ubuntu Nerd Font";
+  /* font-family: "Ubuntu Nerd Font"; */
+  font-family: "Geist";
   transition: 200ms;
 }
 
