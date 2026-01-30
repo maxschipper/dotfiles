@@ -167,7 +167,7 @@ binds {
 
     XF86AudioLowerVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notify-send -e -t 700 -h string:x-canonical-private-synchronous:volume -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}') 'Volume'"; }
 
-    XF86AudioMute        { spawn "~/nix/scripts/volume/vol-mute.sh"; }
+    XF86AudioMute        { spawn "~/nix/scripts/vol-mute.sh"; }
 
 
     XF86MonBrightnessUp   cooldown-ms=40 { spawn-sh "brightnessctl -e set 3%+ && notify-send -e -t 700 -h string:x-canonical-private-synchronous:brightness -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') 'Brightness'"; }
@@ -192,7 +192,7 @@ binds {
 
     XF86Calculator hotkey-overlay-title="" { spawn "footclient" "-T" "Calculator" "qalc"; }
 
-    XF86Favorites hotkey-overlay-title="" { spawn "~/nix/scripts/led/toggle-kbd-backlight.sh"; }
+    XF86Favorites hotkey-overlay-title="" { spawn "~/nix/scripts/toggle-kbd-backlight.sh"; }
 
     Mod+Ctrl+W hotkey-overlay-title="Clear background" { spawn-sh "swww clear"; }
    
