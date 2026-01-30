@@ -31,6 +31,12 @@
   "ui_font_weight": 500.0,
 
   "theme": "Tokyo Night",
+  "theme_overrides": {
+    "Tokyo Night": {
+      "editor.document_highlight.read_background": "#00000000",
+      // "editor.document_highlight.write_background": "#00000000",
+    },
+  },
   "icon_theme": "Catppuccin Frappé",
   "languages": {
     "Python": {
