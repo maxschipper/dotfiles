@@ -1,0 +1,101 @@
+{
+	"name": "Vimium C",
+	"@time": "2/1/2026, 2:24:47 PM",
+	"time": 1769952287944,
+	"environment": {
+		"extension": "2.12.3",
+		"platform": "linux",
+		"firefox": 147
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://192\\.168\\.178\\.76/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://nuc\\.tail3035bf\\.ts\\.net:7681/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://cad.onshape.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://10\\.0\\.1\\.18/"
+		},
+		{
+			"passKeys": "f ",
+			"pattern": ":https://www.youtube.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://127\\.0\\.0\\.1:61208/"
+		},
+		{
+			"passKeys": "s ",
+			"pattern": ":https://nuc.lab/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://try.vikunja.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://nuc\\.lab:8080/"
+		},
+		{
+			"passKeys": "d ",
+			"pattern": ":https://todo.nuc.lab/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.jetkvm.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.super-productivity.com/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"# Insert your preferred key mappings here.",
+		"map J moveTabRight",
+		"map K moveTabLeft",
+		"map h previousTab",
+		"map l nextTab",
+		"",
+		"map q previousTab",
+		"map w nextTab",
+		"",
+		"# unmap i",
+		"",
+		"",
+		"map gl lastTab",
+		"map gh firstTab",
+		"",
+		"unmap -",
+		"map - enterFindMode",
+		"",
+		"map s LinkHints.activateOpenInNewForegroundTab",
+		"map a LinkHints.activateOpenInNewTab",
+		"",
+		"unmap ge",
+		"map ge scrollToBottom",
+		"map e Vomnibar.activateEditUrl",
+		""
+	],
+	"keyboard": [
+		300,
+		40
+	],
+	"keyupTime": 100,
+	"localeEncoding": "",
+	"scrollStepSize": 150,
+	"vimSync": true
+}
