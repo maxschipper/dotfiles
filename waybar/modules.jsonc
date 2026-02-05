@@ -236,7 +236,7 @@
     "format-disabled": "",
     "format-connected": "",
     "format-no-controller": "",
-    "format-connected-battery": "<span size='6pt'>{device_battery_percentage}</span>",
+    "format-connected-battery": "<span size='6pt'> {device_battery_percentage}</span>",
     "tooltip-format-connected-battery": "",
     "tooltip": false,
     "tooltip-format": "Address: {controller_address}\n{device_enumerate}",
