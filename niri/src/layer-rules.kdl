@@ -22,3 +22,8 @@ layer-rule {
     // Fuzzel defaults to 10 px rounded corners.
     geometry-corner-radius 10
 }
+
+layer-rule {
+    match namespace="vicinae"
+    shadow { off; } // broken with compact vicinae
+}
