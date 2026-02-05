@@ -63,3 +63,11 @@ abbr -a makimaa 'sudo -Eb MAKIMA_CONFIG=/etc/makima makima'
 abbr -a yt 'DISPLAY=:0 $NH_FLAKE/scripts/yt-leanback-ui.sh'
 
 abbr -a cage 'cage -sd --'
+
+abbr -a sy systemctl
+abbr -a syu 'systemctl --user'
+abbr -a --command systemctl s status
+abbr -a --command systemctl r restart
+
+abbr -a jo 'journalctl -xe'
+abbr -a jou 'journalctl -xe --unit'
