@@ -188,7 +188,7 @@ binds {
     Alt+P hotkey-overlay-title="Hide/Show waybar" { spawn "pkill" "-SIGUSR1" "waybar"; }
     Shift+Alt+P hotkey-overlay-title="Reload waybar" { spawn "pkill" "-SIGUSR2" "waybar"; }
 
-    Alt+I hotkey-overlay-title="" { spawn "~/.config/fuzzel/scripts/power-menu.sh"; }
+    Alt+I hotkey-overlay-title="" { spawn "~/nix/scripts/power-menu.sh"; }
 
     XF86Calculator hotkey-overlay-title="" { spawn "footclient" "-T" "Calculator" "qalc"; }
 
