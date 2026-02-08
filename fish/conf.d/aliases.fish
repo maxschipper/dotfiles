@@ -18,6 +18,7 @@ abbr -a llst 'lsd --long --tree --total-size -S'
 # abbr -a h hx .
 abbr -a lg lazygit
 abbr -a ff fastfetch
+abbr -a j just
 
 abbr -a todos 'rg --color=always "TODO:" --hidden .'
 abbr -a cat bat
@@ -30,6 +31,8 @@ abbr -a --set-cursor Which 'dirname (dirname (readlink -f $(which %)))'
 abbr -a --set-cursor --command nix shell 'shell nixpkgs#%'
 abbr -a --set-cursor --command nix why 'why-depends /run/current-system nixpkgs#%'
 abbr -a nixup 'nix flake update --commit-lock-file'
+abbr -a --command nix d develop
+abbr -a --command nix dev develop
 
 abbr -a n nixos
 abbr -a --command nixos a apply
