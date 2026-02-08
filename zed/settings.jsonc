@@ -76,9 +76,9 @@
   "auto_indent_on_paste": false,
   "auto_indent": true,
   "remove_trailing_whitespace_on_save": true,
-  "extend_comment_on_newline": true,
-  // "extend_list_on_newline": true,
-  // "indent_list_on_tab": true,
+  "extend_comment_on_newline": false,
+  "extend_list_on_newline": true,
+  "indent_list_on_tab": true,
   "ensure_final_newline_on_save": true,
   "format_on_save": "on",
   "git": {
