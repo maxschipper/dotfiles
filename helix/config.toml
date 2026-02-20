@@ -204,7 +204,11 @@ q = [
 ]
 
 
-tab = ":sh ~/.config/helix/compile-keybind.sh %{buffer_name}"
+# tab = ":sh ~/.config/helix/compile-keybind.sh %{buffer_name}"
+
+# use the script ./compile-set.sh to set the comman to run here. symlink that as cset to local/bin/
+# to just run ":sh cset echo hello world" for example
+tab = ":sh ~/.config/helix/compile-run.sh"
 
 n = "goto_next_diag"
 
