@@ -1,3 +1,39 @@
+# https://github.com/rszyma/vscode-kanata/issues/60
+# https://github.com/rszyma/vscode-kanata
+[[language]]
+name = "kanata"
+scope = "source.kanata"
+file-types = ["kbd"]
+roots = ["kanata.kbd"]
+comment-tokens = ";;"
+block-comment-tokens = [
+  { start = "#|", end = "|#" }
+]
+# indent = { tab-width = 2, unit = "  " }
+auto-format = true
+language-servers = ["kanata-ls"]
+
+# https://github.com/jtroo/kanata/discussions/957
+# https://github.com/postsolar/tree-sitter-kanata
+[[grammar]]
+name = "kanata"
+source = { git = "https://github.com/postsolar/tree-sitter-kanata", rev = "a6213d06ea6efa432702bbbc6b4c5dcddc21df2a" }
+
+[language-server.kanata-ls]
+command = "nix"
+args = ["run", "nixpkgs#nodejs-slim", "--", "/home/max/dev/code/repos/vscode-kanata/out/server.js", "--stdio"]
+[language-server.kanata-ls.config]
+includesAndWorkspaces = "workspace"
+mainConfigFile = "kanata.kbd"
+localKeysVariant = "deflocalkeys-wintercept"
+dimInactiveConfigItems = false
+[language-server.kanata-ls.config.format]
+enable = true
+useDefsrcLayoutOnDeflayers = true
+[language-server.kanata-ls.config.envVariables] # This is the critical workaround mentioned in the Neovim config
+dummy = "value"
+
+
 [[language]]
 name = "typescript"
 auto-format = true
