@@ -7,4 +7,4 @@ function title {
 }
 
 title $@
-exec hx "$@"
+exec $EDITOR "$@"
